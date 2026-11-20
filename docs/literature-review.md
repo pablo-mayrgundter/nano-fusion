@@ -141,7 +141,7 @@ nuclear transition, and the community has built the doping, spectroscopy and the
   neutralisation of the collapsing ion sphere was found to be incomplete; a 2020 permanent-magnet trap
   paper notes fusion in a Penning trap had still not been demonstrated.
 
-Nobody appears to have asked what this scaling does at 100 nm with solid electrodes at volts per
+I found no treatment of what this scaling does at 100 nm with solid electrodes at volts per
 nanometre. That is the Track D paper study.
 
 ---
