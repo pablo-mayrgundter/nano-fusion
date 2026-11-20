@@ -10,7 +10,7 @@ Product fuels are p-¹¹B or p-⁷Li; deuterium is the laboratory fuel.
 
 **Site: <https://pablo-mayrgundter.github.io/nano-fusion/>**, with the study on one page at
 [onepager.html](https://pablo-mayrgundter.github.io/nano-fusion/onepager.html).
-Milestone 1 was marked on 2026-11-20 (tag `m1`, [`MILESTONES.md`](MILESTONES.md)).
+Milestone 1 was marked on 2026-11-20; see [`MILESTONES.md`](MILESTONES.md).
 
 **Start with [`docs/worked-example.md`](docs/worked-example.md)**: the whole argument in nine steps,
 each a number you can reproduce.

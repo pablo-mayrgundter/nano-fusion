@@ -2,7 +2,7 @@
 
 ## M1 — Physics baseline and first simulator
 
-**2026-11-20 · tag `m1` · [site](https://pablo-mayrgundter.github.io/nano-fusion/) · [one-pager](https://pablo-mayrgundter.github.io/nano-fusion/onepager.html)**
+**2026-11-20 · [site](https://pablo-mayrgundter.github.io/nano-fusion/) · [one-pager](https://pablo-mayrgundter.github.io/nano-fusion/onepager.html)**
 
 The first pass at turning the NanoFusion idea into numbers: what a nano-scale fusion battery would
 need from its reaction sites, which routes the physics closes, and a gate-driven plan for finding out
