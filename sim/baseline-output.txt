@@ -1,0 +1,73 @@
+== Gamow constants B_G [keV^0.5] ==
+  D-D      31.40
+  D-T      34.38
+  p-7Li    88.10
+  p-11B   150.30
+  p-15N   212.80
+
+== Sanity checks against published values ==
+  sigma DT  @ 10 keV cm : 2.702e-02 b   (Bosch-Hale table 2.702e-2)
+  sigma DDp @ 10 keV cm : 2.812e-04 b   (Bosch-Hale table 2.812e-4)
+  sigma pB11@ 600 keV cm: 1.192 b      (peak ~1.2 b)
+  S_e p in H @ 1 MeV    : 679 MeV cm2/g (PSTAR ~683)
+
+== Bare cross sections and screening enhancement f = sigma(E+Ue)/sigma(E), D-D (both branches) ==
+  E_cm[keV]   sigma_bare[b]   f(Ue=0.3)   f(Ue=1.0)   f(Ue=3.0 keV)
+       0.5      1.140e-17    6.84e+03    4.73e+07    1.43e+11
+       1.0      2.542e-12        36.6    4.95e+03    1.67e+06
+       2.0      1.259e-08         3.9        39.4    1.42e+03
+       5.0      1.787e-05        1.41        2.85          12
+      10.0      5.591e-04        1.12        1.45        2.64
+      25.0      9.200e-03        1.03        1.09        1.28
+      50.0      3.206e-02        1.01        1.03        1.08
+
+== Beam into cold fuel: figure of merit F = sigma*E_fus/S_e (ceiling on gain) ==
+  D->T    F_max = 1.39e-02 at E_beam =     108 keV  -> need sigma/S improved x72 for F=1
+  D->D    F_max = 1.21e-03 at E_beam =    5017 keV  -> need sigma/S improved x827 for F=1
+  p->11B  F_max = 1.93e-03 at E_beam =     653 keV  -> need sigma/S improved x518 for F=1
+
+== Thick-target yield and gain, bare vs screened (Ue in keV) ==
+  reaction  E0[keV]   Ue    reactions/ion      Q = E_fus/E_beam
+  D->T         20   0.0      5.838e-08       5.134e-05
+  D->T         20   1.0      9.197e-08       8.088e-05
+  D->T         50   0.0      3.317e-06       1.167e-03
+  D->T         50   1.0      3.805e-06       1.339e-03
+  D->T        100   0.0      3.118e-05       5.485e-03
+  D->T        100   1.0      3.266e-05       5.744e-03
+  D->T        200   0.0      9.453e-05       8.314e-03
+  D->T        200   1.0      9.535e-05       8.386e-03
+  D->D          5   0.0      2.435e-14       1.781e-11
+  D->D          5   1.0      6.410e-13       4.687e-10
+  D->D         20   0.0      5.575e-10       1.019e-07
+  D->D         20   1.0      9.406e-10       1.718e-07
+  D->D        100   0.0      1.915e-07       6.977e-06
+  D->D        100   1.0      2.030e-07       7.396e-06
+  D->D        200   0.0      1.038e-06       1.887e-05
+  D->D        200   1.0      1.062e-06       1.930e-05
+  p->11B      400   0.0      3.562e-06       7.731e-05
+  p->11B      400   1.0      3.605e-06       7.825e-05
+  p->11B      700   0.0      4.775e-05       5.922e-04
+  p->11B      700   1.0      4.790e-05       5.941e-04
+  p->11B     1500   0.0      1.084e-04       6.275e-04
+  p->11B     1500   1.0      1.084e-04       6.272e-04
+
+== Solid-state route: fusion rate per fuel pair needed (D-D -> 23.85 MeV, 3.4e22 pairs/cm3) ==
+  betavoltaic-class 100 uW/cm3    7.70e-16 /s per pair = 10^48 x free-D2 rate
+  1 mW/cm3                        7.70e-15 /s per pair = 10^49 x free-D2 rate
+  1 W/cm3                         7.70e-12 /s per pair = 10^52 x free-D2 rate
+  1 kW/cm3                        7.70e-09 /s per pair = 10^55 x free-D2 rate
+
+== Conventional D-D neutron output per unit fusion power (why fuel choice matters) ==
+  1.71e+12 reactions/s per W -> 8.55e+11 n/s per W (8.5e+05 n/s per uW)
+
+== One-photon electric field vs mode volume (2 eV photon) ==
+  photonic-crystal cavity (lambda/n)^3 ~ 9e7 nm3, Si    1.29e-04 V/nm
+  plasmonic nanogap 40 nm3                              6.73e-01 V/nm
+  picocavity 1 nm3                                      4.25e+00 V/nm
+  (compare: Coulomb field between two deuterons at 10 pm = 1.4e4 V/nm, at 100 pm = 144 V/nm)
+
+== Low-beta laser accelerator: structure period = beta*lambda (lambda = 2 um) ==
+  D+ 10 keV   beta = 0.0033  period =    6.5 nm  evanescent decay ~   1.0 nm
+  D+ 100 keV  beta = 0.0103  period =   20.7 nm  evanescent decay ~   3.3 nm
+  p 100 keV   beta = 0.0146  period =   29.2 nm  evanescent decay ~   4.6 nm
+  p 600 keV   beta = 0.0358  period =   71.5 nm  evanescent decay ~  11.4 nm
