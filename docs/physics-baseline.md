@@ -140,7 +140,7 @@ nano-fusion battery is power-limited and lifetime-limited, not energy-limited. H
 | One-photon field, picocavity (1 nm³) | 4 V/nm |
 | Coulomb field between two deuterons at 100 pm / 10 pm | 144 / 14 000 V/nm |
 | Laser intensity at which theory predicts × 10³ tunnelling boost at 1 keV | 10²⁰ W/cm² (Qi, Zhou, Wang) |
-| Photons per fusion, NIF Dec 2022 shot | 3 × 10⁶ |
+| Photons per fusion, NIF Dec 2022 shot (2.05 MJ in, 3.15 MJ out) | 3 × 10⁶ |
 | Photons per fusion, deuterated nanowire arrays | ~5 × 10¹¹ |
 | Photons per fusion allowed at break-even (30 % emitter, p-¹¹B) | ≤ ~10⁶ (≤ ~10⁵ with realistic capture) |
 

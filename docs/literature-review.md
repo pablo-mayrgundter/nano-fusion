@@ -3,13 +3,16 @@
 Compiled 2026-11-20 from web searches plus the two NanoFusion Google Docs. Citations marked ✔ were
 confirmed in this session against an abstract, journal listing or institutional page; citations marked
 ◦ are from memory and should be checked against the journal before being quoted externally. Nothing
-here was read in full text — treat the numbers as abstract-level.
+here was read in full text — treat the numbers as abstract-level. (arxiv.org is outside this cloud
+session's network allowlist, so preprint abstracts came through search summaries, not direct fetches.)
 
 **Bottom line.** There is a real, mainstream-published body of evidence that a metal lattice changes
 low-energy fusion rates by large factors, and it got stronger in 2025–2026. There is no confirmed
 evidence that any lattice effect produces net energy, and no confirmed evidence that low-intensity light
-changes a nuclear rate at all. The photon-energized-site idea has a clear theoretical motivation and one
-directly on-point patent family from the Google-funded team, plus one unreplicated experimental claim.
+changes a nuclear rate at all. The photon-energized-site idea has a clear theoretical motivation, a
+directly on-point patent family from the Google-funded team, a 2025 plasmonic-nanoshell proposal from
+mainstream theorists, an ARPA-E-funded Stanford test whose results I could not find, and one
+unreplicated experimental claim.
 It is an open experimental question that atomically precise fabrication is unusually well placed to
 settle.
 
@@ -72,7 +75,7 @@ is a usable fusion fuel form; it is not evidence for low-energy photon triggerin
 - ◦ Ditmire et al., *Nature* 398, 489 (1999): fusion from Coulomb explosion of laser-heated deuterium
   clusters.
 - Laser-initiated p-¹¹B (the reaction in the main doc): ◦ Labaune et al., *Nat. Commun.* 4, 2506 (2013);
-  ◦ Giuffrida et al., *Phys. Rev. E* 101, 013204 (2020); ◦ Magee et al., *Nat. Commun.* 14, 955 (2023)
+  ◦ Giuffrida et al., *Phys. Rev. E* 101, 013204 (2020); ✔ Magee et al., *Nat. Commun.* 14, 955 (2023)
   (first p-¹¹B in a magnetically confined plasma).
 
 ### 1.4 A laser addressing a nucleus inside a designed crystal
@@ -81,7 +84,8 @@ is a usable fusion fuel form; it is not evidence for low-energy photon triggerin
   nucleus, doped in CaF₂. ✔ Zhang, Ye et al., *Nature* 633, 63–70 (2024): VUV frequency comb drives the
   same nuclear transition in a solid host and links it to the Sr atomic clock
   ([paper](https://jila.colorado.edu/sites/default/files/2024-09/Th%20nuclear%20clock%202024-Nature.pdf)).
-  ◦ Elwell et al., *Phys. Rev. Lett.* 133, 013201 (2024) (LiSrAlF₆ host); ✔ thin-film ²²⁹ThF₄ follow-up
+  ✔ Elwell et al., [arXiv:2404.12311](https://arxiv.org/abs/2404.12311) (LiSrAlF₆ host, isomer at
+  8.355733 eV; journal reference *Phys. Rev. Lett.* 133, 013201 ◦); ✔ thin-film ²²⁹ThF₄ follow-up
   from JILA (*Nature*, Dec 2024).
 
 This is the only case where coherent light has been shown to drive a nuclear state inside an engineered
@@ -91,12 +95,13 @@ nuclear transition, and the community has built the doping, spectroscopy and the
 
 ### 1.5 Putting a photon on one site
 
-- ◦ Benz et al., *Science* 354, 726 (2016) (picocavities: light confined to ~1 nm³ at a single atom);
+- ✔ Benz et al., *Science* 354, 726–729 (2016) (picocavities: light confined to well below 1 nm³ at a
+  single atom, 10⁶ enhancement of optomechanical coupling to individual bonds);
   ◦ Chikkaraddy et al., *Nature* 535, 127 (2016) (single-molecule strong coupling in a plasmonic
   nanocavity at room temperature).
 - ✔ Strong-field emission from plasmonic nanotips with few-cycle mid-IR pulses: electrons reach
-  hundreds of eV, escaping the nanolocalised field within a fraction of an optical cycle (Herink et
-  al., *Nature* 2012 ◦; Echternkamp et al., *Appl. Phys. B* 2016 ✔). eV photons become sub-keV particles
+  hundreds of eV, escaping the nanolocalised field within a fraction of an optical cycle (✔ Herink,
+  Solli, Gulde, Ropers, *Nature* 483, 190–193 (2012); ✔ Echternkamp et al., *Appl. Phys. B* 2016). eV photons become sub-keV particles
   on a nanostructure, with oscillator-level pulse energies.
 - On-chip accelerators from the Notes doc: ◦ Sapra et al., *Science* 367, 79 (2020); ◦ Chlouba et al.,
   *Nature* 622, 476 (2023). Both accelerate relativistic or near-relativistic *electrons*. Nobody has
@@ -128,6 +133,8 @@ nuclear transition, and the community has built the doping, spectroscopy and the
 | Nuclear Dicke model: D-D ↔ Pd energy transfer via lattice vibrations, with screening and tunnelling, gives > 40 orders | ✔ Hagelstein, Metzler, Lilley, Messinger, Galvanetto, [arXiv:2501.08338](https://arxiv.org/abs/2501.08338v2) (2025). Almost certainly the paper behind the 2025-01-14 video in the Notes doc | The most explicit theory in which a *driven lattice mode* is the active ingredient | Preprint in physics.gen-ph; unconfirmed |
 | A 0⁺ threshold resonance in ⁴He dominates D-D at very low energy, decaying by e⁺e⁻ pairs | ✔ Czerski et al., *Phys. Rev. C* 109, L021601 (2024); [arXiv:2408.07567](https://arxiv.org/abs/2408.07567v2); [arXiv:2409.02112](https://export.arxiv.org/pdf/2409.02112) (D-D at thermal energies in ion tracks) | Would change the branching ratio as well as the rate — a route to neutron-poor D-D | One group (Szczecin); Czerski did publicly welcome the 2026 LBNL result as corroboration |
 | **Light-driven plasmon oscillations concentrate electrons around light nuclei, giving transient screening above any static value** | ✔ US 10,566,094 B2 ([Google Patents](https://patents.google.com/patent/US10566094B2/en)) and US 10,264,661 B2 ([link](https://patents.google.com/patent/US10264661B2)); Google LLC / Univ. of Maryland; Munday, Murray, Narayan, Fork | **The closest published statement of the NanoFusion photon-energized-site concept**, from the team behind the 2019 and 2026 papers | Patents, not data. No published confirmation found |
+| **Fusion in a nanoshell:** moderate-intensity laser on D₂O-filled metal nanoshells; plasmonic field enhancement accelerates deuterons | ✔ Kharzeev, Levitt, Trallero-Herrero, [arXiv:2503.15531](https://arxiv.org/abs/2503.15531v2) (2025) | A plasmonic nanostructure as the fusion driver, proposed by mainstream nuclear and strong-field physicists. Same family as the v0 nanogap site | Rate estimates only; no measurement |
+| Nano-plasmonic laser fusion (NAPLIFE): gold nanorod antennas embedded in the target absorb fs laser light | ✔ Hungarian NAPLIFE collaboration ([overview](https://communities.springernature.com/posts/nano-plasmonic-laser-induced-fusion-energy-naplife), [Laser Focus World](https://www.laserfocusworld.com/lasers-sources/article/55283233/catalyzing-nuclear-fusion-via-nanoplasmonics)) | An experimental programme built on resonant nano-antennas inside the fuel | Reported effect is 3–4× larger laser craters, not a measured fusion rate; high-intensity fs pulses; one collaboration |
 | Anomalous heat from Ni-based nano-multilayers with H₂ | ✔ Iwamura et al., *Jpn. J. Appl. Phys.* 63, 037001 (2024) ([open access](https://iopscience.iop.org/article/10.35848/1347-4065/ad2622)); Clean Planet / Tohoku | Nano-*structure* as the active ingredient, in a mainstream journal | Calorimetry only, one lineage of groups, no correlated nuclear products |
 
 ---
@@ -153,8 +160,15 @@ nuclear transition, and the community has built the doping, spectroscopy and the
   the main doc.
 - **ARPA-E LENR exploratory programme.** ✔ $10 M to eight teams in Feb 2023 (Amphionic, Energetics
   Technology Center, LBNL, MIT, Stanford, Texas Tech, Michigan × 2), explicitly to settle the question
-  either way. No final outcome statement was found as of this date; the 2026 LBNL paper is plausibly
-  one of its outputs. **Action: check ARPA-E project pages.**
+  either way. Two of the funded projects are close relatives of the NanoFusion concept
+  ([project descriptions](https://arpa-e.energy.gov/sites/default/files/2025-01/Project%20Descriptions_LENR.pdf)):
+  Stanford, "Nuclear Product Detection from Deuterated Nanoparticles Under Phonon Stimulation"
+  ($1.5 M), i.e. a driven lattice read out with nuclear diagnostics; and Amphionic, testing whether
+  reactions occur in "potential wells existing between two nanoscale surfaces" by controlling
+  nanoparticle geometry, separation, composition and loading. Texas Tech is the shared
+  nuclear-diagnostics hub. No outcome statement was found as of this date; the 2026 LBNL paper is
+  plausibly one of the programme's outputs. **Action: find the Stanford and Amphionic results before
+  designing E1 and E3 — they may already have run them.**
 
 ---
 
@@ -172,7 +186,12 @@ sources):
 - Silicon Quantum Computing: phosphorus placement in silicon at ~0.13 nm accuracy
   (*Nature Nanotechnology* comment).
 
-Today this is 2D, ultra-high-vacuum, a few atoms per second, and a handful of chemistries. The roadmap
+Chemistry is the other route to atom-exact objects, and it already works in bulk: ✔ Komatsu, Murata,
+Murata, *Science* 307, 238–240 (2005) sealed H₂ inside C₆₀ by organic synthesis ("molecular surgery"),
+and D₂@C₆₀ has since been made and studied spectroscopically. That is an atom-exact cage holding
+exactly one fuel pair, produced by the flask.
+
+Today positional assembly is 2D, ultra-high-vacuum, a few atoms per second, and a handful of chemistries. The roadmap
 therefore defines capability levels (APM-0 to APM-4) and names a bridging process for every phase.
 
 ---
@@ -213,3 +232,6 @@ with a cheap, decisive first test, not as an engineering problem.
 5. Letts-Hagelstein 2010 for exact laser powers, spot sizes, cathode preparation.
 6. Czerski arXiv:2408.07567 for the predicted e⁺e⁻ branching ratio versus energy.
 7. Rider 1995 thesis, re-read for which assumptions fail at 10–100 nm with 1–10 V/nm electrodes.
+8. Kharzeev et al. arXiv:2503.15531: their rate estimate and required intensity, as a cross-check on
+   the v0 nanogap numbers.
+9. ARPA-E LENR project outcomes, Stanford and Amphionic first.

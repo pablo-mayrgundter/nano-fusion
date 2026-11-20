@@ -26,8 +26,8 @@ reaction sites driven by on-board photon sources, assuming near-future atomic-le
    strengthened in 2025–2026 (15 % from electrochemical loading in *Nature*; a sub-keV plateau > 10¹⁸
    above bare-nucleus rates in *Nature Communications*). None of it is near useful power.
 2. No experiment has confirmed that low-intensity light changes a nuclear rate. The idea has a
-   peer-reviewed theoretical motivation, a Google/Maryland patent family, and one unreplicated
-   two-laser claim. It can be tested cheaply.
+   peer-reviewed theoretical motivation, a Google/Maryland patent family, a 2025 plasmonic-nanoshell
+   proposal, and one unreplicated two-laser claim. It can be tested cheaply.
 3. Firing ions into cold matter is capped at a gain of 0.1–1 % by electronic stopping, whatever the
    recirculation scheme. Removing the electrons from the reaction zone lifts that ceiling about a
    thousandfold on paper.
