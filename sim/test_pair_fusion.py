@@ -78,6 +78,16 @@ def test_beam_route_numbers():
     assert br.bare_ion_yield(2000.0, 10.0) * br.E_FUS_PB11 / 2e6 < 1.0   # below break-even if it just stops
 
 
+def test_cue_ball_numbers():
+    import baseline as b
+    import cue_ball as cb
+    mu = b.M_P * b.M_B11 / (b.M_P + b.M_B11) * 1e-3
+    lam = cb.wavelength_fm(mu, 600.0)
+    assert abs(math.pi * lam * lam / 100.0 - b.sigma("pB11", 600.0)) < 0.05    # at the head-on limit
+    assert 3.5 < cb.zero_point_pm(11.009, 0.110) < 5.0                          # boron jitter, pm
+    assert cb.zero_point_pm(1.008, 0.060) > 4 * cb.zero_point_pm(11.009, 0.110) * 0.9  # hydrogen is fuzzier
+
+
 if __name__ == "__main__":
     tests = [v for k, v in sorted(globals().items()) if k.startswith("test_")]
     for t in tests:

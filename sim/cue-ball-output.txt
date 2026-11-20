@@ -1,0 +1,29 @@
+== 1. The pocket: a head-on collision against the quantum limit pi*lambda-bar^2 ==
+  p-11B at the 600 keV resonance   lambda-bar   6.1 fm   limit   1.19 b   measured 1.19e+00 b   -> head-on fusion probability ~1
+  D-T at the 64 keV resonance      lambda-bar  16.4 fm   limit   8.50 b   measured 5.06e+00 b   -> head-on fusion probability ~0.6
+  D-D at 50 keV                    lambda-bar  20.4 fm   limit  13.04 b   measured 3.21e-02 b   -> head-on fusion probability ~0.0025
+  D-D at 10 keV                    lambda-bar  45.6 fm   limit  65.22 b   measured 5.59e-04 b   -> head-on fusion probability ~8.6e-06
+
+  p-11B pocket: 119 fm2, i.e. a disc of radius 6.2 fm
+
+== 2. The jitter: zero-point motion of the target nucleus (one axis, at absolute zero) ==
+  boron in a stiff covalent lattice    4.2 pm
+  lithium in LiH                       7.0 pm
+  deuterium in PdD                    16.1 pm
+  hydrogen in PdH                     18.6 pm
+  boron: jitter 4154 fm against a 6.2 fm pocket -> a perfect shot at the site centre hits with probability 1.1e-06
+  pinning a boron nucleus to 6.2 fm would take 25 keV of zero-point energy (two axes); a chemical bond supplies about 55 meV
+
+== 3. What perfect aiming buys (650 keV protons on boron) ==
+  unaimed, per atomic layer: hit probability 3.1e-09, energy lost 14 eV -> gain 0.0019
+  aimed at each nucleus:     hit probability 1.1e-06  (359 times better)
+    if a central pass cost only the average             14 eV per shot -> gain 0.69
+    central pass through the K shell, low estimate      60 eV per shot -> gain 0.16
+    central pass through the K shell, high estimate    110 eV per shot -> gain 0.09
+  (K-shell figures are estimates: ionisation probability 0.1-0.2 per central pass at ~450 eV,
+   plus 15-20 eV to valence electrons)
+
+== 4. Is a photon a fine enough tool? ==
+  one 2 eV photon turns a 650 keV proton by 5.7e-08 rad: 5.7 fm over 100 nm of flight
+  one unit of angular momentum at a 100 nm standoff is a sideways momentum of 2.0 eV/c: one visible photon
+  to use the 4.2 pm jitter the beam needs a 4.2 pm focus (convergence 0.7 mrad); to reach the 6 fm pocket itself it would need 0.46 rad

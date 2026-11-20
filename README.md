@@ -28,6 +28,7 @@ each a number you can reproduce.
 | [`sim/cell_model.py`](sim/cell_model.py) | Device level: what a site must do for a given battery |
 | [`sim/baseline.py`](sim/baseline.py) | Beam physics: cross sections, stopping, gain ceilings |
 | [`sim/beam_route.py`](sim/beam_route.py) | Lattice route versus beam route for the product fuels |
+| [`sim/cue_ball.py`](sim/cue_ball.py) | The aimed single shot: pocket, jitter, and what perfect aiming buys |
 | [`sim/e1_budget.py`](sim/e1_budget.py) | Count-rate and sensitivity budget for the first experiment |
 | [`cad/build_step.py`](cad/build_step.py), [`cad/render_cell.py`](cad/render_cell.py), [`cad/gen_site.py`](cad/gen_site.py) | Code-CAD: STEP export, 2D drawing, atomistic site generator |
 

@@ -188,6 +188,35 @@ every static electrostatic trap has a hole in phase space, and the design questi
 leaving through it arrive slow (climbing to a retarding electrode, energy recovered for free) or fast
 (falling into an attracting one, energy lost).
 
+### The aimed single shot
+
+The original idea was a cue-ball shot: one proton, one nucleus, exactly aligned, with photons doing the
+aiming. From [`sim/cue_ball.py`](../sim/cue_ball.py):
+
+| Question | Number |
+|---|---|
+| If a p-¹¹B collision at 600 keV is head-on, how often does it fuse? | About every time. The measured cross-section, 1.19 b, equals the quantum limit for a head-on collision, πƛ² = 1.19 b |
+| Size of the pocket to hit | a disc of radius 6.2 fm |
+| How well located is a boron nucleus in a stiff lattice at absolute zero? | ± 4.2 pm on each axis (zero-point motion), ~700 times the pocket radius |
+| Chance that a perfect shot at the site centre hits | 1.1 × 10⁻⁶ |
+| Energy to pin the nucleus to 6 fm | 25 keV of zero-point energy; a chemical bond supplies ~55 meV |
+| One 2 eV photon steers a 650 keV proton by | 5.7 × 10⁻⁸ rad: 5.7 fm over 100 nm |
+
+The intuition about where the waste goes is right: at the resonance the nuclear physics is already
+perfect and all the loss is aim. A photon is also a fine enough tool. But the target cannot be aimed
+at. Its position is undetermined to a few picometres by quantum mechanics, not by temperature or
+fabrication, and nothing held by electrons can be located better.
+
+What perfect aiming buys: hit probability per atom passed rises from 3 × 10⁻⁹ to 10⁻⁶, a factor of
+~360. The gain rises from 0.002 to between ~0.1 and 0.7, depending on how much the proton loses to the
+atom's inner electrons on a central pass (estimated here, not measured). Better than any beam, and
+below break-even in every case.
+
+The form of the cue-ball shot that physics does allow is a pair already bound in a state of zero
+angular momentum: a molecule, a caged pair, or a muonic molecule in its ground state. Every approach is
+then head-on by construction, with no aiming at all. That is the model in "What a resting pair needs"
+above; its problem is energy, not alignment. Muon-catalysed fusion is the working example.
+
 ## Wall 3 — branching and radiation: what comes out
 
 | Reaction | Energy | Products | Note |
