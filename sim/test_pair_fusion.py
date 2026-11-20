@@ -88,6 +88,20 @@ def test_cue_ball_numbers():
     assert cb.zero_point_pm(1.008, 0.060) > 4 * cb.zero_point_pm(11.009, 0.110) * 0.9  # hydrogen is fuzzier
 
 
+def test_vibrational_ladder_of_d2():
+    ground, d0 = pf.rate_molecule("D-D", 1.0, 0)
+    first, d1 = pf.rate_molecule("D-D", 1.0, 1)
+    assert abs((d0 - d1) * 1e3 - 371.2) < 2.0                    # measured fundamental, meV
+    assert 0.8 < first - ground < 2.0                             # one quantum: about a factor of 20
+    top = pf.rate_molecule("D-D", 1.0, 18)[0]
+    assert 7.0 < top - ground < 10.0                              # the whole ladder: ~8 orders
+    try:
+        pf.rate_molecule("D-D", 1.0, 22)
+        raise AssertionError("D2 has only 22 bound vibrational levels (0-21)")
+    except ValueError:
+        pass
+
+
 if __name__ == "__main__":
     tests = [v for k, v in sorted(globals().items()) if k.startswith("test_")]
     for t in tests:

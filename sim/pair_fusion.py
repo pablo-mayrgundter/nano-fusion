@@ -157,9 +157,9 @@ def _shoot(rs, r2v, h, two_mu, energy, keep):
     return nodes, lnu
 
 
-def ground_state(potential, mu, r_max, r_min=1e-8, n=4000):
-    """Ground state of two nuclei of reduced mass mu in potential(r).
-    Returns (energy [hartree], log10 |psi(0)|^2 [bohr^-3])."""
+def ground_state(potential, mu, r_max, r_min=1e-8, n=4000, level=0):
+    """Bound state number `level` (0 = ground state, counting radial nodes) of two nuclei of
+    reduced mass mu in potential(r).  Returns (energy [hartree], log10 |psi(0)|^2 [bohr^-3])."""
     h = math.log(r_max / r_min) / (n - 1)
     rs = [r_min * math.exp(i * h) for i in range(n)]
     vs = [potential(r) for r in rs]
@@ -170,12 +170,12 @@ def ground_state(potential, mu, r_max, r_min=1e-8, n=4000):
     e_lo = min(vs)
     step = 1e-4
     e_hi = e_lo + step
-    while _shoot(rs, r2v, h, two_mu, e_hi, False)[0] == 0:
+    while _shoot(rs, r2v, h, two_mu, e_hi, False)[0] <= level:
         step *= 2.0
         e_hi = e_lo + step
     for _ in range(46):
         mid = 0.5 * (e_lo + e_hi)
-        if _shoot(rs, r2v, h, two_mu, mid, False)[0] == 0:
+        if _shoot(rs, r2v, h, two_mu, mid, False)[0] <= level:
             e_lo = mid
         else:
             e_hi = mid
@@ -189,12 +189,16 @@ def ground_state(potential, mu, r_max, r_min=1e-8, n=4000):
 
 
 # --- rates ------------------------------------------------------------------------
-def rate_molecule(pair, m_star=1.0):
+def rate_molecule(pair, m_star=1.0, level=0):
     """log10 of the fusion rate (per second) for a hydrogen-isotope pair in an H2-type molecule
-    whose electrons have mass m_star.  Returns (log10 rate, dissociation energy D0 in eV)."""
+    whose electrons have mass m_star, in vibrational state `level`.
+    Returns (log10 rate, binding energy of that state in eV)."""
     assert PAIRS[pair][2] == 1, "the H2 potential applies to charge-1 pairs only"
     # Scaling lengths by 1/m* and energies by m* maps the problem onto reduced mass mu/m*.
-    energy, log_psi = ground_state(v_h2, reduced_mass(pair) / m_star, r_max=14.0)
+    energy, log_psi = ground_state(v_h2, reduced_mass(pair) / m_star, r_max=14.0,
+                                   n=4000 if level == 0 else 12000, level=level)
+    if energy >= -1.0:
+        raise ValueError(f"no bound vibrational level {level}")
     log_rate = math.log10(nuclear_constant(pair)) + log_psi + 3 * math.log10(m_star / A0_CM)
     return log_rate, (-1.0 - energy) * HARTREE_EV * m_star
 

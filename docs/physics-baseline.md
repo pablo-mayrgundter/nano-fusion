@@ -212,6 +212,21 @@ What perfect aiming buys: hit probability per atom passed rises from 3 × 10⁻�
 atom's inner electrons on a central pass (estimated here, not measured). Better than any beam, and
 below break-even in every case.
 
+**Knocking a bonded pair with light.** With two nuclei bonded, the pair's own vibration is exactly
+head-on, so a knock along the bond needs no aiming. It needs energy that light cannot deliver to a
+nucleus. One 2 eV photon makes a deuteron recoil with 10⁻⁹ eV. A 10 keV knock would take a 6 MeV
+gamma ray (the NASA lattice-confinement approach) or 135 000 V/nm across the bond. The hardest knock
+the bond can hold is its own dissociation energy: pumping D₂ to the top of its vibrational ladder
+(4.4 eV) raises the fusion rate from 10⁻⁶⁴ to 10⁻⁵⁵ per second, 8 of the ~53 orders needed. A knock
+harder than the bond is a ballistic shot again, and the bond's own wobble puts the partner a few
+picometres off line.
+
+The muon does not knock harder. It replaces an electron, pulls the pair to 0.5 pm, and thins the
+barrier until the pair's zero-point motion tunnels through: 10¹² fusions per second with no kick at
+all. That is what "in range at the muon line" means on the chart. Two cautions on reading that line:
+for hydrogen isotopes it is real (muon-catalysed fusion); for lithium and boron it is only a length
+scale, because one muon cancels one of the nucleus's three or five charges and then stays bound to it.
+
 The form of the cue-ball shot that physics does allow is a pair already bound in a state of zero
 angular momentum: a molecule, a caged pair, or a muonic molecule in its ground state. Every approach is
 then head-on by construction, with no aiming at all. That is the model in "What a resting pair needs"

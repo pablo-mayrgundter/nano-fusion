@@ -27,3 +27,17 @@
   one 2 eV photon turns a 650 keV proton by 5.7e-08 rad: 5.7 fm over 100 nm of flight
   one unit of angular momentum at a 100 nm standoff is a sideways momentum of 2.0 eV/c: one visible photon
   to use the 4.2 pm jitter the beam needs a 4.2 pm focus (convergence 0.7 mrad); to reach the 6 fm pocket itself it would need 0.46 rad
+
+== 5. Knocking one nucleus of a bonded pair into the other (D2 molecule, bond 74 pm) ==
+  a free deuteron absorbing one 2 eV photon recoils with 1.1e-09 eV
+  a 10 keV knock needs a photon momentum of 6.1 MeV/c (a gamma ray),
+  or a field of 134953 V/nm across the bond (materials fail near 10 V/nm)
+  the hardest knock the bond itself can hold: pump the pair up its vibrational ladder
+    vibrational level  1 (0.37 eV above ground): fusion rate 10^ -62.4 /s
+    vibrational level  5 (1.71 eV above ground): fusion rate 10^ -59.2 /s
+    vibrational level 10 (3.07 eV above ground): fusion rate 10^ -56.9 /s
+    vibrational level 15 (4.05 eV above ground): fusion rate 10^ -55.6 /s
+    vibrational level 18 (4.41 eV above ground): fusion rate 10^ -55.3 /s
+    vibrational level 21 (4.56 eV above ground): fusion rate 10^ -56.5 /s
+  ground state 10^-63.7; best is level 18 at 10^-55.3: 8 of the ~53 orders a battery needs
+  a muon in place of an electron: 10^11.6 /s with no knock at all (sim/pair_fusion.py)

@@ -86,6 +86,23 @@ def main():
           f" (convergence {lam_lab / (2 * sigma_t) * 1e3:.1f} mrad); to reach the {pocket:.0f} fm pocket itself"
           f" it would need {lam_lab / (2 * pocket):.2f} rad")
 
+    print("\n== 5. Knocking one nucleus of a bonded pair into the other (D2 molecule, bond 74 pm) ==")
+    import pair_fusion as pf
+    m_d_ev = pf.MASS["D"] * 510998.95
+    print(f"  a free deuteron absorbing one 2 eV photon recoils with {2.0 ** 2 / (2 * m_d_ev):.1e} eV")
+    print(f"  a 10 keV knock needs a photon momentum of {math.sqrt(2 * m_d_ev * 1e4) / 1e6:.1f} MeV/c (a gamma ray),")
+    print(f"  or a field of {1e4 / 74.1 * 1e3:.0f} V/nm across the bond (materials fail near 10 V/nm)")
+    print("  the hardest knock the bond itself can hold: pump the pair up its vibrational ladder")
+    base = pf.rate_molecule("D-D")[0]
+    best = (base, 0, 0.0)
+    for v in (1, 5, 10, 15, 18, 21):
+        rate, bound = pf.rate_molecule("D-D", 1.0, v)
+        best = max(best, (rate, v, 4.556 - bound))
+        print(f"    vibrational level {v:2d} ({4.556 - bound:4.2f} eV above ground): fusion rate 10^{rate:6.1f} /s")
+    print(f"  ground state 10^{base:.1f}; best is level {best[1]} at 10^{best[0]:.1f}:"
+          f" {best[0] - base:.0f} of the ~53 orders a battery needs")
+    print("  a muon in place of an electron: 10^11.6 /s with no knock at all (sim/pair_fusion.py)")
+
 
 if __name__ == "__main__":
     main()
