@@ -156,6 +156,38 @@ ions non-thermal against their own elastic scattering costs recirculating power 
 fusion power. Whether atomically precise electrodes at ~1–10 V/nm change the terms of that argument is
 an open, answerable modelling question.
 
+### The beam route for p-¹¹B, in numbers
+
+From [`sim/beam_route.py`](../sim/beam_route.py):
+
+| Case | Fusion energy out ÷ beam energy spent |
+|---|---|
+| Proton into solid boron | 0.002 |
+| Proton held at the 653 keV resonance among bare boron nuclei | 1.6 (10 nm trap), 1.2 (1 µm trap) |
+| Proton injected at 0.7–3.5 MeV and left to slow down on bare boron | 0.5–0.7 |
+
+Even with every electron removed and nothing lost, the scheme is at about break-even once conversion
+losses are counted. It can only do better if the boron is hot too, which means confining an ion cloud
+rather than passing a beam through a target.
+
+The obstacle is one ratio. Over the distance in which a proton has one chance to fuse, Coulomb
+collisions with boron nuclei deflect it by ~90–120 rad² in total and hand over 8 times its energy: its
+direction is randomised about a hundred times per fusion. A beam cannot stay a beam. So:
+
+- a trap that keeps only protons inside a cone of 0.1, 0.3 or 1 rad must recover 99.9 %, 99.1 % or
+  90 % of the energy of every proton it loses, just to break even;
+- put the other way, break-even needs each proton held for about **ten** direction-randomising
+  collisions if lost ions dump their energy as heat, or about **one** if 90 % of it is recovered.
+  Magnetic-mirror loss cones give two or three.
+
+What the small scale adds is field strength. At 1–5 V/nm a 650 kV well fits in 130–650 nm and can hold
+10¹⁷–10¹⁸ charges per cm³, about a million times a magnetic trap's limit, so a proton would fuse every
+4–90 ms and power density is not the constraint. The megavolt well is also, by construction, a direct
+converter for the alphas. What it does not change is the hundred-to-one ratio, or Earnshaw's theorem:
+every static electrostatic trap has a hole in phase space, and the design question is whether ions
+leaving through it arrive slow (climbing to a retarding electrode, energy recovered for free) or fast
+(falling into an attracting one, energy lost).
+
 ## Wall 3 — branching and radiation: what comes out
 
 | Reaction | Energy | Products | Note |

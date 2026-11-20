@@ -226,6 +226,7 @@ Rules:
 | DN-033 | 2026-11-20 | adopted | Track D pruning: no static electrostatic trap confines ions in three dimensions (Earnshaw), and a radio-frequency or optical trap at 1 V/nm in a 100 nm structure is only a few eV deep. Track D therefore means a recirculating-beam (electrostatic mirror) geometry or a magnetic one, and the Rider question is about beam acceptance under scattering. |
 | DN-034 | 2026-11-20 | proposed | E1 expectation under known physics is a null: a free-electron estimate gives ~2 eV of screening change in one atomic layer at 1 V/nm, below the dense-gap target's sensitivity once diluted. A positive E1 would be new physics; that is what makes it a clean test. |
 | DN-035 | 2026-11-20 | adopted | Both STEP models open in Bldrs Share (v1.2251): local load in ~2.3 s, instances preserved (659 meshes on 7 geometries), colours and names shown. Gaps filed as feature requests in `design/step/README.md`: occurrence names are not shown (worked around with neutral part names), no declared model scale and `units=m` reported for a millimetre file, no linked levels of detail, no atom-list import, no per-part properties from STEP. |
+| DN-036 | 2026-11-20 | adopted | Lattice versus beam for the product fuels (`sim/beam_route.py`). Taking reported screening at face value for a caged pair at rest: D-D runs from 17 orders short to inside the battery band; p-⁷Li is 33–68 orders short; p-¹¹B is 125 orders short. Beam route for p-¹¹B: 0.002 in solid boron; 1.2–1.6 with the proton held at resonance among bare boron nuclei; 0.5–0.7 if it just slows down. About 100 direction-randomising collisions per fusion. Break-even criterion for any trap: hold each proton for ~10 such collisions with no energy recovery from lost ions, ~1 with 90 % recovery. The Track D study is therefore a trap-design question: where does the unavoidable phase-space hole lead, and how fast are ions when they leave through it. |
 | DN-017 | 2026-11-20 | open | The 2014 muon-catalysed design (Notes doc state diagram) maps onto this hierarchy as a different L0 site and feed; keep as Track C, not modelled in v0. |
 
 ## 9. Decisions and open questions
@@ -240,7 +241,10 @@ Decided by the owner, 2026-11-20:
 Open, in the order they block work:
 
 1. Given DN-024, should the product architecture be re-centred on Track D (p-¹¹B in a recirculating
-   beam) with Track B kept as the deuterium science programme? The numbers point that way.
+   beam) with Track B kept as the deuterium science programme? For p-¹¹B the lattice is 125 orders
+   short on reported screening while the beam route sits near break-even on known physics, so the
+   comparison favours the beam. Neither is shown to work (DN-036). Proposed: decide after a trap
+   simulation study, which is cheap and can be run now.
 2. Is natural lithium (which is effectively p-⁶Li fuel) acceptable alongside p-⁷Li?
 3. First atomistic target: D₂ in a palladium vacancy (S1/S8), or hydrogen beside lithium in palladium
    (S7)? S1 has the data; S7 is the product fuel.

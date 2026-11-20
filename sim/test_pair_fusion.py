@@ -71,6 +71,13 @@ def test_cell_model_energy_accounting():
     assert 1.5 < stored < 3.0 and 0.5e-4 < power < 2e-4 and rate > 1e9
 
 
+def test_beam_route_numbers():
+    import beam_route as br
+    assert 80 < br.scattering_per_fusion(653.0, 10.0) < 110          # rad^2 per fusion mean free path
+    assert 0.09 < br.bare_ion_yield(2000.0, 10.0) < 0.15             # fusion probability, proton stopping
+    assert br.bare_ion_yield(2000.0, 10.0) * br.E_FUS_PB11 / 2e6 < 1.0   # below break-even if it just stops
+
+
 if __name__ == "__main__":
     tests = [v for k, v in sorted(globals().items()) if k.startswith("test_")]
     for t in tests:

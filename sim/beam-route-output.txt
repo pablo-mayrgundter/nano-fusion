@@ -1,0 +1,34 @@
+== Lattice route, taking reported screening at face value (caged pair, 100 pm cage) ==
+  fuel     reported screening        ->  rate per pair      needed (sensor tier)   shortfall
+  D-D       0.30 keV (UHV accelerators            )  10^  -26.9 /s      10^-10.3 /s             17 orders short
+  D-D       1.00 keV (glow discharge, Pd          )  10^   -9.8 /s      10^-10.3 /s          inside the battery band
+  D-D       1.70 keV (2026 membrane, PdD          )  10^   -5.0 /s      10^-10.3 /s          inside the battery band
+  p-7Li     0.42 keV (Li metal, Trojan-horse based)  10^  -79.3 /s      10^-11.0 /s             68 orders short
+  p-7Li     1.18 keV (Li metal, direct            )  10^  -43.9 /s      10^-11.0 /s             33 orders short
+  p-11B     0.43 keV (direct measurement          )  10^ -135.3 /s      10^-10.7 /s            125 orders short
+
+== Beam route for p-11B: energy out per unit of beam energy dissipated ==
+  into solid boron (electrons present):    F = 1.9e-03 at 653 keV
+  onto bare boron nuclei,     10 nm trap:     F = 1.58 at 653 keV
+  onto bare boron nuclei,   1000 nm trap:     F = 1.20 at 653 keV
+  proton slowing to rest on bare boron (10 nm cut-off):
+    injected at    700 keV: fusion probability   3.7 %, fusion energy / beam energy = 0.46
+    injected at   1000 keV: fusion probability   6.3 %, fusion energy / beam energy = 0.55
+    injected at   2000 keV: fusion probability  11.8 %, fusion energy / beam energy = 0.51
+    injected at   3500 keV: fusion probability  27.0 %, fusion energy / beam energy = 0.67
+
+== What scattering costs ==
+      10 nm trap:    92 rad^2 of deflection per fusion mean free path (direction randomised ~92 times per fusion)
+    1000 nm trap:   121 rad^2 of deflection per fusion mean free path (direction randomised ~121 times per fusion)
+  energy handed to boron per fusion mean free path: 8.4 x the proton's own energy
+  beam trap that keeps only protons within a cone, ideal accelerator, 70 % direct conversion:
+    acceptance 0.1 rad: fusion probability before loss  0.011 %, lost-ion energy recovery needed  99.90 %
+    acceptance 0.3 rad: fusion probability before loss  0.098 %, lost-ion energy recovery needed  99.09 %
+    acceptance 1.0 rad: fusion probability before loss  1.091 %, lost-ion energy recovery needed  89.85 %
+
+== What the nanoscale adds: field, hence density ==
+  1 V/nm across 653 nm (653 kV): up to 8.5e+16 charges/cm3, one fusion per proton every 89 ms, 6.6e+05 W per cm3 of trap
+  5 V/nm across 131 nm (653 kV): up to 2.1e+18 charges/cm3, one fusion per proton every 4 ms, 4.1e+08 W per cm3 of trap
+
+== Why the fuel matters: D-D at the sensor tier ==
+  100 uW of D-D: 8.5e+07 neutrons/s, 7558 n/cm2/s at 30 cm, about 11 mSv per hour (public limit: 1 mSv per year)
