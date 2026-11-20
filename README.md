@@ -99,10 +99,18 @@ Saved outputs of each script are in `sim/*-output.txt`.
 
 ## The site
 
-Two static pages with inline SVG, served by GitHub Pages from the repository root:
+Two static pages with inline SVG. Build them with:
 
 ```bash
 python3 site/build.py
+```
+
+GitHub Pages serves the root of the `gh-pages` branch. That branch is the same history as the working
+branch, moved forward to whichever commit should be live, so work in progress is never published by
+accident. To publish the commit that is checked out:
+
+```bash
+git push origin HEAD:gh-pages
 ```
 
 The build refuses to run if a number the pages rely on is no longer in the saved simulator outputs.

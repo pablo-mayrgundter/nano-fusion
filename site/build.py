@@ -6,7 +6,8 @@
     node site/snap.js                   # optional: re-render site/onepager.png and site/og.png (Playwright)
     python3 site/build.py --shrink      # optional: palette-compress site/onepager.png (Pillow)
 
-The pages are static HTML with inline SVG, served by GitHub Pages from the repository root.
+The pages are static HTML with inline SVG.  GitHub Pages serves the root of the gh-pages branch,
+which is moved forward to the commit that should be live:  git push origin HEAD:gh-pages
 Sources:  site/src/*.html  the text          site/figures.py  the drawings
           site/fig/        the chart         site/site.css, site/site.js
 
