@@ -1,0 +1,55 @@
+== nf-cell-v1: geometry ==
+  site crystal: 5.00e+16 fuel pairs per cm2 per layer, 500 layers per cm, 2.50e+19 pairs per cm3 of stack
+  (a fully dense crystal would hold ~3e22 per cm3; a single pair per 200 nm pixel only 1.3e+12)
+  efficiencies: capture 0.2, laser 0.3, distribution 0.5  (all assumed)
+
+== Photon economy: photons that may be spent per fusion ==
+  p-11B  break-even   1.3e+05    for electricity out = 3 x in  4.34e+04
+  p-7Li  break-even   2.6e+05    for electricity out = 3 x in  8.68e+04
+  p-6Li  break-even  6.03e+04    for electricity out = 3 x in  2.01e+04
+  D-D    break-even  5.47e+04    for electricity out = 3 x in  1.82e+04
+
+== Requirements, fuel p-11B, electricity out = 3 x electricity in ==
+  tier                                            sensor     implant    handheld
+  net electrical power [W/cm3]                     1e-04       1e-02       1e+00
+  fusion power [W/cm3]                           0.00075       0.075         7.5
+  rate per fuel pair [/s]                       2.16e-11    2.16e-09    2.16e-07
+  photons allowed per fusion                    4.34e+04    4.34e+04    4.34e+04
+  light per pixel [W]                              6e-18       6e-16       6e-14
+  light per fuel pair [W]                          3e-25       3e-23       3e-21
+  cm3 of stack per 1 mW laser                       66.7       0.667     0.00667
+  fuel film burn-up without resupply [yr]       1.47e+03        14.7       0.147
+  helium [cm3 STP per cm3 per yr]                 0.0019        0.19          19
+  collector life at damage fluence [h]          8.58e+03        85.8       0.858
+  thickest passively cooled sheet [mm]          1.23e+03        12.3       0.123
+
+== Requirements, fuel p-7Li, electricity out = 3 x electricity in ==
+  tier                                            sensor     implant    handheld
+  net electrical power [W/cm3]                     1e-04       1e-02       1e+00
+  fusion power [W/cm3]                           0.00075       0.075         7.5
+  rate per fuel pair [/s]                       1.08e-11    1.08e-09    1.08e-07
+  photons allowed per fusion                    8.68e+04    8.68e+04    8.68e+04
+  light per pixel [W]                              6e-18       6e-16       6e-14
+  light per fuel pair [W]                          3e-25       3e-23       3e-21
+  cm3 of stack per 1 mW laser                       66.7       0.667     0.00667
+  fuel film burn-up without resupply [yr]       2.94e+03        29.4       0.294
+  helium [cm3 STP per cm3 per yr]               0.000634      0.0634        6.34
+  collector life at damage fluence [h]          2.57e+04         257        2.57
+  thickest passively cooled sheet [mm]          1.23e+03        12.3       0.123
+
+== Cost of holding a site in an optical field (fuel p-11B, 2 eV light) ==
+  case                                                stored [eV]   power [W]   fusions/s needed while lit
+  plasmonic gap, 1 V/nm, 40 nm3, Q 10                       2.21    0.000108     2.58e+09
+  plasmonic gap, 0.1 V/nm, 40 nm3, Q 10                   0.0221    1.08e-06     2.58e+07
+  dielectric cavity, 1 V/nm, 125 nm3 per site, Q 1e6        6.91    3.36e-09     8.06e+04
+  dielectric cavity, 0.01 V/nm, 125 nm3 per site, Q 1e6  0.000691    3.36e-13         8.06
+  for comparison, the handheld tier allows 3.0e-21 W of light per fuel pair
+  -> a continuously held optical field costs many orders of magnitude more than a site can repay.
+
+== If light instead WRITES a long-lived active state (one photon per write) ==
+  p-11B  pair rate   1e-11 /s  ->  the written state must last  7.68e+05 s (8.89 days) to break even
+  p-11B  pair rate   1e-07 /s  ->  the written state must last      76.8 s (0.000889 days) to break even
+  p-11B  pair rate   1e-03 /s  ->  the written state must last   0.00768 s (8.89e-08 days) to break even
+  p-7Li  pair rate   1e-11 /s  ->  the written state must last  3.84e+05 s (4.45 days) to break even
+  p-7Li  pair rate   1e-07 /s  ->  the written state must last      38.4 s (0.000445 days) to break even
+  p-7Li  pair rate   1e-03 /s  ->  the written state must last   0.00384 s (4.45e-08 days) to break even

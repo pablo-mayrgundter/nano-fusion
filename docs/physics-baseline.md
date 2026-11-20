@@ -50,6 +50,62 @@ Screening of the size measured in metals (0.3–1 keV) is enormous in relative t
 irrelevant above 10 keV. The measured sub-keV "plateau" (Karahadian et al. 2026, >10¹⁸ over bare) sits
 exactly in the region where the bare cross section is so small that 10¹⁸ still leaves nothing usable.
 
+### What a resting pair needs (first site-physics model)
+
+[`sim/pair_fusion.py`](../sim/pair_fusion.py) solves the Schrödinger equation for two nuclei in a given
+potential and returns the fusion rate Λ = A·|ψ(0)|². Checks: with the exact H₂ potential (Pachucki
+2010) it gives the dissociation energies of D₂, HD and DT to 1 meV and a D₂ fusion rate of
+2.0 × 10⁻⁶⁴ s⁻¹ (Koonin & Nauenberg: 3 × 10⁻⁶⁴); a free particle in a sphere comes out exact.
+
+![What a resting fuel pair needs: fusion rate against screening length for D-D, p-6Li, p-7Li and p-11B](figures/pair-fusion-requirements.svg)
+
+Values behind the chart: [`sim/pair-fusion-curves.csv`](../sim/pair-fusion-curves.csv).
+
+**1. Where the pair sits matters as much as screening.** Two deuterons on neighbouring octahedral
+sites of PdD, 285 pm apart, fuse at ~10⁻⁸⁸ s⁻¹ with molecule-like screening. That is 24 orders *below*
+a free D₂ molecule, because the zero-point overlap of two separately confined nuclei costs ~10⁻³⁴
+before the Coulomb barrier is counted. A useful site holds the pair in one cage. (Metzler et al. make
+the same point: proximity is worth ~80 orders.)
+
+**2. For deuterium, the requirement lands on the measured numbers.**
+
+| Picture | To reach the v1 cell's tiers, 5 × 10⁻¹¹ to 5 × 10⁻⁷ s⁻¹ per pair |
+|---|---|
+| Heavier electron (Koonin-Nauenberg): the whole molecule shrinks | m* = 9–13; bond 8–6 pm; screening at contact 480–660 eV |
+| Caged pair, screened Coulomb repulsion | screening length 1.5–1.0 pm; screening at contact 1.0–1.5 keV |
+| Fixed 74 pm bond plus screening (Hagelstein et al., their Table 8) | 10⁻²² s⁻¹ at 300 eV, 10⁻²⁰ at 350 eV |
+| **Reported for deuterium in metals (beam experiments)** | **0.2–0.4 keV in ultra-high vacuum; 0.4–1.0 keV elsewhere; 0.8–1.7 keV in the 2026 membrane work** |
+
+The reported screening energies are the size a resting pair would need. That coincidence is what the
+LENR-regime hypothesis rests on, and it is exactly where the doubt lies:
+
+- A beam's screening energy is not known to apply to a pair at rest. Hagelstein et al. themselves note
+  that free-electron screening "is much smaller at zero relative energy."
+- The reported values may partly be artifacts of deuterium density profiles and surface layers (Huke
+  et al.), and the plateau data have an unresolved fast-neutral question.
+- A free-electron gas cannot do it. The Thomas-Fermi length in palladium's electron gas is ~40 pm;
+  reaching 2 pm would take ~10⁷–10⁸ times the electron density.
+
+**3. For the product fuels, it does not.**
+
+| Fuel | Screening length needed, sensor → handheld tier | Screening at contact | Largest reported |
+|---|---|---|---|
+| D–D | 1.5 → 1.0 pm | 1.0 → 1.5 keV | 0.3–1.7 keV |
+| p–⁶Li | 0.65 → 0.43 pm | 6.7 → 10 keV | 0.4–1.2 keV (lithium in metals) |
+| p–⁷Li | 0.57 → 0.37 pm | 7.6 → 12 keV | 0.4–1.2 keV |
+| p–¹¹B | 0.43 → 0.30 pm | 17 → 24 keV | ~0.4 keV |
+
+For scale, an electron's orbit is 52.9 pm and a muon's is 0.256 pm. Lithium and boron need
+sub-picometre screening, within a factor of 1.2–2.5 of a muon's orbit and an order of magnitude beyond
+anything reported for them. In the bound-pair regime the aneutronic fuels are muon-class hard, and
+muons themselves do not help because they bind to the heavier nucleus.
+
+Consequences for the plan: deuterium is the only fuel with which the lattice hypothesis can be tested
+or first demonstrated; p-¹¹B belongs to the beam and collider tracks, where it is the best aneutronic
+fuel (F = 1.9 × 10⁻³ cold, 1.6 electron-free); and lithium is the least-bad aneutronic lattice fuel.
+Natural lithium behaves as a p-⁶Li fuel at low energy: ⁶Li is 7.5 % of the atoms but has 60 times the
+S-factor, so it takes ~83 % of the reactions.
+
 ## Wall 2 — stopping: why firing ions into cold matter cannot break even
 
 An ion moving through matter loses energy to electrons at a rate set by the stopping cross section Sₑ,
@@ -149,9 +205,11 @@ Reading of the table:
 - A single photon squeezed into a picocavity produces a field of volts per nanometre. That is a
   chemically large field, a few per cent of the inter-nuclear field at bond distances, and it acts on
   electrons, not on nuclei (the deuteron's quiver energy in that field is ~10⁻⁵ eV).
-- Light therefore reaches the nucleus only **through electrons** (plasmon-driven transient screening)
-  or **through the lattice** (resonant phonon pumping). Those are the two photon channels the
-  literature offers, and neither has a confirmed nuclear effect yet.
+- Light therefore reaches the nucleus **through electrons** (plasmon-driven transient screening),
+  **through the lattice** (resonant phonon pumping), or, for unlike pairs only, through the pair's own
+  dipole (next section). None has a confirmed nuclear effect yet. A free-electron estimate of the first:
+  screening energy scales as density^(1/6), so a 2 % density swing in the surface layer of a gap at
+  1 V/nm moves a ~500 eV screening energy by ~2 eV, in one atomic layer.
 - The program metric is **photons per fusion, N_γ**. The 2014 doc's own arithmetic (10⁵ one-eV photons
   per 500 keV proton) lands on the same number from the other direction. Track B succeeds if
   N_γ ≤ 10⁵; today's best photon-driven nanostructure result is six orders away, and it gets there by
@@ -162,11 +220,49 @@ Reading of the table:
   atomically-precise-fabrication structure. It is the concrete form of the 2014 "group the photons
   onto protons" idea.
 
+### Light pushes unlike pairs, not like pairs
+
+A uniform field drives the *relative* motion of two nuclei with an effective charge
+(Z₁m₂ − Z₂m₁)/(m₁ + m₂):
+
+| Pair | D–D | D–T | p–⁶Li | p–⁷Li | p–¹¹B |
+|---|---|---|---|---|---|
+| q_eff / e | 0 | 0.20 | 0.43 | 0.50 | 0.50 |
+
+Light cannot push one deuteron against another at all (Queisser & Schützhold make the same point for
+X-ray-assisted tunnelling). It does couple to p–Li and p–B, and lithium hydride's lattice vibrations
+are infrared-active. If light is ever to act on the pair directly, the product fuels are the ones it
+can act on.
+
+### A held field cannot pay for itself
+
+[`sim/cell_model.py`](../sim/cell_model.py), with 20 % capture, a 30 % laser and 50 % distribution:
+
+| Holding one site at | costs | and needs, while lit |
+|---|---|---|
+| 1 V/nm in a plasmonic gap (40 nm³, Q ≈ 10) | 0.1 mW | 3 × 10⁹ fusions per second |
+| 1 V/nm in a dielectric cavity (Q = 10⁶) | 3 nW | 8 × 10⁴ per second |
+| 0.01 V/nm in the same cavity | 0.3 pW | 8 per second |
+
+A 1 W/cm³ cell has 3 × 10⁻²¹ W of light to spend per fuel pair. Continuous optical excitation is
+therefore 8–16 orders of magnitude too expensive at any rate a battery would run at. What light can
+still be:
+
+- a **writer** of long-lived active states. One photon per write breaks even only if
+  (rate) × (lifetime of the written state) ≥ 1/N_γ ≈ 10⁻⁵, e.g. nine days at 10⁻¹¹ s⁻¹;
+- a **trigger or control signal** at low duty;
+- a **probe**, as in experiment E1;
+- the **energy carrier of an accelerator**, where the stopping ceiling applies instead.
+
+The same accounting applies to any drive. The acoustic drive in the Hagelstein model dissipates 1 W
+for 10⁹ fusions per second, which is ~4 mW (our arithmetic from their numbers; the authors say the
+coefficient of performance "will be poor").
+
 ## Summary of targets
 
 | Track | Wall attacked | Required | Best evidence today |
 |---|---|---|---|
-| B — driven coherent lattice (flagship hypothesis) | 1 | ≥ 10⁴⁸ over D₂ rate; N_γ ≤ 10⁵ | 10¹⁸ over bare at sub-keV; no light-driven nuclear effect confirmed |
+| B — driven lattice site (flagship hypothesis) | 1 | caged pair with ~1–1.5 pm screening for D-D (0.3–0.6 pm for Li, B); drive cost below 3 × 10⁻²¹ W per pair | beam screening of 0.3–1.7 keV in metals, not shown for a pair at rest; no light-driven nuclear effect confirmed |
 | A — screened lattice + nano-accelerator | 1, 2 | σ/Sₑ × 72 (D-T), × 520 (p-¹¹B), × 800–2000 (D-D) | channeling × 2–10, screening negligible at these energies |
 | D — electron-free nano-collider | 2 | power to keep ions confined and non-thermal < fusion power | ideal-case F ≈ 8 (D-T), 1.6 (p-¹¹B) computed; nothing built |
 | C — muon-catalysed nano-cell | 1 | ≥ ~500–1000 fusions per muon at today's ~5 GeV per muon, or much cheaper muons | ~150 fusions per muon |

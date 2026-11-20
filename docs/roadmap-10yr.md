@@ -13,13 +13,18 @@ Read with [`physics-baseline.md`](physics-baseline.md) (the targets) and
 - **Status of that hypothesis:** unproven and far from current evidence. Confirmed lattice effects are
   large in relative terms and useless in absolute terms; no nuclear effect of low-intensity light has
   been confirmed.
+- **Fuel (decided 2026-11-20):** the product burns p-¹¹B or p-⁷Li. The first model of a bound pair
+  (`sim/pair_fusion.py`) shows these need near-muonic screening in a lattice, so every
+  proof-of-physics step uses deuterium and the fuel switch is a gate of its own in Phase 2. p-¹¹B is
+  at home in the beam and collider tracks.
 - **Therefore the plan is built around gates, not around the hypothesis being true.** The first three
   years are designed to find out cheaply. Every phase has a product or a publishable result that
   survives a "no."
 
 Rough odds (a starting estimate from the drafting session, not a calculation; revise as data arrives): a confirmed structure- or light-controlled change of a
 nuclear rate by ≥ 2× at Gate 1, perhaps 1 in 5 (structure alone is likelier than light). Net electrical
-energy from a nano-cell by 2036, well under 1 in 100. A sellable chip-scale particle source and a
+energy from a nano-cell by 2036, well under 1 in 100; from an aneutronic lattice cell, lower again by
+an order of magnitude or more. A sellable chip-scale particle source and a
 world-class designed-lattice nuclear metrology platform, better than even.
 
 ## Four tracks on one platform
@@ -28,9 +33,9 @@ All four share the fabrication stack, the CAD model and the simulator, so work i
 
 | Track | Idea | Physics status | Role |
 |---|---|---|---|
-| **B** Driven coherent lattice | Designed hydride/deuteride sites pumped by on-chip light via plasmons (electrons) or resonant phonons (lattice) | Needs new or unconfirmed physics | Flagship; decided at Gate 1 |
+| **B** Driven lattice site | A dense crystal of caged fuel pairs, switched or driven by on-chip light or sound | Needs ~1 pm screening at a resting D-D pair (0.3–0.6 pm for Li, B); the evidence is beam data, for deuterium only | Flagship science; decided at Gate 1 |
 | **A** Screened lattice + nano-accelerator | keV–100 keV ions from field-ionisation nanostructures into a channeling, high-screening lattice | Known physics; gain capped by F ≈ 10⁻³–10⁻² | Metrology backbone and first product |
-| **D** Electron-free nano-collider | Bare ions recirculating in atomically precise electrostatic traps at 1–10 V/nm | Known physics, unbuilt at this scale; prior art in Los Alamos POPS/Penning traps (power density ∝ 1/a⁴); Rider limit is the question | Hedge with the only known-physics path to F ≥ 1 |
+| **D** Electron-free nano-collider | Bare ions recirculating in atomically precise electrostatic traps at 1–10 V/nm | Known physics, unbuilt at this scale; prior art in Los Alamos POPS/Penning traps (power density ∝ 1/a⁴); Rider limit is the question | Hedge with the only known-physics path to F ≥ 1, and the likeliest home for p-¹¹B. Must be a recirculating-beam or magnetic geometry (DN-033) |
 | **C** Muon-catalysed nano-cell | The 2014 concept: geometry to defeat alpha sticking | Known physics; muon cost is the wall | Watch; revisit if muon sources improve |
 
 ## Atomic-fabrication capability levels
@@ -59,8 +64,9 @@ Two rules keep the plan from depending on APM-4:
 
 | Metric | Meaning | Today | Battery needs |
 |---|---|---|---|
-| N_γ | photons spent per fusion event | 3 × 10⁶ (NIF), 5 × 10¹¹ (nanowires), ∞ (lattice) | ≤ 10⁵ |
-| Λ | fusion rate per fuel pair at a site, s⁻¹ | ~10⁻⁶⁴ (D₂) | ≥ 10⁻¹⁵ volumetric; far higher if only hot spots are active |
+| N_γ | photons spent per fusion event | 3 × 10⁶ (NIF), 5 × 10¹¹ (nanowires), ∞ (lattice) | ≤ 4 × 10⁴ for electricity out = 3 × in (p-¹¹B) |
+| Λ | fusion rate per fuel pair, s⁻¹ | 2 × 10⁻⁶⁴ (D₂, computed) | 2 × 10⁻¹¹ (sensor tier) to 2 × 10⁻⁷ (handheld) in a 1 µm film of site crystal |
+| λ_s | screening length at a resting pair | ~20 pm (molecule), ~40 pm (Pd electron gas) | 1–1.5 pm for D-D; 0.3–0.6 pm for Li and B |
 | F-leverage | σ/Sₑ improvement over bulk cold fuel | × 2 (channeling) | × 72 (D-T), × 520 (p-¹¹B) |
 | Q_site, Q_tile, Q_cell | energy out / energy in at each scale | ≤ 10⁻² | ≥ 1, then ≥ 3 with capture losses |
 | n/W | neutrons per second per watt | 8.5 × 10¹¹ (D-D) | ≤ ~10⁴ for an unshielded consumer product (to be set with regulators) |
@@ -73,24 +79,30 @@ Two rules keep the plan from depending on APM-4:
 
 Work:
 
-1. **Simulator v0** (architecture in `design-notes.md` §7). Reproduce six published results before
+1. **Simulator v0** (architecture in `design-notes.md` §7). Reproduce seven published results before
    predicting anything new:
+   - B0 the D₂ fusion rate of Koonin & Nauenberg and the D₂, HD, DT binding energies (done,
+     `sim/pair_fusion.py`);
    - B1 bare cross sections and thick-target yields (done, `sim/baseline.py`);
    - B2 screening energies by host metal (Raiola, Kasagi, Huke) from time-dependent DFT;
    - B3 the 15 % electrochemical-loading effect (Thunderbird);
    - B4 the sub-keV plateau (Karahadian et al.) — or a quantified statement of what conventional
      physics cannot reproduce;
    - B5 the × 2 channeling anisotropy in Pd/D (Lebedev);
-   - B6 NASA LCF neutron spectra and the Missouri tritium null.
+   - B6 NASA LCF neutron spectra and the Missouri tritium results (reactor run unconfirmed;
+     fast-neutron run 3–5× above simulation).
 2. **Requirements document:** for each track and fuel, the enhancement required per site, with error
    bars, generated from the simulator rather than typed in.
 3. **Decide the Rider question for Track D** at 10–100 nm with 1–10 V/nm electrodes: a paper-study
    go/no-go.
-4. **Design experiments E1–E6** to the level of count-rate budgets and systematics lists; secure beam
+4. **Design experiments E1–E7** to the level of count-rate budgets and systematics lists; secure beam
    time and partners (candidates: LBNL/UC Davis, UBC, Szczecin, NASA Glenn, Lebedev-type channeling
    expertise).
-5. **CAD data model v0** and the NF-cell v0 parametric spec (started: `design/nf-cell-v0.yaml`).
-6. Full-text reading queue from the literature review.
+5. **CAD data model v0** and parametric specs (done: `design/nf-cell-v0.yaml`, `nf-cell-v1.yaml`, STEP
+   export in `cad/build_step.py`).
+6. Full-text reading queue from the literature review (fifteen papers done; see its "What changed").
+7. **Device-level model kept in step with the physics** (`sim/cell_model.py`): every site-physics
+   result is restated as a requirement on a cell.
 
 **Gate 0 (Dec 2027).** Pass if the simulator reproduces at least four of B1–B6 within stated
 uncertainty and at least one experiment predicts a ≥ 10σ-detectable effect under the flagship
@@ -104,12 +116,13 @@ HDL). 10–15 people, $5–10 M/yr (estimate), mostly beam time and detectors.
 
 | # | Experiment | Tests | Decisive because |
 |---|---|---|---|
-| **E1** | D⁺ beam (1–20 keV) on PdD plasmonic nanoantenna arrays with a chopped laser; lock-in on charged-product yield | Light-driven transient screening (the Google/UMD patent claim) | Differential measurement: beam, target and geometry identical, only the light changes. Budget (`sim/e1_budget.py`): at 5 keV and 1 mA a dense-gap target resolves a 0.5 % modulation in a day — a ~2 eV change in screening energy if all the fuel responds, or × 2 if only the gap hot spots do. The sparse v0 array is ~50× slower (4 %; × 9 at the hot spots) |
+| **E1** | D⁺ beam (1–20 keV) on PdD plasmonic nanoantenna arrays with a chopped laser; lock-in on charged-product yield | Light-driven transient screening (the Google/UMD patent claim) | Differential measurement: beam, target and geometry identical, only the light changes. Budget (`sim/e1_budget.py`): at 5 keV and 1 mA a dense-gap target resolves a 0.5 % modulation in a day — a ~2 eV change in screening energy if all the fuel responds, or × 2 if only the gap hot spots do. The sparse v0 array is ~50× slower (4 %; × 9 at the hot spots). Known physics predicts a null (~2 eV in one atomic layer), so a signal would be new |
 | **E2** | Uₑ and the sub-keV plateau versus designed defect density: epitaxial single-crystal, nanocrystalline and vacancy-engineered PdD, TiD₂, ErD₃ | Whether defects and loading cause the 2026 plateau | First experiment where the defect population is an input, not an unknown |
 | **E3** | Two-laser THz difference-frequency drive of PdD at 8.3, 15.3, 20.4 THz, with neutron, charged-particle, gamma, ⁴He and calorimetric diagnostics; blinded frequency schedule | The Letts-Cravens-Hagelstein claim | No published replication with nuclear diagnostics was found (Stanford's ARPA-E project on phonon-stimulated nanoparticles may cover related ground — check first); cheap; a clean null is publishable |
 | **E4** | σ/Sₑ leverage in designed channels and superlattices at 20–700 keV | How far channeling and flux peaking go beyond × 2 | Sets the ceiling for Track A |
 | **E5** | Branching-ratio spectroscopy below 5 keV, including e⁺e⁻ pairs | Czerski threshold resonance | A neutron-poor D-D channel would change the product fuel |
 | **E6** | Cage sites: D₂@C₆₀ and metallic fulleride crystals under Raman/THz pumping; neutron scattering for the D-D distribution | Simulator validation on an atom-exact driven site | Null expected; it calibrates the nuclear-quantum-dynamics code on a system with no unknown defects |
+| **E7** | Proton beam on designed LiH and PdLiₓHᵧ targets (or a ⁷Li beam on hydrogen-loaded films): screening versus structure and stress | Whether the lattice effect transfers to the product fuel | Reported lithium screening is ≤ ~1 keV and sample-dependent; the product needs ~10 keV. This measures how hard the fuel switch is before anyone designs for it |
 
 Alongside: build the event-resolved detector tile (diamond or SiC, one channel per ~100 µm pixel),
 because every later phase depends on counting single MeV particles from a known site.
@@ -141,6 +154,8 @@ conventional nanofab). $20–40 M/yr (estimate).
   one chip, measure, refit.
 - Fuel switch study: move the best mechanism from D-D to p-⁷Li and p-¹¹B hosts (LiH, borophane,
   h-¹¹BN) and measure what survives the higher Gamow barrier.
+  This is a gate in its own right: the bound-pair model says lithium needs ~8× and boron ~17× the
+  screening energy that deuterium does.
 
 **Gate 2 (Dec 2031).** Pass if a single tile shows drive-correlated events with measured N_γ ≤ 10¹⁰
 and a validated model path to ≤ 10⁵, or F-leverage ≥ × 10 (Track A/D). Kill the energy goal if the
@@ -225,10 +240,11 @@ APM need    0      0-1    0-1    1-2    2      2-3    3      3      3-4    4
    and confined-ion (Rider) models; grow the pinned regression suite in `sim/test_baseline.py`.
 3. Stand up the atomistic toolchain on PdD: DFT relaxations of D at vacancies, phonon spectrum (check
    the 8/15/20 THz assignment), a first path-integral estimate of the D-D pair distribution at a
-   vacancy.
+   vacancy. Feed the relaxed geometry and electron density into `sim/pair_fusion.py` in place of its
+   model potentials: the first computed rate for a real site.
 4. Write the E1 count-rate and systematics budget properly and take it to a beam group.
 5. Find the ARPA-E LENR outcomes — especially Stanford (deuterated nanoparticles under phonon
    stimulation) and Amphionic (nanogap potential wells), which overlap E3 and E1 — and contact the
    LBNL/UC Davis and UBC teams.
-6. Freeze NF-cell v0 (a first 2D drawing is generated by `cad/render_cell.py`) and choose the 3D CAD
-   kernel (design note DN-009).
+6. Load the two STEP models into Bldrs and work through the viewer checklist in
+   `design/step/README.md`.

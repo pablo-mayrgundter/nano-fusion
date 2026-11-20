@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 640" width="920" height="640" role="img" aria-labelledby="pf-title pf-desc">
+<title id="pf-title">What a resting fuel pair needs</title>
+<desc id="pf-desc">Fusion rate per pair per second against the screening length of the surrounding electrons, for D-D, p-6Li, p-7Li and p-11B. The rate rises by tens of orders of magnitude as the screening length shrinks from 53 picometres toward 0.3. D-D reaches the range a battery needs near 2 picometres; the lithium fuels near 0.8 and boron near 0.5.</desc>
+<style>
+  svg { --surface:#fcfcfb; --ink:#0b0b0b; --ink2:#52514e; --muted:#898781; --grid:#e1e0d9; --axis:#c3c2b7;
+        --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --s4:#eda100; --wash:#52514e;
+        font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+  @media (prefers-color-scheme: dark) {
+    svg { --surface:#1a1a19; --ink:#f0efec; --ink2:#c3c2b7; --muted:#898781; --grid:#2c2c2a; --axis:#383835;
+          --s1:#3987e5; --s2:#d95926; --s3:#199e70; --s4:#c98500; --wash:#c3c2b7; } }
+  .t { fill: var(--ink); } .t2 { fill: var(--ink2); } .tm { fill: var(--muted); }
+  .grid { stroke: var(--grid); stroke-width: 1; } .axis { stroke: var(--axis); stroke-width: 1; }
+  .line { fill: none; stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
+  .tick { font-size: 11px; font-variant-numeric: tabular-nums; }
+</style>
+<rect width="920" height="640" fill="var(--surface)"/>
+<text x="24" y="34" class="t" font-size="17" font-weight="600">What a resting fuel pair needs</text>
+<text x="24" y="54" class="t2" font-size="12.5">Fusion rate of two nuclei sharing a 100 pm cage, against how tightly the surrounding electrons screen them.</text>
+<line x1="24" y1="78" x2="46" y2="78" class="line" stroke="var(--s1)"/>
+<text x="52" y="82" class="t2" font-size="12.5">D–D</text>
+<line x1="116" y1="78" x2="138" y2="78" class="line" stroke="var(--s2)"/>
+<text x="144" y="82" class="t2" font-size="12.5">p–⁶Li</text>
+<line x1="208" y1="78" x2="230" y2="78" class="line" stroke="var(--s3)"/>
+<text x="236" y="82" class="t2" font-size="12.5">p–⁷Li</text>
+<line x1="300" y1="78" x2="322" y2="78" class="line" stroke="var(--s4)"/>
+<text x="328" y="82" class="t2" font-size="12.5">p–¹¹B</text>
+<line x1="84" y1="494.0" x2="724" y2="494.0" class="grid"/>
+<text x="76" y="498.0" text-anchor="end" class="tm tick">10⁻¹⁰⁰</text>
+<line x1="84" y1="430.0" x2="724" y2="430.0" class="grid"/>
+<text x="76" y="434.0" text-anchor="end" class="tm tick">10⁻⁸⁰</text>
+<line x1="84" y1="366.0" x2="724" y2="366.0" class="grid"/>
+<text x="76" y="370.0" text-anchor="end" class="tm tick">10⁻⁶⁰</text>
+<line x1="84" y1="302.0" x2="724" y2="302.0" class="grid"/>
+<text x="76" y="306.0" text-anchor="end" class="tm tick">10⁻⁴⁰</text>
+<line x1="84" y1="238.0" x2="724" y2="238.0" class="grid"/>
+<text x="76" y="242.0" text-anchor="end" class="tm tick">10⁻²⁰</text>
+<line x1="84" y1="174.0" x2="724" y2="174.0" class="grid"/>
+<text x="76" y="178.0" text-anchor="end" class="tm tick">10⁰</text>
+<line x1="84.0" y1="126" x2="84.0" y2="526" class="grid"/>
+<text x="84.0" y="544" text-anchor="middle" class="tm tick">0.2</text>
+<line x1="186.8" y1="126" x2="186.8" y2="526" class="grid"/>
+<text x="186.8" y="544" text-anchor="middle" class="tm tick">0.5</text>
+<line x1="264.6" y1="126" x2="264.6" y2="526" class="grid"/>
+<text x="264.6" y="544" text-anchor="middle" class="tm tick">1</text>
+<line x1="342.4" y1="126" x2="342.4" y2="526" class="grid"/>
+<text x="342.4" y="544" text-anchor="middle" class="tm tick">2</text>
+<line x1="445.2" y1="126" x2="445.2" y2="526" class="grid"/>
+<text x="445.2" y="544" text-anchor="middle" class="tm tick">5</text>
+<line x1="523.0" y1="126" x2="523.0" y2="526" class="grid"/>
+<text x="523.0" y="544" text-anchor="middle" class="tm tick">10</text>
+<line x1="600.7" y1="126" x2="600.7" y2="526" class="grid"/>
+<text x="600.7" y="544" text-anchor="middle" class="tm tick">20</text>
+<line x1="703.5" y1="126" x2="703.5" y2="526" class="grid"/>
+<text x="703.5" y="544" text-anchor="middle" class="tm tick">50</text>
+<line x1="84" y1="526" x2="724" y2="526" class="axis"/>
+<text x="404" y="568" text-anchor="middle" class="t2" font-size="12.5">Screening length of the electrons around the pair, picometres (log scale)</text>
+<text x="26" y="114" class="t2" font-size="12.5">Fusions per pair per second (log scale)</text>
+<rect x="246.0" y="126" width="194.6" height="400" fill="var(--wash)" opacity="0.07"/>
+<text x="252.0" y="142" class="t2" font-size="11.5">reported for deuterium</text>
+<text x="252.0" y="156" class="t2" font-size="11.5">in metals, 0.3–1.7 keV</text>
+<text x="252.0" y="170" class="tm" font-size="11">(beam experiments)</text>
+<rect x="84" y="195.4" width="640" height="12.8" fill="var(--wash)" opacity="0.16"/>
+<text x="734" y="196.4" class="t" font-size="12" font-weight="600">what a battery needs</text>
+<text x="734" y="211.4" class="t2" font-size="11.5">10⁻¹¹ to 10⁻⁷ per second</text>
+<line x1="111.7" y1="126" x2="111.7" y2="526" class="axis"/>
+<text x="116.7" y="518" text-anchor="start" class="tm" font-size="11">muon orbit, 0.26 pm</text>
+<line x1="709.9" y1="126" x2="709.9" y2="526" class="axis"/>
+<text x="704.9" y="142" text-anchor="end" class="tm" font-size="11">electron orbit, 53 pm</text>
+<clipPath id="pf-clip"><rect x="84" y="126" width="640" height="400"/></clipPath>
+<polyline points="109.0,167.4 135.8,170.8 162.5,174.5 189.3,178.8 216.0,183.7 242.7,189.3 269.4,195.5 296.2,202.6 322.9,210.7 349.7,219.7 376.4,229.9 403.2,241.5 429.9,254.4 456.6,268.8 483.4,285.0 510.1,302.8 536.9,322.1 563.6,342.5 590.3,363.4 617.0,383.7 643.8,402.5 670.5,419.0 697.3,432.8 724.0,443.7" class="line" stroke="var(--s1)" clip-path="url(#pf-clip)"/>
+<polyline points="109.0,180.2 135.8,185.8 162.5,192.0 189.3,199.2 216.0,207.2 242.7,216.3 269.4,226.6 296.2,238.2 322.9,251.3 349.7,266.1 376.4,282.8 403.2,301.6 429.9,322.6 456.6,346.3 483.4,372.6 510.1,401.7 536.9,433.5 563.6,467.2 590.3,501.8 617.0,535.5 643.8,566.7 670.5,594.1 697.3,616.9 724.0,635.1" class="line" stroke="var(--s2)" clip-path="url(#pf-clip)"/>
+<polyline points="109.0,186.4 135.8,192.0 162.5,198.4 189.3,205.5 216.0,213.7 242.7,222.9 269.4,233.3 296.2,245.0 322.9,258.3 349.7,273.2 376.4,290.1 403.2,309.0 429.9,330.3 456.6,354.2 483.4,380.8 510.1,410.3 536.9,442.4 563.6,476.5 590.3,511.4 617.0,545.5 643.8,577.1 670.5,604.8 697.3,627.8 724.0,646.2" class="line" stroke="var(--s3)" clip-path="url(#pf-clip)"/>
+<polyline points="109.0,190.0 135.8,197.5 162.5,205.9 189.3,215.6 216.0,226.4 242.7,238.7 269.4,252.6 296.2,268.2 322.9,285.8 349.7,305.7 376.4,328.1 403.2,353.4 429.9,381.7 456.6,413.6 483.4,449.0 510.1,488.4 536.9,531.3 563.6,576.9 590.3,623.8 617.0,669.5 643.8,711.9 670.5,749.1 697.3,780.0 724.0,804.7" class="line" stroke="var(--s4)" clip-path="url(#pf-clip)"/>
+<text x="478.8" y="459.6" text-anchor="end" class="t" font-size="12.5" font-weight="600">p–¹¹B</text>
+<text x="465.9" y="376.4" text-anchor="end" class="t" font-size="12.5" font-weight="600">p–⁷Li</text>
+<text x="420.8" y="312.4" text-anchor="start" class="t" font-size="12.5" font-weight="600">p–⁶Li</text>
+<text x="418.2" y="248.4" text-anchor="start" class="t" font-size="12.5" font-weight="600">D–D</text>
+<circle cx="609.3" cy="377.8" r="5" fill="var(--s1)" stroke="var(--surface)" stroke-width="2"/>
+<text x="621.3" y="355.8" class="t" font-size="12" font-weight="600">D₂ molecule as it is</text>
+<text x="621.3" y="370.8" class="t2" font-size="11.5">2 × 10⁻⁶⁴ per second</text>
+<text x="24" y="610" class="tm" font-size="11">Model: Coulomb repulsion screened as exp(−r/λ); sim/pair_fusion.py, model c. Values: sim/pair-fusion-curves.csv.</text>
+<text x="24" y="626" class="tm" font-size="11">The beam-experiment range is not known to apply to a pair at rest; that is the open question.</text>
+</svg>

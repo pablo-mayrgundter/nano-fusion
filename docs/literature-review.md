@@ -1,148 +1,137 @@
 # Literature review: synthetic crystals, the LENR regime, and photon-energized reaction sites
 
-Compiled 2026-11-20 from web searches plus the two NanoFusion Google Docs. Citations marked ✔ were
-confirmed in this session against an abstract, journal listing or institutional page; citations marked
-◦ are from memory and should be checked against the journal before being quoted externally. Nothing
-here was read in full text — treat the numbers as abstract-level. (arxiv.org is outside this cloud
-session's network allowlist, so preprint abstracts came through search summaries, not direct fetches.)
+First compiled 2026-11-20 from web searches; revised the same day after arXiv access was added, when
+fifteen papers were read in full text (the 150-page Hagelstein paper: main text and selected appendices).
 
-**Bottom line.** There is a real, mainstream-published body of evidence that a metal lattice changes
-low-energy fusion rates by large factors, and it got stronger in 2025–2026. There is no confirmed
-evidence that any lattice effect produces net energy, and no confirmed evidence that low-intensity light
-changes a nuclear rate at all. The photon-energized-site idea has a clear theoretical motivation, a
-directly on-point patent family from the Google-funded team, a 2025 plasmonic-nanoshell proposal from
-mainstream theorists, an ARPA-E-funded Stanford test whose results I could not find, and one
-unreplicated experimental claim.
-It is an open experimental question that atomically precise fabrication is unusually well placed to
-settle.
+How to read the marks:
 
-Evidence is sorted into three tiers. Tier 1 is safe to design around. Tier 2 is a hypothesis to test.
-Tier 3 is a claim to test sceptically.
+- **✔✔** read in full text this session (arXiv version) by reader agents whose quotes were machine-checked
+  against the source file; the passages that changed a conclusion were re-checked by hand. Numbers come
+  from the paper itself.
+- **✔** confirmed against an abstract, journal listing or institutional page only.
+- **◦** from memory; check before quoting externally.
+
+The full-text reading changed several entries. The most important corrections are listed at the end
+under "What changed on full reading."
+
+**Bottom line.** A metal lattice changes low-energy D-D fusion rates by large factors, two groups now
+see the yield stop falling below ~2–3 keV, and an electrical knob on the lattice moves the rate. None
+of it is near useful power, the systematics of the lowest-energy points are not closed, and no
+experiment has confirmed that low-intensity light changes a nuclear rate. All of this evidence is for
+deuterium. For the product fuels (p-¹¹B, p-⁷Li) the reported lattice effects are far smaller relative
+to what would be needed (see `physics-baseline.md`, "What a resting pair needs").
 
 ---
 
 ## Tier 1 — established or mainstream-published experimental results
 
-### 1.1 The lattice changes the fusion rate (electron screening and beyond)
+### 1.1 The lattice changes the D-D fusion rate
 
-| Result | Reference | What it shows |
+| Result | Reference | What it shows, and its limits |
 |---|---|---|
-| Screening energies of several hundred eV in deuterated metals, versus ~25 eV for D₂ gas; small effect in insulators and semiconductors | ✔ Raiola et al., *Eur. Phys. J. A* 19, 283 (2004); ✔ Kasagi et al., *J. Phys. Soc. Jpn.* 71, 2881 (2002) (~600 eV in PdO); ✔ Czerski et al., *Europhys. Lett.* 54, 449 (2001); Rolfs group Pt: 670 ± 50 eV | Metals enhance sub-10-keV D-D rates far beyond what atomic screening theory gives |
-| The values disagree strongly between hosts and between experiments; Debye-plasma explanation excluded | ✔ Huke, Czerski et al., [arXiv:0805.4538](https://www.arxiv.org/abs/0805.4538) (*Phys. Rev. C* 78, 015803 ◦) | The effect is real but not understood, and target surface/loading state is a major systematic |
-| Uₑ = 1000 ± 250 eV in Pd under pulsed glow discharge; conference abstract reports > 100× bare yield below 2 keV | ✔ Schenkel et al., *J. Appl. Phys.* 126, 203302 (2019), [arXiv:1905.03400](https://doi.org/10.48550/arXiv.1905.03400) | Google-funded LBNL result, consistent with the accelerator data |
-| Electrochemical loading of a Pd target raises D-D rate by 15(2) % | ✔ Chen et al., *Nature* 644, 640–645 (2025), [doi:10.1038/s41586-025-09042-7](https://ideas.repec.org/a/nat/nature/v644y2025i8077d10.1038_s41586-025-09042-7.html) ("Thunderbird" reactor, UBC) | First clean demonstration that a *chemical/electrical* knob on the lattice moves a nuclear rate. No net energy |
-| **D-D yield stops falling below ~2–2.5 keV and plateaus; > 10¹⁸ over bare-nucleus theory in Pd and Ti hydride foils; depends on how the foil was loaded** | ✔ Karahadian, Colborne, Persaud, Schenkel, Munday, [arXiv:2512.06212](https://arxiv.org/abs/2512.06212v1); *Nature Communications*, July 2026 ([Physics World](https://physicsworld.com/a/nuclear-fusion-persists-at-ultralow-energies-inside-metal-foils/), [LBNL](https://newscenter.lbl.gov/2026/07/23/when-it-comes-to-fusion-materials-matter/)) | The most important new datum for this project. Authors call it a regime where the material actively shapes the reaction and say the microscopic origin (electrons, defects) is unknown. Absolute rate "far too small for energy production" |
-| Yield anisotropy × 2 for 20 keV D⁺ along crystal planes of deuterated Pd; none in homogeneous TiD; similar in textured CVD diamond | ✔ Dalkarov, Bagulya et al. (Lebedev HELIS), *J. Surf. Investig.* (2020) [doi:10.1134/S102745102002024X](https://www.doi.org/10.1134/S102745102002024X); *NIM B* (2015) doi:10.1016/j.nimb.2015.01.021 | Crystal *order* matters: channeling and flux peaking concentrate the beam on interstitial fuel |
+| Screening energies of hundreds of eV in deuterated metals, tens of eV in insulators | ✔✔ Huke, Czerski et al., [arXiv:0805.4538](https://arxiv.org/abs/0805.4538) (*Phys. Rev. C* 78, 015803 ◦), reviewing all groups | Their own ultra-high-vacuum values: Ta 322 ± 15, Zr 297 ± 8, Pd 313 ± 2, Al 190 ± 15 eV, called lower limits. Others: 602 ± 23 eV (Tohoku, Au/Pd/PdO), Pt 440 → 670 eV and Re 700 → 230 eV on re-measurement (Bochum), insulators < 50 eV. Theory (electron polarisation plus lattice cohesion) gives ~50–140 eV, so experiment is about twice theory. **Warnings from the same paper:** a deuterium density profile that changes with beam energy imitates screening in total-yield analyses; a 15 nm surface layer removes the effect; the Debye-plasma explanation is "clearly excluded" |
+| Uₑ = 1000 ± 250 eV in Pd under pulsed glow discharge | ✔✔ Schenkel et al., *J. Appl. Phys.* 126, 203302 (2019), [arXiv:1905.03400](https://arxiv.org/abs/1905.03400) | One palladium wire, neutrons only, yields relative to the 12.6 kV point. Ion species and energies were simulated, not measured; the surface carried 30 at% carbon and 20 at% oxygen; the authors say ~1000 eV "is not consistent with established theories" |
+| Electrochemical loading of a Pd target raises the D-D rate by 15(2) % | ✔ Chen et al., *Nature* 644, 640–645 (2025) ("Thunderbird", UBC) | A chemical/electrical knob on the lattice moves a nuclear rate. No net energy |
+| **Yield plateau below ~2.5 keV (centre of mass) in Pd, PdD, Ti, TiD; measured/bare yield "approaches or exceeds 10¹⁸" at 0.25 keV** | ✔✔ Karahadian, Colborne, Persaud, Schenkel, Munday, [arXiv:2512.06212](https://arxiv.org/abs/2512.06212); *Nature Communications*, July 2026 ✔ | Same membrane geometry as Thunderbird (beam on one face, electrolyte on the other). Fits above the plateau: Pd 0.8 ± 0.2 keV rising to 1.7 ± 0.2 keV with electrochemical loading; Ti 0.3 ± 0.2 → 0.9 ± 0.2 keV. **Limits:** yields are relative, normalised at 6.5 keV, so 10¹⁸ means the 0.25 keV yield is roughly 0.2–5 % of the 6.5 keV yield; the plateau rests on silicon-detector proton counts with statistical errors only; the arXiv text never mentions energetic neutrals or molecular ions (its Methods section is not in the file). Authors: "many orders of magnitude below energy-production thresholds" |
+| The same plateau, independently: Zr below 3 keV, Ti below 2 keV, Pd below 6 keV, plus a shift of the proton line | ✔✔ Czerski et al., [arXiv:2409.02112](https://arxiv.org/abs/2409.02112) | Fitted screening: Zr 340 ± 30, Pd 400 ± 40, Ti 25 ± 10 eV. **Limits:** fewer than 40 events per low-energy point from week-long runs; the authors themselves assign their D₂⁺ plateau to un-decelerated fast neutrals and rest the claim on D₃⁺ data, on Pd, and on the line shift. "Thermal fusion in ion tracks" is their model, not an observation. They note the US plateau "agrees with our data" for Pd |
+| Yield anisotropy × 2 for 20 keV D⁺ along crystal planes of deuterated Pd | ✔ Dalkarov, Bagulya et al., *J. Surf. Investig.* (2020) [doi](https://www.doi.org/10.1134/S102745102002024X) | Crystal order matters (channeling, flux peaking) |
 
-Why this matters for synthetic crystals: every one of these effects depends on things that conventional
-metallurgy controls poorly and atom-by-atom synthesis controls completely — defect type and density,
-loading ratio, interstitial site occupancy, surface termination, crystal orientation. The 2026 result
-explicitly points at loading history and defects. A lattice built to specification is the natural next
-experiment, whatever the answer turns out to be.
+Why this matters for synthetic crystals: every effect above depends on defect population, loading
+ratio, surface state and crystal order, which conventional metallurgy controls poorly. The two
+plateau papers and the screening review all point at sample state as the uncontrolled variable. A
+lattice built to specification, measured with a beam that is demonstrably free of fast neutrals, is the
+experiment that has not been done.
 
 ### 1.2 Lattice confinement fusion (NASA Glenn)
 
-- ✔ Steinetz et al., "Novel nuclear reactions observed in bremsstrahlung-irradiated deuterated metals,"
-  *Phys. Rev. C* 101, 044610 (2020); ✔ Pines et al., "Nuclear fusion reactions in deuterated metals,"
-  *Phys. Rev. C* 101, 044609 (2020). ErD₃ and TiD₂ at ~10²³ D/cm³ irradiated with 2.9 MeV
-  bremsstrahlung; photodisintegration neutrons heat deuterons, which fuse in the screened lattice;
-  ~4 and ~5 MeV neutrons reported.
-  ([NASA page](https://www.nasa.gov/glenn/glenn-expertise-space-exploration/lattice-confinement-fusion/),
-  [ADS](https://ui.adsabs.harvard.edu/abs/2020PhRvC.101d4610S))
-- **Counter-evidence:** ✔ Gillespie et al., [arXiv:2308.01434](https://arxiv.org/pdf/2308.01434) and
-  [arXiv:2508.18243](https://web3.arxiv.org/pdf/2508.18243) irradiated TiD₂ at the Missouri research
-  reactor. In the ~90 % thermal spectrum, tritium was within 25 % of conventional simulation, "without
-  invoking screening-enhanced recoil-induced fusion." The second paper's title claims enhanced tritium
-  under energetic neutrons; that part was not verified here. **Action: read both in full.**
-- NASA follow-ups are white papers and presentations (Benyo & Forsley, Nov 2024; Jan 2025) aimed at a
-  fusion-fast-fission hybrid for space power, not new peer-reviewed measurements.
+- ✔ Steinetz et al., *Phys. Rev. C* 101, 044610 (2020); ✔ Pines et al., *Phys. Rev. C* 101, 044609
+  (2020). ErD₃ and TiD₂ under 2.9 MeV bremsstrahlung; neutrons at ~4 and ~5 MeV reported.
+- **Replication status is split.** ✔✔ Duncan et al., [arXiv:2308.01434](https://arxiv.org/abs/2308.01434):
+  TiD₂ in a 90 % thermal reactor spectrum gave (5.4 ± 0.4) × 10¹² tritium atoms against 3.9 × 10¹²
+  simulated (±25 %), "an unsuccessful first attempt to replicate." ✔✔ Gillespie et al.,
+  [arXiv:2508.18243](https://arxiv.org/abs/2508.18243): the same group's cyclotron-vault run, with
+  energetic neutrons only, gave tritium "2.9–5.1 times higher than predicted," which they present as
+  "increasing the credibility in the results from Steinetz et al."
+- Caveats on the positive run: three samples, no control result reported for the vault, the two
+  260-hour replicates differ by 40 %, and the tabulated totals are about ten times what the paper's own
+  stated counts-to-nuclei conversion gives (presumably an aliquot factor that is not spelled out). The
+  authors ask for replication.
 
-LCF is photon-driven, but by MeV gammas from an accelerator. It is evidence that a deuterated lattice
-is a usable fusion fuel form; it is not evidence for low-energy photon triggering.
+LCF is evidence that a deuterated lattice is a usable fusion fuel form under MeV irradiation. It says
+nothing about low-energy photon triggering.
 
-### 1.3 Crystals and chips that already do fusion (without net energy)
+### 1.3 Screening for the product fuels: lithium and boron
 
-- ✔ Naranjo, Gimzewski, Putterman, "Observation of nuclear fusion driven by a pyroelectric crystal,"
-  *Nature* 434, 1115 (2005). A heated LiTaO₃ crystal makes ~100 kV; a tungsten nanotip field-ionises
-  and accelerates D⁺ into ErD₂. Replicated: ✔ Geuther, Danon, Saglime, *Phys. Rev. Lett.* 96, 054803
-  (2006). A crystal is the accelerator.
-- ✔ Sandia "neutristor" (Elizondo-Decanini): a neutron generator in flat chip geometry; neutrons
-  demonstrated at mm scale, ion sources at µm scale
-  ([Sandia](https://newsreleases.sandia.gov/?p=4374)). Fusion-on-a-chip exists as a product concept.
-- ✔ Curtis et al., "Micro-scale fusion in dense relativistic nanowire array plasmas,"
-  *Nat. Commun.* 9, 1077 (2018): deuterated nanowire arrays give 2 × 10⁶ neutrons per joule, ~500× a
-  flat target. Nanostructure multiplies laser-fusion yield, at relativistic intensity.
-- ✔ Ditmire et al., *Nature* 398, 489–492 (1999): fusion from Coulomb explosion of laser-heated
-  deuterium clusters, ~10⁵ neutrons per joule from a table-top laser.
-- Laser-initiated p-¹¹B (the reaction in the main doc): ✔ Labaune et al., *Nat. Commun.* 4, 2506 (2013);
-  ◦ Giuffrida et al., *Phys. Rev. E* 101, 013204 (2020); ✔ Magee et al., *Nat. Commun.* 14, 955 (2023)
-  (first p-¹¹B in a magnetically confined plasma).
+| Target | Adiabatic limit (theory) | Reported | Reference |
+|---|---|---|---|
+| ⁶Li, ⁷Li + p, insulator (Li₂WO₄) | ~190 eV | 237 (+133/−77) eV | ✔ Cruz et al., *Phys. Lett. B* 624, 181 (2005) and 2008 follow-up |
+| Li metal | 610 eV expected (✔✔ Huke et al.) | 1.18 ± 0.06 keV (Cruz); 425 ± 60 eV (Lamia 2012, via the Trojan-horse bare S-factor) | ✔ secondary |
+| PdLiₓ alloy | 850 eV expected (✔✔ Huke et al.) | measured value not verified here ◦ | Cruz 2005 |
+| ¹H(⁷Li,α)⁴He on hydrogen-loaded Pd foils | — | one foil "up to an order of magnitude above" theory, the other not; large effect only under tensile stress in earlier work | ✔ Lipoglavšek et al., *Phys. Lett. B* (2023); *Eur. Phys. J. A* (2010) |
+| ¹¹B + p | 340 eV | 430 ± 80 eV direct; 472 ± 160 and 240 ± 200 eV via Trojan horse | ✔ Angulo et al. 1993 and later Trojan-horse work |
 
-### 1.4 A laser addressing a nucleus inside a designed crystal
+So p + Li has been measured inside metals, including palladium, with sample-dependent enhancement.
+The numbers are at most ~1 keV. The bound-pair model in `physics-baseline.md` needs 7–12 keV for
+lithium and 17–24 keV for boron. Reference S-factors: ✔✔ NACRE II, [arXiv:1310.7099](https://arxiv.org/abs/1310.7099):
+⁶Li(p,α)³He 3.1 ± 0.4 MeV b; ⁷Li(p,α)⁴He 52 (+11/−8) keV b; ¹¹B(p,α)⁸Be 210 (+20/−30) MeV b.
 
-- ✔ Tiedau et al., *Phys. Rev. Lett.* 132, 182501 (2024): first resonant laser excitation of the ²²⁹Th
-  nucleus, doped in CaF₂. ✔ Zhang, Ye et al., *Nature* 633, 63–70 (2024): VUV frequency comb drives the
-  same nuclear transition in a solid host and links it to the Sr atomic clock
-  ([paper](https://jila.colorado.edu/sites/default/files/2024-09/Th%20nuclear%20clock%202024-Nature.pdf)).
-  ✔ Elwell et al., [arXiv:2404.12311](https://arxiv.org/abs/2404.12311) (LiSrAlF₆ host, isomer at
-  8.355733 eV; journal reference *Phys. Rev. Lett.* 133, 013201 ◦); ✔ thin-film ²²⁹ThF₄ follow-up
-  from JILA (*Nature*, Dec 2024).
+### 1.4 Crystals and chips that already do fusion (without net energy)
 
-This is the only case where coherent light has been shown to drive a nuclear state inside an engineered
-crystal. It is an 8.4 eV isomer, not fusion. Its relevance is as an existence proof and as a toolkit:
-the host crystal's electric field gradients, doping sites and defect chemistry measurably shape a
-nuclear transition, and the community has built the doping, spectroscopy and theory to engineer it.
+- ✔ Naranjo, Gimzewski, Putterman, *Nature* 434, 1115 (2005): a pyroelectric crystal makes ~100 kV and
+  drives D-D fusion from a tungsten nanotip; replicated in ✔ *Phys. Rev. Lett.* 96, 054803 (2006).
+- ✔ Sandia "neutristor": a neutron generator in flat chip geometry.
+- ✔ Curtis et al., *Nat. Commun.* 9, 1077 (2018): deuterated nanowire arrays, 2 × 10⁶ neutrons per
+  joule, ~500× a flat target, at relativistic intensity. ✔ Ditmire et al., *Nature* 398, 489 (1999):
+  cluster fusion, ~10⁵ neutrons per joule.
+- Laser-initiated p-¹¹B: ✔ Labaune et al., *Nat. Commun.* 4, 2506 (2013); ◦ Giuffrida et al.,
+  *Phys. Rev. E* 101, 013204 (2020); ✔ Magee et al., *Nat. Commun.* 14, 955 (2023).
 
-### 1.5 Putting a photon on one site
+### 1.5 A laser addressing a nucleus inside a designed crystal
 
-- ✔ Benz et al., *Science* 354, 726–729 (2016) (picocavities: light confined to well below 1 nm³ at a
-  single atom, 10⁶ enhancement of optomechanical coupling to individual bonds);
-  ✔ Chikkaraddy et al., *Nature* 535, 127–130 (2016) (single-molecule strong coupling in a plasmonic
-  nanocavity below 40 nm³ at room temperature).
+✔ Tiedau et al., *Phys. Rev. Lett.* 132, 182501 (2024); ✔ Zhang, Ye et al., *Nature* 633, 63–70 (2024);
+✔ Elwell et al., [arXiv:2404.12311](https://arxiv.org/abs/2404.12311): the ²²⁹Th isomer at 8.36 eV
+driven by a laser inside CaF₂ and LiSrAlF₆. The only case of coherent light driving a nuclear state in
+an engineered crystal. An existence proof and a toolkit, not fusion.
+
+### 1.6 Putting light, ions and atoms where you want them
+
+- ✔ Benz et al., *Science* 354, 726–729 (2016): picocavities confine light to well below 1 nm³.
+  ✔ Chikkaraddy et al., *Nature* 535, 127–130 (2016): single-molecule strong coupling below 40 nm³.
 - ✔ Liu, Tang, Hentschel, Giessen, Alivisatos, *Nat. Mater.* 10, 631–636 (2011): one palladium
-  nanoparticle placed in the nanofocus of a gold antenna, its hydrogen uptake read out optically. This
-  is the NF-cell v0 site geometry, already fabricated, for sensing.
-- ✔ Lozada-Hidalgo et al., [arXiv:1511.06693](https://arxiv.org/abs/1511.06693v1) (*Science* 2016 ◦):
-  graphene and hBN monolayers pass protons about ten times faster than deuterons at room temperature
-  — a one-atom-thick hydrogen-isotope membrane.
-- ✔ Strong-field emission from plasmonic nanotips with few-cycle mid-IR pulses: electrons reach
-  hundreds of eV, escaping the nanolocalised field within a fraction of an optical cycle (✔ Herink,
-  Solli, Gulde, Ropers, *Nature* 483, 190–193 (2012); ✔ Echternkamp et al., *Appl. Phys. B* 2016). eV photons become sub-keV particles
-  on a nanostructure, with oscillator-level pulse energies.
-- On-chip accelerators from the Notes doc: ◦ Sapra et al., *Science* 367, 79 (2020); ◦ Chlouba et al.,
-  *Nature* 622, 476 (2023). Both accelerate relativistic or near-relativistic *electrons*. For slow
-  ions the only work found is a feasibility study for proton nanobeams in low-β dielectric laser
-  stages with a dielectric RFQ front end (✔ Torrisi et al., [arXiv:2106.13701](https://www.arxiv.org/abs/2106.13701), 2021); no experiment; the required 6–70 nm periods are computed in `physics-baseline.md`.
-- On-chip single-photon and nanolaser sources (quantum dots, hBN and diamond colour centres, plasmonic
-  nanolasers) are mature enough to treat as components.
+  nanoparticle in the nanofocus of a gold antenna, hydrogen uptake read out optically. This is the
+  NF-cell v0 site geometry, already fabricated for sensing.
+- ✔ Herink, Solli, Gulde, Ropers, *Nature* 483, 190–193 (2012): electrons reach hundreds of eV in the
+  near field of a nanotip.
+- **Slow-ion laser accelerator.** ✔✔ Torrisi et al., [arXiv:2106.13701](https://arxiv.org/abs/2106.13701)
+  is a concept paper: no proton gradient, period, aperture or damage number, no simulation results,
+  and "all the experiments carried out so far used electrons." Useful content: the injection chain
+  (electrostatic to 50 keV, dielectric RFQ to 1 MeV), a ~15 nm bucket at β = 0.01 and 1.5 µm, a
+  nano-aperture ion source expected to give sub-10 nm beams at 0.5–1 nA, and an average beam current of
+  order 10 pA. It names "p-B ultracompact nuclear fusion devices based on proton acceleration below
+  1 MeV" as an application. Electron structures at 28 keV have reached 25–133 MeV/m.
+- **Hydrogen through 2D crystals.** ✔✔ Lozada-Hidalgo et al., [arXiv:1511.06693](https://arxiv.org/abs/1511.06693):
+  protons pass graphene and hBN about ten times faster than deuterons (zero-point difference ~60 meV);
+  Pt-decorated hBN conducts ≈3 S/cm²; cm-scale CVD membranes keep the factor. For a deuterium feed it
+  is poor (only ~10 % of the current emerges as D₂). For a proton-fuelled cell it is a feed that
+  filters deuterium out, which is what an aneutronic cell wants.
 
-### 1.6 Muon catalysis (the 2014 idea)
+### 1.7 Muon catalysis (the 2014 idea)
 
-- ✔ ~150 D-T fusions per muon remains the experimental ceiling; alpha sticking 0.3–1 % in the
-  literature. ✔ Acceleron Fusion's MuFusE diamond-anvil experiment
-  ([arXiv:2606.05333](https://arxiv.org/pdf/2606.05333)) reports up to 150 ± 20 fusions per muon and
-  is exploring higher pressure and temperature; 2026 modelling
-  ([arXiv:2605.26432](https://arxiv.org/pdf/2605.26432)) puts polarisation-assisted improvement at
-  148 → ~193 cycles. The sticking problem the Notes doc proposed to attack with geometry is still the
-  open problem, and it is being attacked with pressure rather than nanostructure.
+✔ ~150 D-T fusions per muon remains the ceiling; alpha sticking 0.3–1 %. ✔ Acceleron's diamond-anvil
+experiment ([arXiv:2606.05333](https://arxiv.org/abs/2606.05333)) reports up to 150 ± 20. Muon
+catalysis does not extend to lithium or boron: the muon binds to the higher-Z nucleus ◦.
 
-### 1.7 Smaller is better: micro-scale electrostatic and Penning traps (prior art for Track D)
+### 1.8 Smaller is better: micro-scale traps (prior art for Track D)
 
-- ✔ Barnes & Nebel, *Phys. Plasmas* 5 (1998) and Nebel & Barnes, *Fusion Technology* 34 (1998): the
-  Periodically Oscillating Plasma Sphere (POPS). An ion cloud oscillates in a harmonic well and
-  compresses at the centre. Their scaling: **fusion power density ∝ 1/a⁴ and power per device ∝ 1/a**
-  for device radius a, which is why they proposed a "massively modular" reactor of many small traps.
-  This is the NanoFusion premise — many small reactions in parallel — stated in mainstream plasma
-  physics a quarter-century ago.
-- ✔ Park, Nebel, Stange et al., *Phys. Rev. Lett.* (2005): the POPS oscillation observed in a gridded
-  electrostatic device. ✔ Mitchell, Schauer, Barnes, *Phys. Rev. Lett.* 78, 58 (1997): spherical focus
-  with density above the Brillouin limit in a 3 mm electron Penning trap (PFX).
-- Caveats from the same programme: useful D-D gain needs ~1000:1 radial compression; space-charge
-  neutralisation of the collapsing ion sphere was found to be incomplete; a 2020 permanent-magnet trap
-  paper notes fusion in a Penning trap had still not been demonstrated.
+- ✔ Barnes & Nebel, *Phys. Plasmas* 5 (1998); Nebel & Barnes, *Fusion Technology* 34 (1998): the
+  Periodically Oscillating Plasma Sphere. Fusion power density ∝ 1/a⁴ and power per device ∝ 1/a, hence
+  a "massively modular" reactor of many small traps. ✔ Park et al., *Phys. Rev. Lett.* (2005): the
+  oscillation observed. ✔ Mitchell, Schauer, Barnes, *Phys. Rev. Lett.* 78, 58 (1997): density above
+  the Brillouin limit at a 3 mm trap's focus.
+- Caveats from the same programme: ~1000:1 compression needed; incomplete space-charge
+  neutralisation; no fusion in a Penning trap as of 2020.
 
-I found no treatment of what this scaling does at 100 nm with solid electrodes at volts per
-nanometre. That is the Track D paper study.
+I found no treatment of this scaling at 100 nm with solid electrodes at volts per nanometre.
 
 ---
 
@@ -150,74 +139,53 @@ nanometre. That is the Track D paper study.
 
 | Idea | Reference | Relevance | Caveat |
 |---|---|---|---|
-| Fusion rate in D₂ is 3 × 10⁻⁶⁴ s⁻¹; an electron mass of 5–10 mₑ would reach the claimed cold-fusion rates | ✔ Koonin & Nauenberg, *Nature* 339, 690 (1989) | Defines the size of the gap and its extreme sensitivity to screening | Free molecule; later work notes neglected state dependence |
-| Barrier penetration in an **equilibrium** solid cannot be enhanced anywhere near enough | ✔ Leggett & Baym, *Nature* 340, 45 (1989); *Phys. Rev. Lett.* 63, 191 (1989) | The central no-go theorem. Its escape clause is non-equilibrium driving, i.e. the photons | A driven system is not thereby shown to work |
-| Dynamically assisted tunnelling: a weak, fast field superposed on the Coulomb barrier raises tunnelling | ✔ Queisser & Schützhold, *Phys. Rev. C* 100, 041601 (2019), [arXiv:1902.04905](https://arxiv.org/pdf/1902.04905); Lv, Duan, Liu, *Phys. Rev. C* 100, 064610 (2019) and comment; Wang, *Phys. Rev. C* 102, 011601 (2020) ◦ | Peer-reviewed mechanism by which light assists fusion | Needs XFEL-class fields; no experiment yet |
-| A 1.55 eV laser at 10²⁰ W/cm² raises fusion probability × 10³ at 1 keV | ✔ Qi, Zhou, Wang, *Nucl. Sci. Tech.*, doi:10.1007/s41365-025-01879-x ([summary](https://www.miragenews.com/laser-enhanced-nuclear-fusion-reactions-study-1605247/)) | Low-frequency light can help, in principle | Idealised two-body theory; intensity ~10¹⁰ above anything a diode delivers |
-| Catalogue of known mechanisms that raise solid-state fusion rates; > 40 orders needed, cascading mechanisms argued to reach it | ✔ Metzler, Hunt, Hagelstein, Galvanetto, *New J. Phys.* 26, 101202 (2024), [arXiv:2208.07245](https://arxiv.org/abs/2208.07245) | The best single map of the enhancement landscape | Review of mechanisms, not a demonstration |
-| Nuclear Dicke model: D-D ↔ Pd energy transfer via lattice vibrations, with screening and tunnelling, gives > 40 orders | ✔ Hagelstein, Metzler, Lilley, Messinger, Galvanetto, [arXiv:2501.08338](https://arxiv.org/abs/2501.08338v2) (2025). Almost certainly the paper behind the 2025-01-14 video in the Notes doc | The most explicit theory in which a *driven lattice mode* is the active ingredient | Preprint in physics.gen-ph; unconfirmed |
-| A 0⁺ threshold resonance in ⁴He dominates D-D at very low energy, decaying by e⁺e⁻ pairs | ✔ Czerski et al., *Phys. Rev. C* 109, L021601 (2024); [arXiv:2408.07567](https://arxiv.org/abs/2408.07567v2); [arXiv:2409.02112](https://export.arxiv.org/pdf/2409.02112) (D-D at thermal energies in ion tracks) | Would change the branching ratio as well as the rate — a route to neutron-poor D-D | One group (Szczecin); Czerski did publicly welcome the 2026 LBNL result as corroboration |
-| **Light-driven plasmon oscillations concentrate electrons around light nuclei, giving transient screening above any static value** | ✔ US 10,566,094 B2 ([Google Patents](https://patents.google.com/patent/US10566094B2/en)) and US 10,264,661 B2 ([link](https://patents.google.com/patent/US10264661B2)); Google LLC / Univ. of Maryland; Munday, Murray, Narayan, Fork | **The closest published statement of the NanoFusion photon-energized-site concept**, from the team behind the 2019 and 2026 papers | Patents, not data. No published confirmation found |
-| **Fusion in a nanoshell:** moderate-intensity laser on D₂O-filled metal nanoshells; plasmonic field enhancement accelerates deuterons | ✔ Kharzeev, Levitt, Trallero-Herrero, [arXiv:2503.15531](https://arxiv.org/abs/2503.15531v2) (2025) | A plasmonic nanostructure as the fusion driver, proposed by mainstream nuclear and strong-field physicists. Same family as the v0 nanogap site | Rate estimates only; no measurement |
-| Nano-plasmonic laser fusion (NAPLIFE): gold nanorod antennas embedded in the target absorb fs laser light | ✔ Hungarian NAPLIFE collaboration ([overview](https://communities.springernature.com/posts/nano-plasmonic-laser-induced-fusion-energy-naplife), [Laser Focus World](https://www.laserfocusworld.com/lasers-sources/article/55283233/catalyzing-nuclear-fusion-via-nanoplasmonics)) | An experimental programme built on resonant nano-antennas inside the fuel | Reported effect is 3–4× larger laser craters, not a measured fusion rate; high-intensity fs pulses; one collaboration |
-| Anomalous heat from Ni-based nano-multilayers with H₂ | ✔ Iwamura et al., *Jpn. J. Appl. Phys.* 63, 037001 (2024) ([open access](https://iopscience.iop.org/article/10.35848/1347-4065/ad2622)); Clean Planet / Tohoku | Nano-*structure* as the active ingredient, in a mainstream journal | Calorimetry only, one lineage of groups, no correlated nuclear products |
+| Fusion rate in D₂ is 3 × 10⁻⁶⁴ s⁻¹; an electron mass of 5–10 mₑ would reach the claimed cold-fusion rates | ✔ Koonin & Nauenberg, *Nature* 339, 690 (1989) | Reproduced here: `sim/pair_fusion.py` gives 2.0 × 10⁻⁶⁴ s⁻¹ and the same 5–10 | A thought experiment, not a mechanism |
+| Barrier penetration in an **equilibrium** solid cannot be enhanced nearly enough | ✔ Leggett & Baym, *Nature* 340, 45 (1989); *Phys. Rev. Lett.* 63, 191 (1989) | The central no-go theorem; it leaves driven systems open | A driven system is not thereby shown to work |
+| **Models for nuclear fusion in the solid state** | ✔✔ Hagelstein, Metzler, Lilley, Messinger, Galvanetto, [arXiv:2501.08338](https://arxiv.org/abs/2501.08338) (2025); almost certainly the paper behind the 2025-01-14 video | The most developed driven-lattice theory. D₂ molecules in deuterium-packed Pd vacancies; a single uniform **MHz acoustic mode** (1 W, 5 MHz, ~3 mJ stored) transfers the fusion energy to Pd nuclei; 10⁻⁶ s⁻¹ per pair across 10¹⁵ coherent pairs. Screening alone, their Table 8: 150 eV → 1.5 × 10⁻³², 300 eV → 1.5 × 10⁻²², 350 eV → 2.2 × 10⁻²⁰ s⁻¹ | Preprint. By the authors' own account: reasonable dephasing "would show no observable coherent effects" in the simpler versions; the energy cost per transfer means the coefficient of performance "will be poor"; Pd level data are proxied from ¹²⁰Sn; several ingredients are labelled conjectures. Lasers appear only as suggestions, and the two-laser experiments are not mentioned |
+| Catalogue of known enhancement mechanisms | ✔✔ Metzler, Hunt, Galvanetto, [arXiv:2208.07245](https://arxiv.org/abs/2208.07245) (*New J. Phys.* 26, 101202) | Proximity (D₂ in a vacancy instead of lattice sites) +80 orders; uniform screening +10–20; fluctuations +5–10; defect screening +5–15; resonances +3–7 and +20–30 | "We offer no single mechanism that could increase fusion rates by 40 orders of magnitude"; whether the factors multiply is not discussed |
+| A 0⁺ threshold resonance in ⁴He decaying by e⁺e⁻ pairs | ✔✔ Czerski et al., [arXiv:2305.17101](https://arxiv.org/abs/2305.17101) (*Phys. Rev. C* 109, L021601); Dubey et al., [arXiv:2408.07567](https://arxiv.org/abs/2408.07567), **published as *Phys. Rev. X* 15, 041004 (2025)** | Pair-to-proton ratio measured in ZrD₂: 0.42 ± 0.05 at 10 keV, 0.060 ± 0.012 at 20 keV. Would give a neutron-poor D-D channel at low energy | One group. The fitted pair width rose from 1.4–2.8 to 14 times the proton width between papers after a model change; dominance below 5 keV is extrapolation; no full-energy pair measurement |
+| Dynamically assisted tunnelling | ✔✔ Queisser & Schützhold, [arXiv:1902.04905](https://arxiv.org/abs/1902.04905) (*Phys. Rev. C* 100, 041601) | For D + T at 1 keV, a 10 keV X-ray field raises the tunnelling exponent by ten orders. The field couples through the pair's charge-to-mass asymmetry | Needs keV photons at 10¹³–10¹⁵ V/m; "the frequency of an optical laser is so low" that it acts only quasi-statically; **for D–D the coupling is zero** |
+| A 1.55 eV laser at 10²⁰ W/cm² raises fusion probability × 10³ at 1 keV | ✔ Qi, Zhou, Wang, *Nucl. Sci. Tech.* (2025) | Low-frequency light can help in principle | ~10¹⁰ above anything a diode delivers |
+| Fusion in a nanoshell | ✔✔ Kharzeev, Levitt, Trallero-Herrero, [arXiv:2503.15531](https://arxiv.org/abs/2503.15531) (2025) | A ~100 nm gold shell filled with D₂O, 1 µm laser at ~10⁹ V/cm, internal field ×100, deuterons at 25–60 keV, 10⁷ fusions/s per shell, "Q ≃ 100 is theoretically achievable" | Classical acceleration followed by ordinary beam-target fusion, so the stopping ceiling in `physics-baseline.md` applies unless the electrons are stripped; ionisation "has not yet been incorporated"; one author's company holds the IP |
+| Light-driven plasmon oscillations give transient screening above any static value | ✔ US 10,566,094 B2 and US 10,264,661 B2 (Google / Univ. of Maryland) | The closest published statement of the photon-energized-site idea. Metzler et al. credit it with "~15 orders" for a 40 % rise in Uₑ | Patents, not data. A free-electron estimate here gives a far smaller effect (`physics-baseline.md`) |
+| Nano-plasmonic laser fusion (NAPLIFE) | ✔ Hungarian collaboration | Resonant nano-antennas inside the fuel | Reported effect is larger laser craters, not a fusion rate |
+| Anomalous heat from Ni-based nano-multilayers with H₂ | ✔ Iwamura et al., *Jpn. J. Appl. Phys.* 63, 037001 (2024) | Nanostructure as the active ingredient | Calorimetry only; no correlated nuclear products |
 
 ---
 
 ## Tier 3 — contested or unreplicated
 
-- **Two-laser stimulation of PdD (Letts, Cravens, Hagelstein).** ✔ Excess power reported only when two
-  lasers' difference frequency hit 8.3, 15.3 or 20.4 THz, matched to optical-phonon modes of PdD;
-  required p-polarisation and overlapped beams (*J. Condensed Matter Nucl. Sci.* 3, 59–76 (2010);
-  [2008 paper](https://www.newenergytimes.com/v2/library/2008/2008LettsHagelstein-StimulationofOpticalPhonons.pdf)).
-  This is the single experimental claim that matches "reaction sites energized by laser diodes," and
-  it used exactly diode-class lasers. No independent replication was found, the diagnostics were
-  calorimetric, and it was published in the field's own journal. **It is the first thing this program
-  should replicate with nuclear diagnostics** (Phase 1, experiment E3).
-- **Fleischmann-Pons excess heat and descendants.** ✔ The Google-funded multi-institution effort found
-  no evidence under rigorous conditions (Berlinguette et al., "Revisiting the cold case of cold fusion,"
-  *Nature* 570, 45–51 (2019)), while generating the screening results in Tier 1.
-- **Phonon-nuclear excitation transfer (⁵⁷Co/⁵⁷Fe).** ✔ MIT theses report 17–19 % emission anomalies
-  after mechanical stress, described by their own authors as "not inconsistent" with theory. Unreplicated.
+- **Two-laser stimulation of PdD (Letts, Cravens, Hagelstein).** ✔ Excess power only at difference
+  frequencies of 8.3, 15.3, 20.4 THz (*J. Condensed Matter Nucl. Sci.* 3, 59–76 (2010)). The one
+  experimental claim that matches "reaction sites energized by laser diodes." No independent
+  replication found; calorimetry only. Notably, the 2025 Hagelstein model does not cite it and favours
+  acoustic over optical phonons.
+- **Fleischmann-Pons excess heat.** ✔ The Google-funded effort found no evidence under rigorous
+  conditions (*Nature* 570, 45–51 (2019)).
+- **Phonon-nuclear excitation transfer (⁵⁷Co/⁵⁷Fe).** ✔ 17–19 % anomalies in MIT theses; unreplicated.
 - **Ultra-dense deuterium / Rydberg-matter fusion (Holmlid).** ✔ Published critiques find the core
-  claims unsupported (Hansen & Engelen comment; Shmatov, *Energy, Sustainability and Society* (2024)).
-  Not a basis for design. Note this is distinct from the sound physics of Rydberg atom arrays cited in
-  the main doc.
-- **ARPA-E LENR exploratory programme.** ✔ $10 M to eight teams in Feb 2023 (Amphionic, Energetics
-  Technology Center, LBNL, MIT, Stanford, Texas Tech, Michigan × 2), explicitly to settle the question
-  either way. Two of the funded projects are close relatives of the NanoFusion concept
-  ([project descriptions](https://arpa-e.energy.gov/sites/default/files/2025-01/Project%20Descriptions_LENR.pdf)):
-  Stanford, "Nuclear Product Detection from Deuterated Nanoparticles Under Phonon Stimulation"
-  ($1.5 M), i.e. a driven lattice read out with nuclear diagnostics; and Amphionic, testing whether
-  reactions occur in "potential wells existing between two nanoscale surfaces" by controlling
-  nanoparticle geometry, separation, composition and loading. Texas Tech is the shared
-  nuclear-diagnostics hub. No outcome statement was found as of this date; the 2026 LBNL paper is
-  plausibly one of the programme's outputs. **Action: find the Stanford and Amphionic results before
-  designing E1 and E3 — they may already have run them.**
+  claims unsupported.
+- **ARPA-E LENR programme.** ✔ $10 M, eight teams, 2023. Stanford: "Nuclear Product Detection from
+  Deuterated Nanoparticles Under Phonon Stimulation." Amphionic: reactions in "potential wells
+  existing between two nanoscale surfaces." No outcome statements found; the 2026 LBNL paper is
+  plausibly an output.
 
 ---
 
 ## Enabling technology: atomically precise fabrication today
 
-The plan assumes this matures. Where it actually stands (✔ all from 2025–2026 reports, mostly secondary
-sources):
+- ✔✔ CBN Nano, [arXiv:2605.27250](https://arxiv.org/abs/2605.27250) (May 2026): carbon dimers placed one
+  at a time by a purely mechanical transfer at 4 K. Largest structure: nine C₂ units (18 carbon atoms)
+  in an X; also four- and eight-carbon chains. Per-step yields 84–97 % over 351 attempts; every
+  placement consumes a fresh tool molecule and is imaged afterwards. Three-dimensional building is
+  stated as a prospect, not a result. No rate or roadmap given.
+- ✔ ORNL: AI-driven assembly of a 37-molecule artificial lattice. ✔ Zyvex: hydrogen depassivation
+  lithography at sub-nm resolution, slow. ✔ Silicon Quantum Computing: phosphorus placement at ~0.13 nm.
+- ✔ Chemistry makes atom-exact objects in bulk: H₂ and D₂ sealed inside C₆₀ by organic synthesis
+  (Komatsu, Murata, Murata, *Science* 307, 238 (2005)).
 
-- CBN Nano: positionally controlled C₂ donation and stepwise C-C bond formation on H-passivated
-  Si(100) by inverted-mode STM (arXiv:2605.27250, May 2026).
-- ORNL: AI-driven atom-by-atom assembly; 37-molecule artificial graphene lattice with a measured Dirac
-  point (*ACS Nano*).
-- Zyvex Labs: hydrogen depassivation lithography at sub-nm resolution with the ZyVector/ZL-1 tools;
-  DOE's own assessment calls it slow and limited to phosphorus dopants.
-- Silicon Quantum Computing: phosphorus placement in silicon at ~0.13 nm accuracy
-  (*Nature Nanotechnology* comment).
-
-Chemistry is the other route to atom-exact objects, and it already works in bulk: ✔ Komatsu, Murata,
-Murata, *Science* 307, 238–240 (2005) sealed H₂ inside C₆₀ by organic synthesis ("molecular surgery"),
-and D₂@C₆₀ has since been made and studied spectroscopically. That is an atom-exact cage holding
-exactly one fuel pair, produced by the flask.
-
-Today positional assembly is 2D, ultra-high-vacuum, a few atoms per second, and a handful of chemistries. The roadmap
-therefore defines capability levels (APM-0 to APM-4) and names a bridging process for every phase.
+Positional assembly today is ~10¹ atoms per structure for carbon, 2D, cryogenic and serial. The
+roadmap's capability levels start from there.
 
 ---
 
@@ -225,40 +193,48 @@ therefore defines capability levels (APM-0 to APM-4) and names a bridging proces
 
 Supported:
 
-1. A metal lattice changes sub-10-keV fusion rates by orders of magnitude beyond theory, the effect
-   depends on loading and defects, and it persists to lower energy than anyone expected (2026).
-2. Crystal order changes yield (channeling, × 2).
-3. An electrical knob on the lattice changes a nuclear rate (2025, 15 %).
-4. A laser can coherently drive a nucleus in a designed crystal (2024, ²²⁹Th).
-5. Nanostructure multiplies laser-fusion yield (2018, × 500).
-   Small traps favour fusion power density (POPS scaling, 1/a⁴), the original argument for massively
-   modular micro-reactors.
-6. Theory in which a driven, non-equilibrium lattice or field assists tunnelling is published in
-   mainstream journals, and the no-go theorem applies only to equilibrium.
+1. A metal lattice raises sub-10-keV D-D rates beyond theory; the effect depends on loading, defects
+   and surface state; two groups see a low-energy plateau.
+2. Crystal order and an electrochemical bias each change the yield (× 2; +15 %).
+3. A laser can coherently drive a nucleus in a designed crystal (²²⁹Th).
+4. Nanostructure multiplies laser-fusion yield at high intensity (× 500).
+5. Small traps favour fusion power density (1/a⁴).
+6. Proton-on-lithium fusion has been measured inside palladium and lithium metal, with
+   sample-dependent enhancement.
 
 Not supported:
 
-1. Net energy from any lattice-assisted reaction. Every confirmed rate is many orders below useful.
-2. Any confirmed nuclear effect of low-intensity light on a deuterated lattice.
-3. A dominant aneutronic D-D channel.
-4. A known mechanism by which one eV-scale photon triggers one MeV-scale event.
+1. Net energy from any lattice-assisted reaction.
+2. Any confirmed nuclear effect of low-intensity light on a hydrided lattice.
+3. A plateau free of beam artifacts: neither plateau paper closes the fast-neutral question in the
+   text available.
+4. Screening anywhere near what lithium or boron fuel would need.
+5. A mechanism by which one eV-scale photon triggers one MeV-scale event.
 
-The gap between the lists is the research programme. The best confirmed enhancement is 10¹⁸ relative to
-bare nuclei at sub-keV beam energy; a beamless cell needs 10⁴⁸–10⁵² relative to a D₂ molecule at rest.
-The baselines differ, so the remaining gap is not a simple subtraction, but it is tens of orders of
-magnitude, to be delivered at room temperature and steered by light. That should be read as a long shot
-with a cheap, decisive first test, not as an engineering problem.
+## What changed on full reading
+
+1. **Lattice-confinement replication** is not a clean null: the reactor run failed to confirm, the
+   fast-neutron run reported a 3–5× excess. Both are thinly sampled.
+2. **The 10¹⁸ figure** is a ratio of normalised yields at 0.25 keV, not an absolute rate, and the
+   paper's own fitted screening energies are 0.3–1.7 keV.
+3. **The plateau has a second, independent observation** whose authors attribute part of their own
+   signal to fast neutrals.
+4. **The leading driven-lattice theory drives an acoustic mode at MHz**, not optical phonons or
+   plasmons, and predicts a poor energy return by its authors' own estimate.
+5. **Field-assisted tunnelling cannot act on D–D** (no relative force on identical nuclei) but does act
+   on p–Li and p–B.
+6. **The proton laser-accelerator paper is a concept note** without design numbers.
+7. **Atom-by-atom carbon assembly stands at 18 atoms**, not thousands.
+8. **The threshold-resonance work is now in *Phys. Rev. X***, with its key width revised sixfold.
 
 ## Reading queue
 
-1. Karahadian et al. 2026 full text and methods (what exactly plateaus; fast-neutral backgrounds).
-2. Gillespie et al. arXiv:2508.18243 (the energetic-neutron result).
-3. US 10,566,094 B2 claims and any associated experimental disclosure.
-4. Hagelstein et al. arXiv:2501.08338: extract the predicted dependence on phonon mode, drive power
-   and loading, so E3 can be designed to falsify it.
-5. Letts-Hagelstein 2010 for exact laser powers, spot sizes, cathode preparation.
-6. Czerski arXiv:2408.07567 for the predicted e⁺e⁻ branching ratio versus energy.
-7. Rider 1995 thesis, re-read for which assumptions fail at 10–100 nm with 1–10 V/nm electrodes.
-8. Kharzeev et al. arXiv:2503.15531: their rate estimate and required intensity, as a cross-check on
-   the v0 nanogap numbers.
-9. ARPA-E LENR project outcomes, Stanford and Amphionic first.
+1. Karahadian et al., journal version: Methods and Extended Data (beam composition, neutral
+   suppression, cross-normalisation of proton and neutron channels).
+2. Cruz et al. 2005 and 2008, and Lipoglavšek et al. 2023: the lithium-in-palladium numbers.
+3. Chen et al., *Nature* 2025 (Thunderbird) in full; Steinetz and Pines in full.
+4. US 10,566,094 B2 claims and any experimental disclosure.
+5. Letts-Hagelstein 2010 for exact laser powers and cathode preparation.
+6. Rider 1995 thesis; Nevins on recirculating power.
+7. Koonin & Nauenberg 1989 in full, to pin down the factor 1.5 between their rate and ours.
+8. ARPA-E LENR project outcomes, Stanford and Amphionic first.

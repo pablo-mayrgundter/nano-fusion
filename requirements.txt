@@ -1,0 +1,3 @@
+# sim/baseline.py, sim/pair_fusion.py, sim/e1_budget.py and sim/plot_pair_fusion.py need only the standard library.
+PyYAML>=6          # sim/cell_model.py, cad/render_cell.py, cad/gen_site.py, cad/build_step.py
+cadquery>=2.5      # cad/build_step.py (STEP export)

@@ -1,0 +1,51 @@
+== Nuclear constants A = S(0) c / (pi alpha Z1Z2 mu c^2) ==
+  D-D    A = 1.524e-16 cm3/s   (S(0) = 109.3 keV b, Bosch-Hale 1992, both branches)
+  p-D    A = 4.391e-22 cm3/s   (S(0) = 0.00021 keV b, NACRE II)
+  D-T    A = 1.326e-14 cm3/s   (S(0) = 11400 keV b, Bosch-Hale 1992 at 0.5 keV)
+  p-6Li  A = 1.681e-15 cm3/s   (S(0) = 3100 keV b, NACRE II)
+  p-7Li  A = 2.763e-17 cm3/s   (S(0) = 52 keV b, NACRE II)
+  p-11B  A = 6.389e-14 cm3/s   (S(0) = 210000 keV b, NACRE II)
+
+== (a) Molecules: benchmark against spectroscopy and Koonin-Nauenberg ==
+  D-D  D0 = 4.556 eV (measured 4.556)   fusion rate = 2.0e-64 /s
+  p-D  D0 = 4.513 eV (measured 4.514)   fusion rate = 5.6e-56 /s
+  D-T  D0 = 4.572 eV (measured 4.573)   fusion rate = 9.4e-70 /s
+  Koonin & Nauenberg 1989 for D2: 3e-64 /s
+
+== (a) D2 with a hypothetical heavier electron m* ==
+  m*     bond length [pm]   screening at contact [eV]    log10 rate [/s]
+      1        74.10                52                 -63.7
+      2        37.05               104                 -40.5
+      3        24.70               155                 -30.2
+      5        14.82               259                 -19.8
+      7        10.59               363                 -14.2
+     10         7.41               518                  -9.2
+     15         4.94               777                  -4.4
+     20         3.70              1036                  -1.6
+     50         1.48              2590                   5.3
+    100         0.74              5180                   8.9
+    207         0.36             10723                  11.6
+  100 uW/cm3 (betavoltaic class): needs 10^-14.2 /s per pair  ->  m* = 7.0  (contact screening 361 eV)
+  1 W/cm3: needs 10^-10.2 /s per pair  ->  m* = 9.2  (contact screening 477 eV)
+
+== (b) Nuclei on separate lattice sites: why PdD is worse than a molecule ==
+  screening length that makes a caged pair match the D2 molecule: 21.6 pm
+  D-D on neighbouring octahedral sites of PdD (285 pm apart, 40 meV wells), lam = 21.6 pm:  10^-88 /s
+  D-D on neighbouring octahedral sites of PdD (285 pm apart, 40 meV wells), lam = 10.0 pm:  10^-68 /s
+  D-D on neighbouring octahedral sites of PdD (285 pm apart, 40 meV wells), lam =  3.0 pm:  10^-48 /s
+  -> distance and well stiffness cost ~10^-34 before screening enters; pairs must share a cage
+
+== (c) What each fuel needs: screening length for a pair sharing a 100 pm cage ==
+  pair     target                           lam [pm]   screening at contact [keV]   field coupling q_eff/e
+  D-D      100 uW/cm3 (betavoltaic class)    2.13           0.68                     0.00
+  D-D      1 W/cm3                           1.50           0.96                     0.00
+  D-T      100 uW/cm3 (betavoltaic class)    2.16           0.67                     0.20
+  D-T      1 W/cm3                           1.58           0.91                     0.20
+  p-6Li    100 uW/cm3 (betavoltaic class)    0.89           4.83                     0.43
+  p-6Li    1 W/cm3                           0.64           6.72                     0.43
+  p-7Li    100 uW/cm3 (betavoltaic class)    0.80           5.39                     0.50
+  p-7Li    1 W/cm3                           0.57           7.62                     0.50
+  p-11B    100 uW/cm3 (betavoltaic class)    0.58          12.52                     0.50
+  p-11B    1 W/cm3                           0.42          16.96                     0.50
+  for scale: electron Bohr radius 52.9 pm, muon Bohr radius 0.256 pm
+  cage radius hardly matters: D-D at 1 W/cm3 needs lam = 1.65 pm (Rc 50), 1.50 pm (Rc 100), 1.37 pm (Rc 200)

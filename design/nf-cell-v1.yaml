@@ -1,0 +1,58 @@
+# NF-cell v1 -- product-architecture CONCEPT (source of truth for the device-level model).
+# This is not a design that is known to work: the site physics is the open question.
+# It exists so that every claim about the physics can be turned into a statement about a battery.
+# Numbers with exponents need an explicit sign (2.5e+9) or PyYAML reads them as strings.
+# provenance: measured | computed | literature | assumed | decided (owner decision, 2026-11-20).
+
+meta:
+  name: nf-cell-v1
+  revision: 0.1
+  date: 2026-11-20
+  purpose: >
+    Aneutronic product concept: many reaction sites per shared light source,
+    charged-particle capture, lateral fuel feed and helium venting.
+  track: [B]
+
+fuel:
+  primary: p-11B                     # decided: p-11B or p-7Li are the product fuels
+  alternates: [p-7Li, p-6Li]
+  lab: D-D                           # counting experiments only (neutrons, tritium)
+  hydrogen_feed: protium, deuterium-depleted        # D would bring neutron-producing side reactions
+
+site:                                # L0
+  kind: caged fuel pair              # pairs must share a cage (sim/pair_fusion.py, model c)
+  pairs_per_cage: {value: 1, provenance: assumed}
+  cage_radius_pm: {value: 100, provenance: assumed}
+
+site_crystal:                        # the "synthetic crystal": every unit cell is a site
+  cage_pitch_nm: {value: 1.0, provenance: assumed}       # e.g. a fulleride or vacancy-ordered hydride
+  film_thickness_nm: {value: 1000, basis: thin against the alpha range so products escape, provenance: assumed}
+  areal_fill: {value: 0.5, provenance: assumed}           # rest is optics, fuel channels, helium vents
+
+pixel:                               # L2: the unit that light and fuel address, not a single site
+  pitch_nm: {value: 200, provenance: assumed}
+
+stack:                               # L5
+  layer_pitch_um: {value: 20, basis: alpha range 6-12 um in diamond or silicon, provenance: literature}
+
+laser_unit:                          # decided: shared light sources, many reactors per laser
+  description: one separately made laser die feeding many tiles through a waveguide tree
+  optical_power_mW: {value: 1.0, provenance: assumed}
+  photon_energy_eV: {value: 2.0, provenance: assumed}
+  wall_plug_efficiency: {value: 0.3, provenance: assumed}
+  distribution_efficiency: {value: 0.5, provenance: assumed}
+  die_footprint_um: [300, 200, 100]
+
+capture:                             # Wall 4
+  scheme: C1                         # wide-gap junction; see docs/design-notes.md section 4.3
+  efficiency: {value: 0.2, provenance: assumed}
+  damage_fluence_alpha_per_cm2: {value: 1.0e+14, provenance: assumed}
+
+thermal:
+  passive_h_W_per_m2K: {value: 10, provenance: assumed}
+  allowed_delta_T_K: {value: 40, provenance: assumed}
+
+tiers:                               # net electrical power density targets, W per cm3 of stack
+  sensor: 1.0e-4
+  implant: 1.0e-2
+  handheld: 1.0e+0

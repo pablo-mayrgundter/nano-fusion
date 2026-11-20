@@ -89,6 +89,8 @@ Why these choices:
 | S4 | D₂ in a carbon-vacancy cage in ¹²C diamond | D-D | Stiff lattice, high phonon frequencies, monolithic with the platform | Insulator; D is hard to load |
 | S5 | Endohedral cage, D₂@C₆₀, in a metallic fulleride crystal | D-D | Atom-exact site made by chemistry in bulk; cage modes at 8–47 THz are optically addressable | No reason from known physics to expect enhancement; it is the simulator's calibration system |
 | S6 | ErD₃ / TiD₂ nano-inclusions | D-D | NASA LCF hosts, 10²³ D/cm³ | Contested replication |
+| S7 | Hydrogen-loaded PdLiₓ, or H at a vacancy next to Li in Pd | p-⁶Li, p-⁷Li | The only product-fuel pair already measured inside palladium, with sample-dependent enhancement | Needs 7–12 keV of screening at contact; ~1 keV reported |
+| S8 | D₂ (or dideuterium) in a deuterium-packed Pd vacancy, ordered as a vacancy superlattice (Pd₃VacD₄) | D-D | The configuration the Hagelstein and Metzler papers require; a crystal in which every cell is a site | Whether the ordered phase exists and holds molecular D₂ is itself conjectural |
 
 ### 4.2 Photon delivery (L1–L2)
 
@@ -98,6 +100,9 @@ Why these choices:
 | P2 | Two-colour difference-frequency drive at 8–20 THz | lattice (optical phonons) | E3; needs two diode lines per tile, p-polarised |
 | P3 | Per-site single-photon emitter in a picocavity (4 V/nm per photon) | electrons, quantum regime | Phase 2; for photon-number-resolved experiments |
 | P4 | Low-β dielectric laser accelerator, period βλ = 6–70 nm | ion kinetic energy | Track A/D ion driver; fs pulses, not diodes |
+| P5 | Acoustic drive: on-chip SAW/BAW transducer, or laser pulses at MHz–GHz repetition launching coherent acoustic phonons | lattice (uniform acoustic mode) | What the 2025 Hagelstein model actually calls for; their numbers imply ~4 mW out per watt in |
+| P6 | Write-once: light switches a site into a long-lived active state | electrons or lattice, then nothing | The only optical scheme the photon budget allows at battery rates (DN-027) |
+| P7 | Mid-infrared drive of the fuel pair's own stretch (LiH-type sites) | the pair's dipole, q_eff ≈ 0.5 e | Available only for unlike pairs (DN-028) |
 
 ### 4.3 Capture (L2–L5)
 
@@ -191,7 +196,7 @@ Rules:
 | DN-006 | 2026-11-20 | adopted | Spend atomic precision only on the site (~10³–10⁴ atoms); the rest is conventional nanofab. |
 | DN-007 | 2026-11-20 | proposed | Site-as-molecule manufacturing route; D₂@C₆₀ as the first atom-exact test site (S5). |
 | DN-008 | 2026-11-20 | proposed | All-carbon platform plus one metal: diamond for collector, optics, heat and emitters; PdDₓ for site and antenna. |
-| DN-009 | 2026-11-20 | open | CAD kernel for L2–L5. Candidates: a code-CAD library (CadQuery/build123d, OpenSCAD) versus a web viewer fed by generated meshes. Requirement: parametric, scriptable, diff-able. |
+| DN-009 | 2026-11-20 | closed by DN-030 | CAD kernel for L2–L5. Candidates: a code-CAD library (CadQuery/build123d, OpenSCAD) versus a web viewer fed by generated meshes. Requirement: parametric, scriptable, diff-able. |
 | DN-010 | 2026-11-20 | open | Hot-spot versus volumetric drive (§5). Needs the field-dependence of the hypothesised enhancement before v1. |
 | DN-011 | 2026-11-20 | open | Track D: does the Rider recirculating-power bound hold at 10–100 nm with 1–10 V/nm electrodes and tens of ions per trap? Phase 0 paper study. Prior art to start from: POPS (Barnes & Nebel 1998; power density ∝ 1/a⁴, per-device power ∝ 1/a, hence "massively modular") and the Los Alamos Penning fusion experiments. Their open problems — 1000:1 compression, incomplete space-charge neutralisation — are the first things to re-examine at nanometre scale, where field emission and wall interaction replace them as the likely limits. |
 | DN-012 | 2026-11-20 | open | Slow-ion laser accelerator needs 6–70 nm periods and ~1–10 nm apertures. Starting point found: Torrisi et al., arXiv:2106.13701 (2021), a feasibility study of proton nanobeams in low-β dielectric laser stages with a dielectric RFQ front end. Electron work at 28 keV reports 133 MeV/m. No ion experiment found. Next: read Torrisi for their period and aperture choices. |
@@ -205,13 +210,34 @@ Rules:
 | DN-021 | 2026-11-20 | adopted | E1 budget (`sim/e1_budget.py`, 1 mA, one day, 3σ). v0 array at 5 keV: 0.28 counts/s, detects a 3.9 % change in particle-averaged yield (16 eV of screening) or × 8.6 confined to the gap hot spots. The 2 % areal fuel fill of the 200 nm-pitch array costs ~50× in rate. A dense-gap film (50 % fill, 50 nm thick; variant v0-c) reaches 0.5 %, i.e. 2 eV of screening or × 2 at the hot spots. E1 should use v0-c; the sparse v0 pitch is for optical addressing. |
 | DN-022 | 2026-11-20 | proposed | E1 controls. Polarisation flip (field across versus along the gap) is the built-in null at equal absorbed power. Chop-frequency dependence separates plasmonic response (fs) from heating and deloading (ms and slower): the 2025 Thunderbird result shows loading alone moves the rate 15 %, so thermal deloading is the leading false positive. Beam power is 3–10 W at 1 mA; monitor loading optically through the Pd plasmon shift. |
 | DN-023 | 2026-11-20 | adopted | Stack order corrected in review: the first draft put the waveguide above the sites, which blocks a keV beam (range tens of nm) and so contradicts "v0 is the E1 target". Sites are now the top surface, with the SiN guide beneath on 1 µm of SiO₂ (diamond's index, 2.4, is above SiN's 2.0, so the guide needs a low-index layer under it). Fuel feed is lateral, not through 15 µm of diamond. |
+| DN-024 | 2026-11-20 | decided | Owner decision: product fuels are p-¹¹B or p-⁷Li. Consequence from `sim/pair_fusion.py`: in the bound-pair regime these need 0.3–0.6 pm screening (7–24 keV at contact), near a muon's orbit and ~10× beyond anything reported. Deuterium stays the fuel for every proof-of-physics step; the fuel switch is a late gate. p-¹¹B's natural home is the beam and collider tracks. Lithium is the least-bad aneutronic lattice fuel; natural lithium reacts mostly through ⁶Li (60× the S-factor). Enriched ⁶Li is a controlled material (to be confirmed), another reason to use natural lithium. |
+| DN-025 | 2026-11-20 | decided | Owner decision: shared light sources, many reactors per laser, built as separate laser units. `sim/cell_model.py`: at 4 × 10⁴ photons per fusion one ordinary diode (150 mW optical) serves a 1 W cell, so the reactor-to-laser ratio is set by distribution loss, uniformity and redundancy, not by laser count. The unit is one laser die plus a waveguide tree over a field of tiles (`design/step/nf-cell-v1-laser-unit.step`: 625 tiles, 3.9 × 10⁷ pixels per die). |
+| DN-026 | 2026-11-20 | adopted | Sites must form a dense crystal. One pair per 200 nm pixel gives 1.3 × 10¹² pairs/cm³ and would need ~4 fusions per pair per second at 1 W/cm³. A 1 µm film of site crystal with 1 nm cage pitch gives 2.5 × 10¹⁹ pairs/cm³ and needs 2 × 10⁻⁷ s⁻¹. The pixel is the unit that light and fuel address, not a single site. |
+| DN-027 | 2026-11-20 | adopted | A continuously held optical field cannot pay for itself: 0.1 mW per site for 1 V/nm in a plasmonic gap, against a budget of 3 × 10⁻²¹ W per pair. Light may write long-lived states (rate × lifetime ≥ 1/N_γ), trigger, probe, or drive an accelerator. Plasmonic antennas are for the laboratory; a product needs non-absorbing optics. |
+| DN-028 | 2026-11-20 | adopted | A field couples to the relative motion of unlike nuclei only: q_eff = 0.50 e for p-⁷Li and p-¹¹B, 0.43 e for p-⁶Li, 0 for D-D. Direct optical driving of the pair is a product-fuel option, never a D-D one. |
+| DN-029 | 2026-11-20 | adopted | Simulator: stage 2 and 4 seed is `sim/pair_fusion.py` (benchmarks: D₂/HD/DT dissociation energies to 1 meV; D₂ fusion rate 2.0 × 10⁻⁶⁴ s⁻¹ against Koonin-Nauenberg's 3 × 10⁻⁶⁴; exact sphere). Device level is `sim/cell_model.py` reading `design/nf-cell-v1.yaml`. Owner decision: physics first, with the device model kept in step so every physics claim becomes a statement about a cell. |
+| DN-030 | 2026-11-20 | decided | Owner decision, closes DN-009: code-CAD (CadQuery on OpenCascade), STEP export for Bldrs. Each file is written in millimetres at a declared scale (1 mm = 1 nm for the pixel block, 1 mm = 1 µm for the laser unit) because STEP has no practical nanometre unit and kernels lose precision below a micrometre. Repeated parts are instances of one shape (659 solids, 7 shapes, 0.5 MB). Viewer checklist in `design/step/README.md`. |
+| DN-031 | 2026-11-20 | adopted | A graphene or hBN membrane passes protons ~10× faster than deuterons. For proton fuels that makes it a feed that also strips deuterium, which removes the main source of side-reaction neutrons. For a deuterium feed it is poor (~10 % of the current emerges as D₂). |
+| DN-032 | 2026-11-20 | open | Lifetime limits from `sim/cell_model.py` at 1 W/cm³ net (p-¹¹B): junction collector reaches 10¹⁴ α/cm² in under an hour; the fuel film burns up in ~2 months without resupply of boron; 19 cm³ of helium per cm³ per year; passively cooled sheets must be ≤ 0.12 mm. At the 100 µW/cm³ sensor tier all four are benign (a year, 1500 years, 0.002 cm³, unlimited). The sensor tier is the natural first product. |
+| DN-033 | 2026-11-20 | adopted | Track D pruning: no static electrostatic trap confines ions in three dimensions (Earnshaw), and a radio-frequency or optical trap at 1 V/nm in a 100 nm structure is only a few eV deep. Track D therefore means a recirculating-beam (electrostatic mirror) geometry or a magnetic one, and the Rider question is about beam acceptance under scattering. |
+| DN-034 | 2026-11-20 | proposed | E1 expectation under known physics is a null: a free-electron estimate gives ~2 eV of screening change in one atomic layer at 1 V/nm, below the dense-gap target's sensitivity once diluted. A positive E1 would be new physics; that is what makes it a clean test. |
 | DN-017 | 2026-11-20 | open | The 2014 muon-catalysed design (Notes doc state diagram) maps onto this hierarchy as a different L0 site and feed; keep as Track C, not modelled in v0. |
 
-## 9. Open questions (owner decisions)
+## 9. Decisions and open questions
 
-1. Fuel for the product: comfortable with p-¹¹B / p-⁷Li as baseline and D-D as lab fuel only?
-2. "Single-photon laser diodes": per-site single-photon emitters (P3), or shared nanolasers feeding
-   many sites (P1)? v0 assumes P1 with P3 as a Phase 2 upgrade.
-3. Simulator first target: atomistic (site physics, slow, deep) or device-level (cell CAD and
-   transport, fast, visual)? Suggested: B2 screening calculation plus a rendered v0 cell in parallel.
-4. Preferred CAD/visualisation stack (DN-009): code-CAD with file exports, or a web viewer?
+Decided by the owner, 2026-11-20:
+
+1. Product fuels: p-¹¹B or p-⁷Li (DN-024). D-D remains the laboratory fuel.
+2. Light sources are shared; mass fabrication should plan on separate many-to-one laser units (DN-025).
+3. Physics first, with a basic device-level cell model kept going alongside (DN-029).
+4. Code-CAD with STEP export to Bldrs; missing viewer capabilities become feature requests (DN-030).
+
+Open, in the order they block work:
+
+1. Given DN-024, should the product architecture be re-centred on Track D (p-¹¹B in a recirculating
+   beam) with Track B kept as the deuterium science programme? The numbers point that way.
+2. Is natural lithium (which is effectively p-⁶Li fuel) acceptable alongside p-⁷Li?
+3. First atomistic target: D₂ in a palladium vacancy (S1/S8), or hydrogen beside lithium in palladium
+   (S7)? S1 has the data; S7 is the product fuel.
+4. Is the 100 µW/cm³ sensor tier an acceptable first product target? It is the only tier where capture,
+   burn-up, helium and heat are all benign (DN-032).
