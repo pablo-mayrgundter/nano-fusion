@@ -1,0 +1,83 @@
+# NF-cell v0 -- parametric specification (source of truth for the CAD model).
+# Geometry is generated from this file; do not hand-edit generated geometry.
+# provenance: measured | computed | literature | assumed.  "assumed" = open work.
+# See docs/design-notes.md for the rationale behind every choice.
+
+meta:
+  name: nf-cell-v0
+  revision: 0.1
+  date: 2026-11-20
+  purpose: >
+    Laboratory instrument for experiment E1 (light-modulated beam-driven D-D yield)
+    and first CAD render. Not an energy-producing design.
+  track: [A, B]
+  fuel: D-D            # lab fuel only; product fuel is p-11B or p-7Li (DN-005)
+
+conventions:
+  axes: right-handed; z = stack normal; origin at site centre of pixel (0,0)
+  length_units: {site: angstrom, pixel: nm, tile: um}
+  energy_units: eV
+
+site:                                  # L0
+  id: S1
+  host: {material: PdD_x, structure: fcc, a_angstrom: 4.03, provenance: literature}
+  loading_x: {value: 0.9, provenance: assumed}
+  fuel_density_per_nm3: {value: 59, provenance: computed}      # 4 D per cell at x = 1
+  defect: {type: Pd-monovacancy, count: 1, provenance: assumed}
+  nearest_DD_angstrom: {value: 2.85, provenance: computed}     # octahedral sites, a/sqrt(2)
+  isotopes: {Pd: natural, D: ">= 99.9 %"}
+  atoms_placed_exactly: {value: 5000, provenance: assumed}     # precision budget (DN-006)
+
+antenna:                               # L1
+  type: bowtie-dimer
+  material: PdD_x                      # variant v0-b: Al or Ag antenna with PdD insert
+  prism_edge_nm: 30
+  thickness_nm: 10
+  gap_nm: {value: 1.0, tolerance: 0.2, provenance: assumed}
+  hot_spot_volume_nm3: {value: 40, range: [1, 40], provenance: assumed}
+  deuterons_in_hot_spot: {value: 2400, provenance: computed}
+  one_photon_field_V_per_nm: {value: 0.67, at_volume_nm3: 40, provenance: computed}
+
+photon_feed:                           # L2
+  scheme: P1                           # waveguide-fed plasmonic gap
+  waveguide: {material: SiN, width_nm: 400, height_nm: 200, provenance: assumed}
+  photon_energy_eV: {value: 2.0, range: [1.5, 2.5]}
+  polarisation: along-gap
+  modulation: {type: chopped, frequency_Hz: 1.0e3}   # lock-in reference for E1
+  variants:
+    P2: {two_colour_difference_THz: [8.3, 15.3, 20.4], polarisation: p}
+    P3: {emitter: colour-centre single-photon source, cavity_volume_nm3: 1, field_V_per_nm: 4.25}
+
+layers:                                # bottom to top, z increasing
+  - {name: reservoir,  material: Pd membrane + D2, thickness_nm: 500,   role: fuel feed}
+  - {name: contact,    material: p+ diamond,       thickness_nm: 2000,  role: electrode, heat spreader}
+  - {name: collector,  material: intrinsic 12C diamond, thickness_nm: 15000, role: detector / C1 capture}
+  - {name: spacer,     material: hBN,              thickness_nm: 2,     role: proton-conducting barrier}
+  - {name: reaction,   material: PdD_x antennas,   thickness_nm: 10,    role: sites}
+  - {name: cladding,   material: SiO2,             thickness_nm: 300,   role: optical isolation}
+  - {name: waveguide,  material: SiN,              thickness_nm: 200,   role: photon feed}
+
+pixel:                                 # L2
+  pitch_nm: 200
+  sites_per_pixel: 1
+  site_density_per_cm2: {value: 2.5e9, provenance: computed}
+
+tile:                                  # L3
+  size_um: [50, 50]
+  pixels: 62500
+  detector_channels: 1
+  helium_vent: {type: edge, provenance: assumed}     # DN-015
+
+stack:                                 # L5 (placeholder for later revisions)
+  layer_pitch_um: {value: 20, basis: alpha range 6-12 um in diamond/Si, provenance: literature}
+
+targets:                               # what v0 is for
+  E1_detectable_yield_modulation: {value: 0.01, in: about one day at 5 keV and 1 mA, provenance: assumed}
+  reference_rate_for_1mW_per_cm2_layer: {events_per_site_per_s: 0.7, provenance: computed}
+
+baseline_physics:                      # from sim/baseline.py
+  F_max: {D_T: 1.39e-2, p_11B: 1.93e-3, D_D: 1.2e-3}
+  break_even_photons_per_fusion: 1.0e5
+  DD_neutrons_per_s_per_W: 8.5e11
+
+open_items: [DN-009, DN-010, DN-011, DN-012, DN-013, DN-015]
