@@ -146,7 +146,7 @@ nuclear transition, and the community has built the doping, spectroscopy and the
   required p-polarisation and overlapped beams (*J. Condensed Matter Nucl. Sci.* 3, 59–76 (2010);
   [2008 paper](https://www.newenergytimes.com/v2/library/2008/2008LettsHagelstein-StimulationofOpticalPhonons.pdf)).
   This is the single experimental claim that matches "reaction sites energized by laser diodes," and
-  it used exactly diode-class lasers. It has never been independently replicated, the diagnostics were
+  it used exactly diode-class lasers. No independent replication was found, the diagnostics were
   calorimetric, and it was published in the field's own journal. **It is the first thing this program
   should replicate with nuclear diagnostics** (Phase 1, experiment E3).
 - **Fleischmann-Pons excess heat and descendants.** ✔ The Google-funded multi-institution effort found

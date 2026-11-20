@@ -17,7 +17,7 @@ Read with [`physics-baseline.md`](physics-baseline.md) (the targets) and
   years are designed to find out cheaply. Every phase has a product or a publishable result that
   survives a "no."
 
-My rough odds, to be revised as data arrives: a confirmed structure- or light-controlled change of a
+Rough odds (a starting estimate from the drafting session, not a calculation; revise as data arrives): a confirmed structure- or light-controlled change of a
 nuclear rate by ≥ 2× at Gate 1, perhaps 1 in 5 (structure alone is likelier than light). Net electrical
 energy from a nano-cell by 2036, well under 1 in 100. A sellable chip-scale particle source and a
 world-class designed-lattice nuclear metrology platform, better than even.
@@ -106,7 +106,7 @@ HDL). 10–15 people, $5–10 M/yr (estimate), mostly beam time and detectors.
 |---|---|---|---|
 | **E1** | D⁺ beam (1–20 keV) on PdD plasmonic nanoantenna arrays with a chopped laser; lock-in on charged-product yield | Light-driven transient screening (the Google/UMD patent claim) | Differential measurement: beam, target and geometry identical, only the light changes. Budget (`sim/e1_budget.py`): at 5 keV and 1 mA a dense-gap target resolves a 0.5 % modulation in a day — a ~2 eV change in screening energy if all the fuel responds, or × 2 if only the gap hot spots do. The sparse v0 array is ~50× slower (4 %; × 9 at the hot spots) |
 | **E2** | Uₑ and the sub-keV plateau versus designed defect density: epitaxial single-crystal, nanocrystalline and vacancy-engineered PdD, TiD₂, ErD₃ | Whether defects and loading cause the 2026 plateau | First experiment where the defect population is an input, not an unknown |
-| **E3** | Two-laser THz difference-frequency drive of PdD at 8.3, 15.3, 20.4 THz, with neutron, charged-particle, gamma, ⁴He and calorimetric diagnostics; blinded frequency schedule | The Letts-Cravens-Hagelstein claim | Never replicated with nuclear diagnostics; cheap; a clean null is publishable |
+| **E3** | Two-laser THz difference-frequency drive of PdD at 8.3, 15.3, 20.4 THz, with neutron, charged-particle, gamma, ⁴He and calorimetric diagnostics; blinded frequency schedule | The Letts-Cravens-Hagelstein claim | No published replication with nuclear diagnostics was found (Stanford's ARPA-E project on phonon-stimulated nanoparticles may cover related ground — check first); cheap; a clean null is publishable |
 | **E4** | σ/Sₑ leverage in designed channels and superlattices at 20–700 keV | How far channeling and flux peaking go beyond × 2 | Sets the ceiling for Track A |
 | **E5** | Branching-ratio spectroscopy below 5 keV, including e⁺e⁻ pairs | Czerski threshold resonance | A neutron-poor D-D channel would change the product fuel |
 | **E6** | Cage sites: D₂@C₆₀ and metallic fulleride crystals under Raman/THz pumping; neutron scattering for the D-D distribution | Simulator validation on an atom-exact driven site | Null expected; it calibrates the nuclear-quantum-dynamics code on a system with no unknown defects |
