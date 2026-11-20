@@ -194,7 +194,7 @@ Rules:
 | DN-009 | 2026-11-20 | open | CAD kernel for L2–L5. Candidates: a code-CAD library (CadQuery/build123d, OpenSCAD) versus a web viewer fed by generated meshes. Requirement: parametric, scriptable, diff-able. |
 | DN-010 | 2026-11-20 | open | Hot-spot versus volumetric drive (§5). Needs the field-dependence of the hypothesised enhancement before v1. |
 | DN-011 | 2026-11-20 | open | Track D: does the Rider recirculating-power bound hold at 10–100 nm with 1–10 V/nm electrodes and tens of ions per trap? Phase 0 paper study. |
-| DN-012 | 2026-11-20 | open | Slow-ion laser accelerator needs 6–70 nm periods and ~1–10 nm apertures. Is there any published low-β DLA design to start from? |
+| DN-012 | 2026-11-20 | open | Slow-ion laser accelerator needs 6–70 nm periods and ~1–10 nm apertures. Starting point found: Torrisi et al., arXiv:2106.13701 (2021), a feasibility study of proton nanobeams in low-β dielectric laser stages with a dielectric RFQ front end. Electron work at 28 keV reports 133 MeV/m. No ion experiment found. Next: read Torrisi for their period and aperture choices. |
 | DN-013 | 2026-11-20 | open | Capture stage. C1 is adequate as a detector; nothing in the catalogue is yet adequate as a converter at W/cm². |
 | DN-014 | 2026-11-20 | retired | Rydberg-array "force field" capture from the main doc: Rydberg transitions are µeV–meV; no useful coupling to MeV products. |
 | DN-015 | 2026-11-20 | open | Helium venting geometry per tile; bubble nucleation limits in PdD and diamond. |

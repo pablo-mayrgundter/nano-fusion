@@ -110,8 +110,9 @@ nuclear transition, and the community has built the doping, spectroscopy and the
   Solli, Gulde, Ropers, *Nature* 483, 190–193 (2012); ✔ Echternkamp et al., *Appl. Phys. B* 2016). eV photons become sub-keV particles
   on a nanostructure, with oscillator-level pulse energies.
 - On-chip accelerators from the Notes doc: ◦ Sapra et al., *Science* 367, 79 (2020); ◦ Chlouba et al.,
-  *Nature* 622, 476 (2023). Both accelerate relativistic or near-relativistic *electrons*. No
-  slow-ion version was found; the required 6–70 nm periods are computed in `physics-baseline.md`.
+  *Nature* 622, 476 (2023). Both accelerate relativistic or near-relativistic *electrons*. For slow
+  ions the only work found is a feasibility study for proton nanobeams in low-β dielectric laser
+  stages with a dielectric RFQ front end (✔ Torrisi et al., [arXiv:2106.13701](https://www.arxiv.org/abs/2106.13701), 2021); no experiment; the required 6–70 nm periods are computed in `physics-baseline.md`.
 - On-chip single-photon and nanolaser sources (quantum dots, hBN and diamond colour centres, plasmonic
   nanolasers) are mature enough to treat as components.
 
