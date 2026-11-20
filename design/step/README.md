@@ -15,23 +15,46 @@ STEP has no practical nanometre unit and geometry kernels lose precision far bel
 1 nm gap written in true millimetres is 10⁻⁶ mm, the same size as the kernel's default tolerance. Each
 file is therefore written in millimetres at a stated scale, and the scale is in the assembly name.
 
-## Viewer checklist
+## Tried in Bldrs
 
-Not yet tried in Bldrs. These are the things this model family will ask of a viewer, most demanding
-first. Anything missing is a candidate feature request.
+Both files were opened in Bldrs Share (v1.2251, Conway v1.1656) on 2026-11-20, in headless Chromium
+with software WebGL, through Open → Local → Browse. Share's own load report is the source for the
+numbers.
 
-1. **Declared scale.** Can a model carry a scale factor so that measurements read in nm or µm?
-2. **Instances.** The 625 tiles and 26 branch waveguides are occurrences of one shape each. Are they
-   kept as instances on load? A real die is ~10⁵ tiles and a real tile ~10⁵ pixels.
-3. **Extreme aspect ratios.** A 2 nm layer in a 1.5 µm stack; 0.3 µm waveguides on a 2 mm die. Depth
-   precision, picking and section cuts at 1:1000 thickness ratios.
-4. **Names and colours.** Part names and colours are written to the STEP assembly structure. Do both
-   survive?
-5. **Linked levels of detail.** The pixel block is what one 200 nm cell of a tile looks like. Can an
-   element of one model link to another model, three orders of magnitude finer?
-6. **Atoms.** Level L0 is an atom list (`design/sites/*.xyz`, 485 atoms now). STEP has no natural form
-   for it; a ball-and-stick or isosurface view would need its own import path.
-7. **Properties.** Material, isotope, thickness and provenance live in the YAML specs. STEP carries
-   only names and colours, so properties need a sidecar or an IFC-style property set.
-8. **Regeneration.** Every model is rebuilt from a spec on each commit; element identity across
-   versions comes from part names, not from geometry.
+What works:
+
+| Check | Result |
+|---|---|
+| Opens OpenCascade STEP AP214, locally | Yes. Recognised as `AUTOMOTIVE_DESIGN`, loaded "Local-only" with no upload, ~2.3 s each |
+| Instances kept as instances | Yes. Pixel block: 14 meshes on 6 geometries. Laser unit: 659 meshes on 7 geometries, 168 vertices in total |
+| Colours | Yes, all `COLOUR_RGB` values render |
+| Names | Assembly name becomes the page title and tree root; parts are listed in Navigation |
+
+Gaps, as feature requests:
+
+1. **Occurrence names.** Every instance is listed under its shared part's name. STEP carries a unique
+   name on each occurrence (`NEXT_ASSEMBLY_USAGE_OCCURRENCE`: `antenna_0_0_a` … `antenna_1_1_b`), but
+   the tree showed eight entries all reading the same. Request: show the occurrence name, or
+   "part : occurrence". Until then the generator gives shared parts neutral names ("antenna prism"),
+   so the tree is repetitive rather than wrong.
+2. **Units and declared scale.** The load report prints `units=m` for a file that declares
+   millimetres, and there is no way to say "1 mm here means 1 nm." Request: honour the STEP length
+   unit, and allow a per-model display scale so measurements read in nm or µm. Not verified: what
+   the measure tool reports.
+3. **A console warning** on both files: `RawLineData null, expressID: 1`. No visible effect.
+4. STEP is labelled "early access" in the About dialog.
+
+Not tested yet (needs a person at the controls): section cuts and picking at 1:1000 thickness ratios,
+the properties panel, and performance on a realistically large field (a real die is ~10⁵ tiles, a
+real tile ~10⁵ pixels).
+
+Needs that have no path today, in order of how soon this project hits them:
+
+1. **Linked levels of detail.** The pixel block is what one 200 nm cell of a tile looks like. An
+   element of one model should be able to open another model three orders of magnitude finer.
+2. **Atoms.** Level L0 is an atom list (`design/sites/*.xyz`, 485 atoms now). It needs its own import
+   path: ball-and-stick, later isosurfaces of electron density.
+3. **Properties.** Material, isotope, thickness and provenance live in the YAML specs; STEP carries
+   only names and colours. A sidecar or an IFC-style property set per part.
+4. **Regeneration.** Every model is rebuilt from a spec on each commit, so element identity across
+   versions has to come from part names rather than geometry.

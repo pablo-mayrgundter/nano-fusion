@@ -118,7 +118,7 @@ def build_laser_unit(spec, die_um=2000.0, tile_um=50.0, street_um=10.0, margin_u
     # lower layers of the stack, plain: same pattern, not repeated in detail
     plain = slab(die_um, die_um, layer_pitch)
     for k in range(extra_layers):
-        assy.add(plain, name=f"layer_{k} (same pattern as the top layer)", loc=at(z=k * layer_pitch),
+        assy.add(plain, name=f"layer_{k}", loc=at(z=k * layer_pitch),   # same pattern as the top layer
                  color=colour("collector"))
     z = extra_layers * layer_pitch
     assy.add(slab(die_um, die_um, collector), name="collector and heat spreader (diamond)", loc=at(z=z),
@@ -148,6 +148,28 @@ def build_laser_unit(spec, die_um=2000.0, tile_um=50.0, street_um=10.0, margin_u
     return assy, n * n
 
 
+def rename_products(path, mapping):
+    """STEP names a shared shape (PRODUCT) after its first occurrence; viewers that list product
+    names then show e.g. eight parts all called antenna_0_0_a.  Give shared shapes a neutral part
+    name.  Occurrence names (NEXT_ASSEMBLY_USAGE_OCCURRENCE) are left untouched."""
+    with open(path) as fh:
+        text = fh.read()
+    for first, neutral in mapping.items():
+        old = f"PRODUCT('{first}','{first}'"
+        if old not in text:
+            raise ValueError(f"product {first!r} not found in {path}")
+        text = text.replace(old, f"PRODUCT('{neutral}','{neutral}'")
+    with open(path, "w") as fh:
+        fh.write(text)
+
+
+# Neutral names are kept short so the rewritten STEP lines stay within 72 columns.
+PIXEL_PARTS = {"antenna_0_0_a": "antenna prism", "side_cladding_0_a": "side cladding",
+               "waveguide_0": "waveguide strip"}
+UNIT_PARTS = {"tile_0_0": "site-crystal tile", "branch_waveguide_0": "branch waveguide",
+              "layer_0": "lower stack layer"}
+
+
 def report(path):
     shape = cq.importers.importStep(path)
     bb = shape.val().BoundingBox()
@@ -165,9 +187,11 @@ def main():
         v1 = yaml.safe_load(fh)
     p0 = os.path.join(OUT, "nf-cell-v0-pixel-block.step")
     build_pixel_block(v0).export(p0)
+    rename_products(p0, PIXEL_PARTS)
     p1 = os.path.join(OUT, "nf-cell-v1-laser-unit.step")
     unit, tiles = build_laser_unit(v1)
     unit.export(p1)
+    rename_products(p1, UNIT_PARTS)
     print("wrote:")
     report(p0)
     report(p1)
