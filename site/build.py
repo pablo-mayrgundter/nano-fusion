@@ -26,6 +26,9 @@ import figures  # noqa: E402
 REPO = "https://github.com/pablo-mayrgundter/nano-fusion"
 GH = REPO + "/blob/HEAD/"
 URL = "https://pablo-mayrgundter.github.io/nano-fusion/"
+# Bldrs Share opens a model straight from GitHub.  The ref is a Milestone 1 commit, so the link is pinned.
+MODEL_REF = "86c039e7ebd8a2782b0f7349a8b0152f2cd8ffc7"
+BLDRS = f"https://bldrs.ai/share/v/gh/pablo-mayrgundter/nano-fusion/{MODEL_REF}/design/step/"
 
 # (file, text that must be in it, what the site says on the strength of it).  Runs of spaces are loose.
 CHECKS = (
@@ -197,7 +200,7 @@ def main():
         return
     check_sources()
     shared = {
-        "gh": GH, "repo": REPO,
+        "gh": GH, "repo": REPO, "bldrs": BLDRS,
         "zoom_ladder": figures.zoom_ladder(), "zoom_strip": figures.zoom_strip(),
         "rate_wide": figures.rate_ladder(False), "rate_compact": figures.rate_ladder(True),
         "way_rest": figures.way_rest(), "way_beam": figures.way_beam(), "way_aim": figures.way_aim(),
