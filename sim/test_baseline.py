@@ -62,6 +62,16 @@ def test_single_photon_field_scaling():
     assert close(b.single_photon_field(2.0, 4.0) * 2, b.single_photon_field(2.0, 1.0), 1e-9)
 
 
+def test_e1_budget_inputs_are_sane():
+    import e1_budget as e1
+    assert 8e-15 < e1.stop_in_pd(10.0) < 14e-15           # slow protons in Pd: ~10e-15 eV cm2
+    thick = e1.proton_yield(5.0, 0.8)
+    thin = e1.proton_yield(5.0, 0.8, thickness_nm=10.0)
+    assert 0.0 < thin < thick                              # a 10 nm layer cannot beat a thick target
+    assert e1.proton_yield(10.0, 0.8) > 10 * thick         # steep energy dependence
+    assert e1.proton_yield(5.0, 1.0) > thick               # more screening, more yield
+
+
 if __name__ == "__main__":
     tests = [v for k, v in sorted(globals().items()) if k.startswith("test_")]
     for t in tests:

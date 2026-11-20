@@ -74,7 +74,9 @@ stack:                                 # L5 (placeholder for later revisions)
   layer_pitch_um: {value: 20, basis: alpha range 6-12 um in diamond/Si, provenance: literature}
 
 targets:                               # what v0 is for
-  E1_detectable_yield_modulation: {value: 0.01, in: about one day at 5 keV and 1 mA, provenance: assumed}
+  E1_detectable_yield_modulation:      # 3 sigma, 5 keV, 1 mA, one day; sim/e1_budget.py
+    v0_array: {value: 0.039, hot_spot_only_enhancement: 8.6, provenance: computed}
+    v0c_dense_gap: {value: 0.0052, hot_spot_only_enhancement: 2.0, provenance: computed}
   reference_rate_for_1mW_per_cm2_layer: {events_per_site_per_s: 0.7, provenance: computed}
 
 baseline_physics:                      # from sim/baseline.py
@@ -82,4 +84,8 @@ baseline_physics:                      # from sim/baseline.py
   break_even_photons_per_fusion: 1.0e+5
   DD_neutrons_per_s_per_W: 8.5e+11
 
-open_items: [DN-009, DN-010, DN-011, DN-012, DN-013, DN-015]
+variants:
+  v0-b: {change: Al or Ag antenna with a PdD insert, reason: lower optical loss}
+  v0-c: {change: dense-gap PdD film, fuel_fill: 0.5, thickness_nm: 50, reason: 50x the E1 count rate (DN-021)}
+
+open_items: [DN-009, DN-010, DN-011, DN-012, DN-013, DN-015, DN-022]
