@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1180 640" width="1180" height="640" font-family="Helvetica, Arial, sans-serif">
+<rect width="1180" height="640" fill="#ffffff"/>
+<text x="40.0" y="34.0" font-size="16" fill="#1a1a1a" text-anchor="start" font-weight="bold">nf-cell-v0 (rev 0.1, 2026-11-20) — generated from the parametric spec</text>
+<text x="40.0" y="62.0" font-size="12" fill="#666666" text-anchor="start" font-weight="normal">Layer stack, y–z section (heights log-scaled; labels are true)</text>
+<rect x="40" y="78.0" width="250" height="68.6" fill="#9e9ac8" stroke="#1a1a1a" stroke-width="0.6"/>
+<text x="302.0" y="110.3" font-size="12" fill="#1a1a1a" text-anchor="start" font-weight="bold">waveguide · 200 nm</text>
+<text x="302.0" y="124.3" font-size="11" fill="#666666" text-anchor="start" font-weight="normal">SiN — photon feed</text>
+<rect x="40" y="146.6" width="250" height="72.5" fill="#f0f0f0" stroke="#1a1a1a" stroke-width="0.6"/>
+<text x="302.0" y="180.9" font-size="12" fill="#1a1a1a" text-anchor="start" font-weight="bold">cladding · 300 nm</text>
+<text x="302.0" y="194.9" font-size="11" fill="#666666" text-anchor="start" font-weight="normal">SiO2 — optical isolation</text>
+<rect x="40" y="219.1" width="250" height="40.0" fill="#e6550d" stroke="#1a1a1a" stroke-width="0.6"/>
+<circle cx="65" cy="239.1" r="3" fill="#ffffff"/>
+<circle cx="105" cy="239.1" r="3" fill="#ffffff"/>
+<circle cx="145" cy="239.1" r="3" fill="#ffffff"/>
+<circle cx="185" cy="239.1" r="3" fill="#ffffff"/>
+<circle cx="225" cy="239.1" r="3" fill="#ffffff"/>
+<circle cx="265" cy="239.1" r="3" fill="#ffffff"/>
+<text x="302.0" y="237.1" font-size="12" fill="#1a1a1a" text-anchor="start" font-weight="bold">reaction · 10 nm</text>
+<text x="302.0" y="251.1" font-size="11" fill="#666666" text-anchor="start" font-weight="normal">PdD_x antennas — sites</text>
+<rect x="40" y="259.1" width="250" height="24.6" fill="#74c476" stroke="#1a1a1a" stroke-width="0.6"/>
+<text x="302.0" y="269.4" font-size="12" fill="#1a1a1a" text-anchor="start" font-weight="bold">spacer · 2 nm</text>
+<text x="302.0" y="283.4" font-size="11" fill="#666666" text-anchor="start" font-weight="normal">hBN — proton-conducting barrier</text>
+<rect x="40" y="283.7" width="250" height="109.9" fill="#d9e6ec" stroke="#1a1a1a" stroke-width="0.6"/>
+<text x="302.0" y="336.7" font-size="12" fill="#1a1a1a" text-anchor="start" font-weight="bold">collector · 15 µm</text>
+<text x="302.0" y="350.7" font-size="11" fill="#666666" text-anchor="start" font-weight="normal">intrinsic 12C diamond — detector / C1 capture</text>
+<rect x="40" y="393.6" width="250" height="90.6" fill="#525252" stroke="#1a1a1a" stroke-width="0.6"/>
+<text x="302.0" y="436.9" font-size="12" fill="#1a1a1a" text-anchor="start" font-weight="bold">contact · 2 µm</text>
+<text x="302.0" y="450.9" font-size="11" fill="#666666" text-anchor="start" font-weight="normal">p+ diamond — electrode, heat spreader</text>
+<rect x="40" y="484.2" width="250" height="77.4" fill="#9ecae1" stroke="#1a1a1a" stroke-width="0.6"/>
+<text x="302.0" y="520.9" font-size="12" fill="#1a1a1a" text-anchor="start" font-weight="bold">reservoir · 500 nm</text>
+<text x="302.0" y="534.9" font-size="11" fill="#666666" text-anchor="start" font-weight="normal">Pd membrane + D2 — fuel feed</text>
+<text x="40.0" y="581.6" font-size="11" fill="#666666" text-anchor="start" font-weight="normal">z ↑  (growth direction, heat and fuel flow)</text>
+<text x="600.0" y="62.0" font-size="12" fill="#666666" text-anchor="start" font-weight="normal">Top view, 2 × 2 pixels to scale (pitch 200 nm)</text>
+<rect x="600" y="78" width="360.0" height="360.0" fill="#fafafa" stroke="#1a1a1a" stroke-width="0.8"/>
+<rect x="600" y="123.0" width="360.0" height="270.0" fill="#9e9ac8" fill-opacity="0.35"/>
+<line x1="780.0" y1="78" x2="780.0" y2="438.0" stroke="#666666" stroke-dasharray="4 4" stroke-width="0.6"/>
+<line x1="600" y1="258.0" x2="960.0" y2="258.0" stroke="#666666" stroke-dasharray="4 4" stroke-width="0.6"/>
+<polygon points="690.00,167.55 676.50,144.17 703.50,144.17" fill="#e6550d"/>
+<polygon points="690.00,168.45 676.50,191.83 703.50,191.83" fill="#e6550d"/>
+<polygon points="690.00,347.55 676.50,324.17 703.50,324.17" fill="#e6550d"/>
+<polygon points="690.00,348.45 676.50,371.83 703.50,371.83" fill="#e6550d"/>
+<polygon points="870.00,167.55 856.50,144.17 883.50,144.17" fill="#e6550d"/>
+<polygon points="870.00,168.45 856.50,191.83 883.50,191.83" fill="#e6550d"/>
+<polygon points="870.00,347.55 856.50,324.17 883.50,324.17" fill="#e6550d"/>
+<polygon points="870.00,348.45 856.50,371.83 883.50,371.83" fill="#e6550d"/>
+<text x="600.0" y="456.0" font-size="11" fill="#666666" text-anchor="start" font-weight="normal">waveguide 300 nm wide, runs along x, spans two pixel rows; TE field along y</text>
+<text x="600.0" y="472.0" font-size="11" fill="#666666" text-anchor="start" font-weight="normal">antenna: bowtie-dimer, 30 nm prisms, 10 nm thick, PdD_x</text>
+<text x="600.0" y="488.0" font-size="11" fill="#666666" text-anchor="start" font-weight="normal">site density 2.5e+09 per cm²</text>
+<text x="968.0" y="438.0" font-size="11" fill="#666666" text-anchor="start" font-weight="normal">x →</text>
+<text x="1010.0" y="62.0" font-size="12" fill="#666666" text-anchor="start" font-weight="normal">Site zoom (one antenna)</text>
+<rect x="1010" y="78" width="150" height="230" fill="#fafafa" stroke="#1a1a1a" stroke-width="0.8"/>
+<polygon points="1085.00,191.30 1034.00,102.97 1136.00,102.97" fill="#e6550d"/>
+<polygon points="1085.00,194.70 1034.00,283.03 1136.00,283.03" fill="#e6550d"/>
+<circle cx="1085.0" cy="193.0" r="9" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+<line x1="1094.0" y1="193.0" x2="1154" y2="193.0" stroke="#1a1a1a" stroke-width="0.8"/>
+<text x="1010.0" y="326.0" font-size="12" fill="#1a1a1a" text-anchor="start" font-weight="bold">gap 1.0 nm = reaction site</text>
+<text x="1010.0" y="342.0" font-size="11" fill="#666666" text-anchor="start" font-weight="normal">hot spot ≤ 40 nm³</text>
+<text x="1010.0" y="358.0" font-size="11" fill="#666666" text-anchor="start" font-weight="normal">~2400 deuterons</text>
+<text x="1010.0" y="374.0" font-size="11" fill="#666666" text-anchor="start" font-weight="normal">0.67 V/nm per photon</text>
+<line x1="1010" y1="298" x2="1044.0" y2="298" stroke="#1a1a1a" stroke-width="2"/>
+<text x="1050.0" y="302.0" font-size="10" fill="#666666" text-anchor="start" font-weight="normal">10 nm</text>
+<text x="40.0" y="624.0" font-size="11" fill="#666666" text-anchor="start" font-weight="normal">Laboratory instrument for experiment E1 (light-modulated D-D yield). Not an energy-producing design.</text>
+</svg>

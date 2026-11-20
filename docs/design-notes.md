@@ -38,12 +38,14 @@ code, not drawn.
 
 A deliberately simple first cell, chosen so that Phase 1 experiment E1 and the first CAD render are
 the same object. D-D fuel, because v0 is a laboratory instrument and D-D events are easy to count.
+A drawing generated from the spec is in [`design/nf-cell-v0.svg`](../design/nf-cell-v0.svg)
+(`python3 cad/render_cell.py`).
 
 ```
   z ↑
-    │   light in (waveguide, 1.5–2.5 eV)
-    │        ║
-    │   ═════╩═════════════════════  SiN / diamond waveguide, evanescently coupled
+    │   light: 1.5–2.5 eV, TE mode, field along y
+    │
+    │   ═══════════════════════════  SiN waveguide (runs along x, into the page), evanescently coupled
     │      ┌──────┐ ┌──────┐
     │      │ PdDx │·│ PdDx │         L1: bowtie dimer, 30 nm prisms, 10 nm thick,
     │      └──────┘ └──────┘             gap 1.0 nm  ← reaction site (hot spot ~1–40 nm³)
@@ -51,7 +53,7 @@ the same object. D-D fuel, because v0 is a laboratory instrument and D-D events 
     │   ░░░░░░░░░░░░░░░░░░░░░░░░░░░  intrinsic ¹²C diamond, 15 µm  ← collector / detector
     │   ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓  p⁺ diamond contact, heat spreader
     │   ═══════════════════════════  D₂ reservoir / permeation layer (Pd membrane)
-    └──────────────────────────────→ x      pixel pitch 200 nm → 2.5 × 10⁹ sites/cm²
+    └──────────────────────────────→ y      pixel pitch 200 nm → 2.5 × 10⁹ sites/cm²
 ```
 
 Why these choices:
@@ -190,6 +192,8 @@ Rules:
 | DN-014 | 2026-11-20 | retired | Rydberg-array "force field" capture from the main doc: Rydberg transitions are µeV–meV; no useful coupling to MeV products. |
 | DN-015 | 2026-11-20 | open | Helium venting geometry per tile; bubble nucleation limits in PdD and diamond. |
 | DN-016 | 2026-11-20 | proposed | Detector-first build order: the event-resolved diamond tile is the first hardware, before any reactor claim. |
+| DN-018 | 2026-11-20 | adopted | Electron-free reaction zone lifts the cold-target ceiling ~10³: ideal-case F ≈ 8 (D-T), 1.6 (p-¹¹B), 0.1–0.7 (D-D), from `sim/baseline.py`. Confinement cost not yet included (DN-011). |
+| DN-019 | 2026-11-20 | adopted | Spec numbers with exponents carry an explicit sign (`2.5e+9`); flow-mapping values containing commas are quoted. Both bit the first render. |
 | DN-017 | 2026-11-20 | open | The 2014 muon-catalysed design (Notes doc state diagram) maps onto this hierarchy as a different L0 site and feed; keep as Track C, not modelled in v0. |
 
 ## 9. Open questions (owner decisions)

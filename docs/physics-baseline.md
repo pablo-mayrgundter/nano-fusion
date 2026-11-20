@@ -85,12 +85,14 @@ So the question for any beam-into-lattice architecture is: **can an engineered c
 | Flux peaking (channeled flux concentrated on interstitial fuel) | yield × ~2 observed | Lebedev HELIS, Pd/D |
 | Screening | × 1.0–1.1 at these energies | established, irrelevant here |
 | Resonances (p-¹¹B 148 keV, 600 keV; D-T 64 keV) | already inside F | — |
-| Electron-free reaction zone (bare ions held by fields) | Sₑ → ion-ion stopping, ÷ ~10³ (estimate) | known physics, unbuilt at nanoscale |
+| Electron-free reaction zone (bare ions held by fields) | Sₑ → ion-ion Coulomb stopping, ÷ 600–1100 (computed) | known physics, unbuilt at nanoscale |
 
 The last row is the only known-physics lever of the right size. Ion-on-ion Coulomb stopping is smaller
 than electronic stopping by roughly Z·mₑ/M per target atom times a ratio of Coulomb logarithms —
-about 10⁻³. That would put F at order 10 for D-T, order 1 for p-¹¹B and D-D (estimate, to be computed
-properly in Phase 0). The catch is Rider's result (MIT thesis 1995, linked in the Notes doc): keeping
+about 10⁻³. With a 10 nm cut-off the script gives **F ≈ 8 for D-T** at 108 keV, **1.6 for p-¹¹B** at
+653 keV and 0.1–0.7 for D-D at 0.5–2 MeV. This is the idealised ceiling: it counts only energy handed
+to target ions and ignores what it costs to keep the ions confined and non-thermal. The catch is
+Rider's result (MIT thesis 1995, linked in the Notes doc): keeping
 ions non-thermal against their own elastic scattering costs recirculating power that tends to exceed
 fusion power. Whether atomically precise electrodes at ~1–10 V/nm change the terms of that argument is
 an open, answerable modelling question.
@@ -166,5 +168,5 @@ Reading of the table:
 |---|---|---|---|
 | B — driven coherent lattice (flagship hypothesis) | 1 | ≥ 10⁴⁸ over D₂ rate; N_γ ≤ 10⁵ | 10¹⁸ over bare at sub-keV; no light-driven nuclear effect confirmed |
 | A — screened lattice + nano-accelerator | 1, 2 | σ/Sₑ × 72 (D-T), × 520 (p-¹¹B), × 800–2000 (D-D) | channeling × 2–10, screening negligible at these energies |
-| D — electron-free nano-collider | 2 | recirculation loss < fusion gain | estimate only |
+| D — electron-free nano-collider | 2 | power to keep ions confined and non-thermal < fusion power | ideal-case F ≈ 8 (D-T), 1.6 (p-¹¹B) computed; nothing built |
 | C — muon-catalysed nano-cell | 1 | ≥ ~500–1000 fusions per muon at today's ~5 GeV per muon, or much cheaper muons | ~150 fusions per muon |

@@ -26,6 +26,13 @@
   D->D    F_max = 1.21e-03 at E_beam =    5017 keV  -> need sigma/S improved x827 for F=1
   p->11B  F_max = 1.93e-03 at E_beam =     653 keV  -> need sigma/S improved x518 for F=1
 
+== Electron-free reaction zone (Track D): F with ion-ion Coulomb stopping only, b_max = 10 nm ==
+  D->T    E_beam =    108 keV  S_ion/S_electron = 1.73e-03  F_electron_free =   8.07
+  p->11B  E_beam =    653 keV  S_ion/S_electron = 1.22e-03  F_electron_free =   1.58
+  D->D    E_beam =    500 keV  S_ion/S_electron = 1.15e-03  F_electron_free =   0.12
+  D->D    E_beam =   2000 keV  S_ion/S_electron = 9.37e-04  F_electron_free =   0.65
+  (elastic scattering is not a true loss if scattered ions stay confined; see Rider 1995)
+
 == Thick-target yield and gain, bare vs screened (Ue in keV) ==
   reaction  E0[keV]   Ue    reactions/ion      Q = E_fus/E_beam
   D->T         20   0.0      5.838e-08       5.134e-05

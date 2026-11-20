@@ -16,7 +16,9 @@ reaction sites driven by on-board photon sources, assuming near-future atomic-le
 | [`docs/physics-baseline.md`](docs/physics-baseline.md) | The four walls and the numbers a design must beat |
 | [`docs/design-notes.md`](docs/design-notes.md) | Running design log toward the CAD model and simulator |
 | [`design/nf-cell-v0.yaml`](design/nf-cell-v0.yaml) | Parametric spec of the first cell (source of truth for CAD) |
+| [`design/nf-cell-v0.svg`](design/nf-cell-v0.svg) | Drawing generated from the spec by [`cad/render_cell.py`](cad/render_cell.py) |
 | [`sim/baseline.py`](sim/baseline.py) | Baseline physics calculator; seed of the simulator |
+| [`sim/test_baseline.py`](sim/test_baseline.py) | Regression tests pinned to published cross-section and stopping values |
 
 ## The short version
 
@@ -27,7 +29,8 @@ reaction sites driven by on-board photon sources, assuming near-future atomic-le
    peer-reviewed theoretical motivation, a Google/Maryland patent family, and one unreplicated
    two-laser claim. It can be tested cheaply.
 3. Firing ions into cold matter is capped at a gain of 0.1–1 % by electronic stopping, whatever the
-   recirculation scheme.
+   recirculation scheme. Removing the electrons from the reaction zone lifts that ceiling about a
+   thousandfold on paper.
 4. So the plan is gate-driven: three years to find out whether structure or light controls a nuclear
    rate, with products and publishable nulls at each step, before any atomically precise reactor is
    built.
@@ -39,6 +42,20 @@ python3 sim/baseline.py
 ```
 
 Standard library only. Output is saved in `sim/baseline-output.txt`.
+
+```bash
+python3 sim/test_baseline.py
+```
+
+```bash
+python3 cad/render_cell.py
+```
+
+The drawing needs PyYAML.
+
+## First cell
+
+![NF-cell v0: layer stack, pixel top view and site zoom](design/nf-cell-v0.svg)
 
 ## Status
 

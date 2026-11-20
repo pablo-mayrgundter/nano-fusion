@@ -115,6 +115,9 @@ REACTIONS = {
     "p->11B": (("pB11",), 1.00728, M_B11 / (M_P + M_B11), 8682.0, stop_in_boron),
 }
 E_DDP, E_DDN = 4033.0, 3269.0
+PARTICLES = {  # name: (Z_beam, Z_target, m_beam, m_target) in keV
+    "D->T": (1, 1, M_D, M_T), "D->D": (1, 1, M_D, M_D), "p->11B": (1, 5, M_P, M_B11),
+}
 
 
 def channel_energy(name, ch):
@@ -132,6 +135,24 @@ def figure_of_merit(name, e_lab, u_e=0.0):
     s_e = stop(e_lab / m_u)
     return sum(sigma(c, e_lab * cmf, u_e) * BARN * channel_energy(name, c) * 1e3
                for c in chans) / s_e
+
+
+def ion_ion_stopping(name, e_lab, b_max_nm=10.0):
+    """Coulomb stopping of the beam ion on bare, free target nuclei, eV cm^2 per
+    target ion (the only drag left in an electron-free reaction zone).
+    S_n = K Z1^2 Z2^2 (m_e/M2) / beta^2 * ln(b_max / b_90), K = 4 pi r_e^2 m_e c^2."""
+    z1, z2, m1, m2 = PARTICLES[name]
+    beta2 = 2.0 * e_lab / m1
+    e_cm = e_lab * m2 / (m1 + m2)
+    b90_nm = 1.43996e-3 * z1 * z2 / (2.0 * e_cm)          # e^2 = 1.43996 eV nm
+    return 5.099e-19 * z1 ** 2 * z2 ** 2 * (510.99895 / m2) / beta2 * math.log(b_max_nm / b90_nm)
+
+
+def electron_free_fom(name, e_lab, b_max_nm=10.0):
+    """F with electronic stopping replaced by ion-ion Coulomb stopping (Track D)."""
+    chans, _, cmf, _, _ = REACTIONS[name]
+    s_n = ion_ion_stopping(name, e_lab, b_max_nm)
+    return sum(sigma(c, e_lab * cmf) * BARN * channel_energy(name, c) * 1e3 for c in chans) / s_n
 
 
 def thick_target(name, e0, u_e=0.0, e_min=None, steps=4000):
@@ -195,6 +216,12 @@ def main():
     for name in REACTIONS:
         f, e = best_fom(name)
         print(f"  {name:7s} F_max = {f:.2e} at E_beam = {e:7.0f} keV  -> need sigma/S improved x{1/f:,.0f} for F=1")
+
+    print("\n== Electron-free reaction zone (Track D): F with ion-ion Coulomb stopping only, b_max = 10 nm ==")
+    for name, e in (("D->T", 108.0), ("p->11B", 653.0), ("D->D", 500.0), ("D->D", 2000.0)):
+        ratio = ion_ion_stopping(name, e) / REACTIONS[name][4](e / REACTIONS[name][1])
+        print(f"  {name:7s} E_beam = {e:6.0f} keV  S_ion/S_electron = {ratio:.2e}  F_electron_free = {electron_free_fom(name, e):6.2f}")
+    print("  (elastic scattering is not a true loss if scattered ions stay confined; see Rider 1995)")
 
     print("\n== Thick-target yield and gain, bare vs screened (Ue in keV) ==")
     print("  reaction  E0[keV]   Ue    reactions/ion      Q = E_fus/E_beam")

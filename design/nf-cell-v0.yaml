@@ -1,5 +1,6 @@
 # NF-cell v0 -- parametric specification (source of truth for the CAD model).
 # Geometry is generated from this file; do not hand-edit generated geometry.
+# Numbers with exponents need an explicit sign (2.5e+9) or PyYAML reads them as strings.
 # provenance: measured | computed | literature | assumed.  "assumed" = open work.
 # See docs/design-notes.md for the rationale behind every choice.
 
@@ -30,6 +31,7 @@ site:                                  # L0
 
 antenna:                               # L1
   type: bowtie-dimer
+  dimer_axis: y                        # tip-to-tip direction; perpendicular to the waveguide
   material: PdD_x                      # variant v0-b: Al or Ag antenna with PdD insert
   prism_edge_nm: 30
   thickness_nm: 10
@@ -40,17 +42,17 @@ antenna:                               # L1
 
 photon_feed:                           # L2
   scheme: P1                           # waveguide-fed plasmonic gap
-  waveguide: {material: SiN, width_nm: 400, height_nm: 200, provenance: assumed}
+  waveguide: {material: SiN, width_nm: 300, height_nm: 200, runs_along: x, pixel_rows_per_waveguide: 2, provenance: assumed}
   photon_energy_eV: {value: 2.0, range: [1.5, 2.5]}
-  polarisation: along-gap
-  modulation: {type: chopped, frequency_Hz: 1.0e3}   # lock-in reference for E1
+  polarisation: TE, field along y (the dimer axis)
+  modulation: {type: chopped, frequency_Hz: 1.0e+3}   # lock-in reference for E1
   variants:
     P2: {two_colour_difference_THz: [8.3, 15.3, 20.4], polarisation: p}
     P3: {emitter: colour-centre single-photon source, cavity_volume_nm3: 1, field_V_per_nm: 4.25}
 
 layers:                                # bottom to top, z increasing
   - {name: reservoir,  material: Pd membrane + D2, thickness_nm: 500,   role: fuel feed}
-  - {name: contact,    material: p+ diamond,       thickness_nm: 2000,  role: electrode, heat spreader}
+  - {name: contact,    material: p+ diamond,       thickness_nm: 2000,  role: "electrode, heat spreader"}
   - {name: collector,  material: intrinsic 12C diamond, thickness_nm: 15000, role: detector / C1 capture}
   - {name: spacer,     material: hBN,              thickness_nm: 2,     role: proton-conducting barrier}
   - {name: reaction,   material: PdD_x antennas,   thickness_nm: 10,    role: sites}
@@ -60,7 +62,7 @@ layers:                                # bottom to top, z increasing
 pixel:                                 # L2
   pitch_nm: 200
   sites_per_pixel: 1
-  site_density_per_cm2: {value: 2.5e9, provenance: computed}
+  site_density_per_cm2: {value: 2.5e+9, provenance: computed}
 
 tile:                                  # L3
   size_um: [50, 50]
@@ -77,7 +79,7 @@ targets:                               # what v0 is for
 
 baseline_physics:                      # from sim/baseline.py
   F_max: {D_T: 1.39e-2, p_11B: 1.93e-3, D_D: 1.2e-3}
-  break_even_photons_per_fusion: 1.0e5
-  DD_neutrons_per_s_per_W: 8.5e11
+  break_even_photons_per_fusion: 1.0e+5
+  DD_neutrons_per_s_per_W: 8.5e+11
 
 open_items: [DN-009, DN-010, DN-011, DN-012, DN-013, DN-015]
