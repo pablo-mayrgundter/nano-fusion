@@ -93,4 +93,4 @@ variants:
   v0-b: {change: Al or Ag antenna with a PdD insert, reason: lower optical loss}
   v0-c: {change: dense-gap PdD film, fuel_fill: 0.5, thickness_nm: 50, reason: 50x the E1 count rate (DN-021)}
 
-open_items: [DN-009, DN-010, DN-011, DN-012, DN-013, DN-015, DN-022]
+open_items: [DN-010, DN-011, DN-012, DN-013, DN-015, DN-022]

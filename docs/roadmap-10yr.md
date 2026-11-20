@@ -184,6 +184,9 @@ instrument company.
 **Needs:** APM-3; pilot line. $100 M+/yr (estimate).
 
 - Tile → die → stack. 10⁹–10¹² sites/cm² per layer, layer pitch set by alpha range (~10–20 µm).
+- Laser units as separately made, separately tested parts: one laser die bonded to a waveguide tree
+  over a field of tiles. A 1 W cell needs only ~150 mW of light, one ordinary diode, so the unit size
+  is set by distribution loss and redundancy rather than by laser count (DN-025).
 - Yield and defect tolerance: sites fail independently, so design for graceful degradation and per-tile
   disconnect.
 - Lifetime: fuel burn-up is negligible (19 kWh per mg of p-¹¹B); life is set by helium accumulation,

@@ -1,8 +1,7 @@
 # Physics baseline: the numbers the nano-reactor has to beat
 
-Every figure here is produced by [`sim/baseline.py`](../sim/baseline.py) (output saved in
-[`sim/baseline-output.txt`](../sim/baseline-output.txt)) from published parametrisations, and the script
-reproduces the published check values (D-T 2.702e-2 b and D-D(p) 2.812e-4 b at 10 keV; p-11B 1.19 b at
+Every figure here is produced by the scripts in [`sim/`](../sim/) (outputs saved beside them as
+`*-output.txt`) from published parametrisations. `baseline.py` reproduces the published check values (D-T 2.702e-2 b and D-D(p) 2.812e-4 b at 10 keV; p-11B 1.19 b at
 600 keV; proton stopping in hydrogen 679 vs 683 MeV cm²/g at 1 MeV). Anything not computed there is
 marked as an estimate.
 
@@ -20,6 +19,10 @@ magnitude.
 | Rate needed for 1 W/cm³ | 8 × 10⁻¹² s⁻¹ per pair = 10⁵² × D₂ | script |
 | Electron-mass enhancement that would close the gap | m* ≈ 5–10 mₑ | Koonin & Nauenberg 1989 |
 | Muonic molecule (m = 207 mₑ), for scale | ~10¹² s⁻¹ (dtμ) | muon-catalysed fusion |
+
+The two "rate needed" rows assume a fully dense crystal and count all the fusion energy. The v1
+concept cell (a 1 µm film of sites per 20 µm layer, 20 % capture, light paid for) needs
+2 × 10⁻¹¹ to 2 × 10⁻⁷ s⁻¹ per pair; those are the figures used further down.
 
 Two consequences:
 

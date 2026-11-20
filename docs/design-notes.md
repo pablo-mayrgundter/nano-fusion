@@ -154,8 +154,8 @@ Project
 
 - **Source of truth:** a parametric text spec (YAML now) under version control. Geometry is always
   *generated* from it, never hand-edited, so every simulation is reproducible from a commit hash.
-- **Exports:** L0–L1 → extended XYZ / CIF / LAMMPS data; L2 → CSG script and solver meshes; L3–L4 →
-  GDSII/OASIS; L5 → STEP.
+- **Exports:** L0–L1 → extended XYZ / CIF / LAMMPS data; L2–L5 → STEP through CadQuery
+  (`cad/build_step.py`), each file at a declared scale (DN-030); GDSII/OASIS for lithography later.
 - **Variants:** a site library with stable IDs (S1…), so a tile can be an array of *different* sites.
   Combinatorial chips are the experimental strategy from Phase 2, and the CAD model must express them
   natively.
@@ -175,6 +175,10 @@ Multi-scale, with explicit hand-offs. Each arrow is a file format and a unit tes
 | 6 Transport | Where do products and heat go? | Monte Carlo (Geant4 / OpenMC), SRIM-class stopping | deposited energy, damage, dose |
 | 7 Device | Electricity out | drift-diffusion, circuit | Q_site → Q_cell |
 | 8 Process | Yield versus placement error | statistical sampling over stage 1–7 | tolerance budget for fabrication |
+
+Implemented so far: stages 2 and 4 on model potentials (`sim/pair_fusion.py`), the beam-side baseline
+(`sim/baseline.py`), and stage 7 run backwards as requirements (`sim/cell_model.py`). Stage 1 and 3
+(first-principles structure and electron response at a real site) are the next physics step.
 
 Rules:
 
