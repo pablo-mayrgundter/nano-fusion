@@ -50,14 +50,19 @@ photon_feed:                           # L2
     P2: {two_colour_difference_THz: [8.3, 15.3, 20.4], polarisation: p}
     P3: {emitter: colour-centre single-photon source, cavity_volume_nm3: 1, field_V_per_nm: 4.25}
 
+# Sites are the top surface so that a keV beam (E1) and gas or plasma loading can reach them.
+# Light arrives from below; MeV products pass down through ~1 um of optics into the detector.
 layers:                                # bottom to top, z increasing
-  - {name: reservoir,  material: Pd membrane + D2, thickness_nm: 500,   role: fuel feed}
   - {name: contact,    material: p+ diamond,       thickness_nm: 2000,  role: "electrode, heat spreader"}
   - {name: collector,  material: intrinsic 12C diamond, thickness_nm: 15000, role: detector / C1 capture}
-  - {name: spacer,     material: hBN,              thickness_nm: 2,     role: proton-conducting barrier}
-  - {name: reaction,   material: PdD_x antennas,   thickness_nm: 10,    role: sites}
-  - {name: cladding,   material: SiO2,             thickness_nm: 300,   role: optical isolation}
+  - {name: cladding,   material: SiO2,             thickness_nm: 1000,  role: low-index isolation from diamond}
   - {name: waveguide,  material: SiN,              thickness_nm: 200,   role: photon feed}
+  - {name: spacer,     material: hBN,              thickness_nm: 2,     role: deuterium diffusion barrier}
+  - {name: reaction,   material: PdD_x antennas,   thickness_nm: 10,    role: "sites, exposed top surface"}
+
+fuel_feed:
+  E1: {scheme: beam implantation, provenance: assumed}
+  beamless: {scheme: lateral Pd bus lines to an edge reservoir (also allows electrochemical loading), provenance: assumed}
 
 pixel:                                 # L2
   pitch_nm: 200

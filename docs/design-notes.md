@@ -45,17 +45,15 @@ A drawing generated from the spec is in [`design/nf-cell-v0.svg`](../design/nf-c
 [`design/sites/S1-PdD-vacancy.xyz`](../design/sites/S1-PdD-vacancy.xyz) (`python3 cad/gen_site.py`).
 
 ```
-  z ↑
-    │   light: 1.5–2.5 eV, TE mode, field along y
-    │
-    │   ═══════════════════════════  SiN waveguide (runs along x, into the page), evanescently coupled
+  z ↑        D⁺ beam (E1)  ↓ ↓ ↓          vacuum
     │      ┌──────┐ ┌──────┐
     │      │ PdDx │·│ PdDx │         L1: bowtie dimer, 30 nm prisms, 10 nm thick,
     │      └──────┘ └──────┘             gap 1.0 nm  ← reaction site (hot spot ~1–40 nm³)
-    │   ───────────────────────────  2 nm spacer (hBN) / proton-conducting 2D membrane
+    │   ───────────────────────────  2 nm hBN spacer (deuterium diffusion barrier)
+    │   ═══════════════════════════  SiN waveguide, 200 nm (runs along x, into the page; TE, field along y)
+    │   ···························  SiO₂ lower cladding, 1 µm
     │   ░░░░░░░░░░░░░░░░░░░░░░░░░░░  intrinsic ¹²C diamond, 15 µm  ← collector / detector
     │   ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓  p⁺ diamond contact, heat spreader
-    │   ═══════════════════════════  D₂ reservoir / permeation layer (Pd membrane)
     └──────────────────────────────→ y      pixel pitch 200 nm → 2.5 × 10⁹ sites/cm²
 ```
 
@@ -70,8 +68,14 @@ Why these choices:
   radiation detector, has colour-centre single-photon emitters, conducts heat better than any other
   solid, and can be made isotopically pure. An all-carbon platform plus one metal is the smallest
   chemistry set that covers site, optics, capture and heat.
-- **2D membrane under the site.** Graphene and hBN pass protons and deuterons with isotope selectivity
-  (Geim group), giving a fuel feed that is also a diffusion barrier for everything else.
+- **Sites on top, optics underneath.** The antennas are the top surface, so a keV beam (E1) and gas or
+  plasma loading can reach them. Light arrives from below through the waveguide, and MeV products pass
+  down through ~1 µm of optics into the diamond detector with little loss. Fuel arrives by beam
+  implantation in E1, and by lateral Pd bus lines from an edge reservoir (which also allow
+  electrochemical loading) in beamless operation. The hBN spacer keeps deuterium out of the optics.
+- **Precedent for the geometry.** A single Pd nanoparticle placed in the nanofocus of a gold antenna,
+  read out optically as it takes up hydrogen, was built in 2011 (Liu et al., *Nat. Mater.* 10, 631).
+  v0 is that structure with deuterium, a detector underneath and a beam on top.
 
 ## 4. Catalogues
 
@@ -200,6 +204,7 @@ Rules:
 | DN-020 | 2026-11-20 | adopted | First L0 model: `cad/gen_site.py` writes `design/sites/S1-PdD-vacancy.xyz` (4×4×4 supercell, 255 Pd + 230 D, six tagged D around the vacancy, unrelaxed). It is the input for the first DFT relaxation and path-integral run. Unrelaxed shell D-D distance is 2.85 Å; the question for stage 1–2 is how far relaxation, extra D in the vacancy and zero-point motion move that. |
 | DN-021 | 2026-11-20 | adopted | E1 budget (`sim/e1_budget.py`, 1 mA, one day, 3σ). v0 array at 5 keV: 0.28 counts/s, detects a 3.9 % change in particle-averaged yield (16 eV of screening) or × 8.6 confined to the gap hot spots. The 2 % areal fuel fill of the 200 nm-pitch array costs ~50× in rate. A dense-gap film (50 % fill, 50 nm thick; variant v0-c) reaches 0.5 %, i.e. 2 eV of screening or × 2 at the hot spots. E1 should use v0-c; the sparse v0 pitch is for optical addressing. |
 | DN-022 | 2026-11-20 | proposed | E1 controls. Polarisation flip (field across versus along the gap) is the built-in null at equal absorbed power. Chop-frequency dependence separates plasmonic response (fs) from heating and deloading (ms and slower): the 2025 Thunderbird result shows loading alone moves the rate 15 %, so thermal deloading is the leading false positive. Beam power is 3–10 W at 1 mA; monitor loading optically through the Pd plasmon shift. |
+| DN-023 | 2026-11-20 | adopted | Stack order corrected in review: the first draft put the waveguide above the sites, which blocks a keV beam (range tens of nm) and so contradicts "v0 is the E1 target". Sites are now the top surface, with the SiN guide beneath on 1 µm of SiO₂ (diamond's index, 2.4, is above SiN's 2.0, so the guide needs a low-index layer under it). Fuel feed is lateral, not through 15 µm of diamond. |
 | DN-017 | 2026-11-20 | open | The 2014 muon-catalysed design (Notes doc state diagram) maps onto this hierarchy as a different L0 site and feed; keep as Track C, not modelled in v0. |
 
 ## 9. Open questions (owner decisions)

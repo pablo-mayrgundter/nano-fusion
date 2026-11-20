@@ -75,7 +75,7 @@ def render(spec):
         p.append(text(x0 + bw + 12, mid - 2, f'{layer["name"]} · {fmt_len(t)}', 12, weight="bold"))
         p.append(text(x0 + bw + 12, mid + 12, f'{layer["material"]} — {layer["role"]}', 11, MUTED))
         y += lh
-    p.append(text(x0, y + 20, "z ↑  (growth direction, heat and fuel flow)", 11, MUTED))
+    p.append(text(x0, y + 20, "z ↑  (beam and loading reach the sites from the top; products are detected below)", 11, MUTED))
 
     # --- top view of a 2 x 2 pixel block, to scale ---------------------------
     s = 0.9                                           # px per nm

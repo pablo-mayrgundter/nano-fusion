@@ -72,9 +72,9 @@ is a usable fusion fuel form; it is not evidence for low-energy photon triggerin
 - ✔ Curtis et al., "Micro-scale fusion in dense relativistic nanowire array plasmas,"
   *Nat. Commun.* 9, 1077 (2018): deuterated nanowire arrays give 2 × 10⁶ neutrons per joule, ~500× a
   flat target. Nanostructure multiplies laser-fusion yield, at relativistic intensity.
-- ◦ Ditmire et al., *Nature* 398, 489 (1999): fusion from Coulomb explosion of laser-heated deuterium
-  clusters.
-- Laser-initiated p-¹¹B (the reaction in the main doc): ◦ Labaune et al., *Nat. Commun.* 4, 2506 (2013);
+- ✔ Ditmire et al., *Nature* 398, 489–492 (1999): fusion from Coulomb explosion of laser-heated
+  deuterium clusters, ~10⁵ neutrons per joule from a table-top laser.
+- Laser-initiated p-¹¹B (the reaction in the main doc): ✔ Labaune et al., *Nat. Commun.* 4, 2506 (2013);
   ◦ Giuffrida et al., *Phys. Rev. E* 101, 013204 (2020); ✔ Magee et al., *Nat. Commun.* 14, 955 (2023)
   (first p-¹¹B in a magnetically confined plasma).
 
@@ -97,15 +97,21 @@ nuclear transition, and the community has built the doping, spectroscopy and the
 
 - ✔ Benz et al., *Science* 354, 726–729 (2016) (picocavities: light confined to well below 1 nm³ at a
   single atom, 10⁶ enhancement of optomechanical coupling to individual bonds);
-  ◦ Chikkaraddy et al., *Nature* 535, 127 (2016) (single-molecule strong coupling in a plasmonic
-  nanocavity at room temperature).
+  ✔ Chikkaraddy et al., *Nature* 535, 127–130 (2016) (single-molecule strong coupling in a plasmonic
+  nanocavity below 40 nm³ at room temperature).
+- ✔ Liu, Tang, Hentschel, Giessen, Alivisatos, *Nat. Mater.* 10, 631–636 (2011): one palladium
+  nanoparticle placed in the nanofocus of a gold antenna, its hydrogen uptake read out optically. This
+  is the NF-cell v0 site geometry, already fabricated, for sensing.
+- ✔ Lozada-Hidalgo et al., [arXiv:1511.06693](https://arxiv.org/abs/1511.06693v1) (*Science* 2016 ◦):
+  graphene and hBN monolayers pass protons about ten times faster than deuterons at room temperature
+  — a one-atom-thick hydrogen-isotope membrane.
 - ✔ Strong-field emission from plasmonic nanotips with few-cycle mid-IR pulses: electrons reach
   hundreds of eV, escaping the nanolocalised field within a fraction of an optical cycle (✔ Herink,
   Solli, Gulde, Ropers, *Nature* 483, 190–193 (2012); ✔ Echternkamp et al., *Appl. Phys. B* 2016). eV photons become sub-keV particles
   on a nanostructure, with oscillator-level pulse energies.
 - On-chip accelerators from the Notes doc: ◦ Sapra et al., *Science* 367, 79 (2020); ◦ Chlouba et al.,
-  *Nature* 622, 476 (2023). Both accelerate relativistic or near-relativistic *electrons*. Nobody has
-  built the slow-ion version; the required 6–70 nm periods are computed in `physics-baseline.md`.
+  *Nature* 622, 476 (2023). Both accelerate relativistic or near-relativistic *electrons*. No
+  slow-ion version was found; the required 6–70 nm periods are computed in `physics-baseline.md`.
 - On-chip single-photon and nanolaser sources (quantum dots, hBN and diamond colour centres, plasmonic
   nanolasers) are mature enough to treat as components.
 
