@@ -1,0 +1,60 @@
+<svg class="pf-chart" viewBox="0 0 400 440" role="img" tabindex="0" data-left="52" data-top="30" data-w="338" data-h="350" data-xlo="-0.69897" data-xhi="1.77815" data-ylo="-110.0" data-yhi="15.0" data-vw="400" data-vh="440" aria-label="Fusion rate per pair per second against the screening length of the surrounding electrons, for D-D, p-6Li, p-7Li and p-11B. The rate rises by tens of orders of magnitude as the screening length shrinks from 53 picometres toward 0.3. D-D reaches the range a battery needs near 1 to 1.5 picometres, the lithium fuels near 0.5 and boron near 0.4. A muon gives 0.26 picometres for hydrogen pairs only.">
+<line x1="52" y1="352.0" x2="390" y2="352.0" class="pf-grid"/>
+<text x="45" y="356.0" text-anchor="end" class="pf-tm pf-tick">10⁻¹⁰⁰</text>
+<line x1="52" y1="296.0" x2="390" y2="296.0" class="pf-grid"/>
+<text x="45" y="300.0" text-anchor="end" class="pf-tm pf-tick">10⁻⁸⁰</text>
+<line x1="52" y1="240.0" x2="390" y2="240.0" class="pf-grid"/>
+<text x="45" y="244.0" text-anchor="end" class="pf-tm pf-tick">10⁻⁶⁰</text>
+<line x1="52" y1="184.0" x2="390" y2="184.0" class="pf-grid"/>
+<text x="45" y="188.0" text-anchor="end" class="pf-tm pf-tick">10⁻⁴⁰</text>
+<line x1="52" y1="128.0" x2="390" y2="128.0" class="pf-grid"/>
+<text x="45" y="132.0" text-anchor="end" class="pf-tm pf-tick">10⁻²⁰</text>
+<line x1="52" y1="72.0" x2="390" y2="72.0" class="pf-grid"/>
+<text x="45" y="76.0" text-anchor="end" class="pf-tm pf-tick">10⁰</text>
+<line x1="52.0" y1="30" x2="52.0" y2="380" class="pf-grid"/>
+<text x="52.0" y="397" text-anchor="middle" class="pf-tm pf-tick">0.2</text>
+<line x1="106.3" y1="30" x2="106.3" y2="380" class="pf-grid"/>
+<text x="106.3" y="397" text-anchor="middle" class="pf-tm pf-tick">0.5</text>
+<line x1="147.4" y1="30" x2="147.4" y2="380" class="pf-grid"/>
+<text x="147.4" y="397" text-anchor="middle" class="pf-tm pf-tick">1</text>
+<line x1="188.4" y1="30" x2="188.4" y2="380" class="pf-grid"/>
+<text x="188.4" y="397" text-anchor="middle" class="pf-tm pf-tick">2</text>
+<line x1="242.7" y1="30" x2="242.7" y2="380" class="pf-grid"/>
+<text x="242.7" y="397" text-anchor="middle" class="pf-tm pf-tick">5</text>
+<line x1="283.8" y1="30" x2="283.8" y2="380" class="pf-grid"/>
+<text x="283.8" y="397" text-anchor="middle" class="pf-tm pf-tick">10</text>
+<line x1="324.9" y1="30" x2="324.9" y2="380" class="pf-grid"/>
+<text x="324.9" y="397" text-anchor="middle" class="pf-tm pf-tick">20</text>
+<line x1="379.2" y1="30" x2="379.2" y2="380" class="pf-grid"/>
+<text x="379.2" y="397" text-anchor="middle" class="pf-tm pf-tick">50</text>
+<line x1="52" y1="380" x2="390" y2="380" class="pf-axis"/>
+<text x="221" y="418" text-anchor="middle" class="pf-t2" font-size="12">Screening length, picometres (log scale)</text>
+<text x="12" y="19" class="pf-t2" font-size="12">Fusions per pair per second (log scale)</text>
+<rect x="137.5" y="30" width="102.8" height="350" fill="var(--pf-wash)" opacity="0.07"/>
+<text x="142.5" y="45.0" class="pf-t2" font-size="11">reported for</text>
+<text x="142.5" y="58.5" class="pf-t2" font-size="11">deuterium in metals,</text>
+<text x="142.5" y="72.0" class="pf-t2" font-size="11">0.3–1.7 keV</text>
+<text x="142.5" y="85.5" class="pf-tm" font-size="10.5">(beam experiments)</text>
+<rect x="52" y="90.8" width="338" height="11.2" fill="var(--pf-wash)" opacity="0.17"/>
+<text x="385" y="117.0" text-anchor="end" class="pf-t" font-size="11" font-weight="600">what a battery needs</text>
+<line x1="382.5" y1="30" x2="382.5" y2="380" class="pf-axis"/>
+<text x="377.5" y="45" text-anchor="end" class="pf-tm" font-size="10.5">electron orbit, 53 pm</text>
+<line x1="66.6" y1="30" x2="66.6" y2="380" class="pf-axis"/>
+<text x="71.6" y="344.0" class="pf-t2" font-size="10.5" font-weight="600">muon orbit, 0.26 pm:</text>
+<text x="71.6" y="357.5" class="pf-tm" font-size="10.5">a real route for</text>
+<text x="71.6" y="371.0" class="pf-tm" font-size="10.5">hydrogen pairs only</text>
+<clipPath id="pfc-clip"><rect x="52" y="30" width="338" height="350"/></clipPath>
+<polyline points="65.2,66.3 79.3,69.2 93.5,72.5 107.6,76.2 121.7,80.5 135.8,85.4 149.9,90.8 164.0,97.1 178.2,104.1 192.3,112.0 206.4,120.9 220.6,131.0 234.7,142.3 248.8,155.0 262.9,169.1 277.0,184.7 291.2,201.6 305.3,219.4 319.4,237.7 333.5,255.5 347.6,272.0 361.8,286.4 375.9,298.4 390.0,308.0" class="pf-line" stroke="var(--pf-s1)" clip-path="url(#pfc-clip)"/>
+<polyline points="65.2,77.5 79.3,82.3 93.5,87.8 107.6,94.0 121.7,101.1 135.8,109.0 149.9,118.0 164.0,128.2 178.2,139.6 192.3,152.6 206.4,167.2 220.6,183.6 234.7,202.0 248.8,222.7 262.9,245.8 277.0,271.3 291.2,299.1 305.3,328.6 319.4,358.8 333.5,388.3 347.6,415.6 361.8,439.6 375.9,459.5 390.0,475.5" class="pf-line" stroke="var(--pf-s2)" clip-path="url(#pfc-clip)"/>
+<polyline points="65.2,82.9 79.3,87.8 93.5,93.3 107.6,99.6 121.7,106.7 135.8,114.8 149.9,123.9 164.0,134.1 178.2,145.7 192.3,158.8 206.4,173.6 220.6,190.1 234.7,208.8 248.8,229.7 262.9,253.0 277.0,278.8 291.2,306.8 305.3,336.7 319.4,367.2 333.5,397.1 347.6,424.7 361.8,448.9 375.9,469.1 390.0,485.2" class="pf-line" stroke="var(--pf-s3)" clip-path="url(#pfc-clip)"/>
+<polyline points="65.2,86.0 79.3,92.5 93.5,99.9 107.6,108.4 121.7,117.9 135.8,128.6 149.9,140.7 164.0,154.4 178.2,169.9 192.3,187.3 206.4,206.9 220.6,229.0 234.7,253.8 248.8,281.6 262.9,312.7 277.0,347.1 291.2,384.6 305.3,424.6 319.4,465.5 333.5,505.6 347.6,542.7 361.8,575.2 375.9,602.3 390.0,623.9" class="pf-line" stroke="var(--pf-s4)" clip-path="url(#pfc-clip)"/>
+<text x="261.9" y="333.6" text-anchor="end" class="pf-t pf-halo" font-size="12.5" font-weight="600">p–¹¹B</text>
+<text x="257.0" y="260.8" text-anchor="end" class="pf-t pf-halo" font-size="12.5" font-weight="600">p–⁷Li</text>
+<text x="237.4" y="199.2" text-anchor="start" class="pf-t pf-halo" font-size="12.5" font-weight="600">p–⁶Li</text>
+<text x="238.8" y="143.2" text-anchor="start" class="pf-t pf-halo" font-size="12.5" font-weight="600">D–D</text>
+<circle cx="329.4" cy="250.3" r="5" fill="var(--pf-s1)" stroke="var(--pf-surface)" stroke-width="2"/>
+<line x1="356.0" y1="219.3" x2="333.4" y2="244.3" class="pf-axis"/>
+<text x="386.0" y="199.3" text-anchor="end" class="pf-t pf-halo" font-size="11" font-weight="600">D₂ as it is:</text>
+<text x="386.0" y="213.3" text-anchor="end" class="pf-t2 pf-halo" font-size="11">2 × 10⁻⁶⁴</text>
+<line class="pf-cross" x1="0" y1="0" x2="0" y2="0" visibility="hidden"/>
+</svg>
