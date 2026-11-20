@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+<head>
+{{head}}
+</head>
+<body>
+<div class="wrap">
+
+<header class="top">
+  {{nav}}
+  <figure class="hero-float" aria-labelledby="hero-h">
+    <h3 id="hero-h">From a battery down to one fuel pair</h3>
+    {{zoom_ladder}}
+    <figcaption>The concept cell, top to bottom. Atomic precision is needed only at the last step, the cage that holds one fuel pair; everything above it is closer to conventional chip-making. Schematic, not to scale. Numbers from <a href="{{gh}}design/nf-cell-v1.yaml">nf-cell-v1.yaml</a>.</figcaption>
+  </figure>
+  <div class="eyebrow" id="overview">Concept study · screening level · Milestone 1, November 2026</div>
+  <div class="title-row">
+    <h1>NanoFusion</h1>
+    <span class="reg">a fusion battery, one reaction site at a time · modelling only, no hardware</span>
+  </div>
+  <div class="intro">
+    <p><b>One milligram of hydrogen and boron-11 holds 19&nbsp;kWh</b>, as much as 75&nbsp;kg of lithium-ion cells, and fusing it leaves only helium. NanoFusion asks whether it could be burned in a solid chip instead of a plasma: a crystal of reaction sites, each built to atomic specification and holding a single fuel pair, <b>2.5&nbsp;×&nbsp;10¹⁹ pairs to the cubic centimetre</b>, all switched by light from a shared on-board laser. A fusion battery with no plasma, no magnets and no moving parts.</p>
+    <p>This study works out what that would take. It comes down to one number with a long way to go. Two deuterium nuclei at rest in a molecule fuse at <b>2&nbsp;×&nbsp;10⁻⁶⁴ per second</b>. A battery needs each pair to manage <b>10⁻¹¹ to 10⁻⁷</b>. The 53 orders of magnitude in between are set almost entirely by how tightly the surrounding electrons screen the two nuclei from each other's charge: over about 22 picometres in a molecule, against the 1 to 1.5 a deuterium battery needs and the 0.3 to 0.6 needed by the clean fuels, lithium and boron.</p>
+    <p>Nothing known does that for a pair at rest. The one real lead is that deuterons fired into metals behave as if screened at about the right strength; whether that carries over to a resting pair is the question the first three years of the plan are built to settle. The study also closes some doors. Light cannot knock two nuclei together or hold a site active, though the budget still leaves it room to write, trigger and probe. A proton beam fired into solid boron returns 0.2&nbsp;% of its energy. A perfectly aimed shot still misses a million times for every hit.</p>
+  </div>
+  <p class="frame"><span class="stamp">FRAMING.</span> A screening-level desk study: models and published data, no hardware and no measurements of our own. The site model is benchmarked (the D₂ binding energy to 1&nbsp;meV, the D₂ fusion rate within 1.5× of the published value), but a rate this sensitive to screening is only as good as the screening assumed, and the beam data it leans on have known artefacts. Device figures assume 20&nbsp;% capture, a 30&nbsp;% efficient laser and 50&nbsp;% optical distribution. The odds quoted are a starting estimate, not a calculation.</p>
+</header>
+
+<section aria-labelledby="gap-h" id="gap">
+  <div class="sec-head">
+    <div class="eyebrow">The gap · one fuel pair at a time</div>
+    <h2 id="gap-h">Fifty-three orders of magnitude</h2>
+    <p class="lede">A battery is an enormous number of fuel pairs, each fusing very rarely. That turns the whole question into a rate per pair: how often does one pair, sitting at rest in its site, fuse?</p>
+  </div>
+  <div class="stats">
+    <div class="stat"><b>2 × 10<sup>−64</sup> /s</b><span>a deuterium pair in a D₂ molecule, computed here (published: 3 × 10⁻⁶⁴)</span></div>
+    <div class="stat"><b>10<sup>−11</sup>–10<sup>−7</sup> /s</b><span>what a battery needs from each pair, from the sensor tier to the handheld</span></div>
+    <div class="stat"><b>53 orders</b><span>of magnitude between the two, nearly all of it electron screening</span></div>
+    <div class="stat"><b>22 → 1.5 pm</b><span>screening length in a molecule, and where a deuterium battery starts</span></div>
+    <div class="stat"><b>0.3–0.6 pm</b><span>what lithium and boron need; a muon's orbit is 0.26 pm</span></div>
+  </div>
+  <figure class="panel">
+    <div class="panel-head"><h3>Where one fuel pair stands today</h3><span class="tag">sim/pair_fusion.py</span></div>
+    <div class="legend" aria-hidden="true">
+      <span style="--c:var(--s1)"><i class="dot"></i>computed for a deuterium pair</span>
+      <span style="--c:var(--s1)"><i class="dash"></i>only if beam-measured screening held at rest</span>
+      <span><i class="band"></i>what a battery needs</span>
+    </div>
+    <div class="fig-wide">{{rate_wide}}</div>
+    <div class="fig-compact">{{rate_compact}}</div>
+    <figcaption>Fusion rate of one deuterium pair in different surroundings. Dashed bars are conditional: they take the screening measured in beam experiments and assume it also acts on a pair at rest, which nobody has shown. A muon in place of the electron does close the gap, and muon-catalysed fusion is real, but a muon costs about 5&nbsp;GeV to make and catalyses about 150 fusions before it is lost; energy break-even needs roughly twice that, and a working plant several times more.</figcaption>
+  </figure>
+</section>
+
+<section aria-labelledby="lever-h" id="lever">
+  <div class="sec-head">
+    <div class="eyebrow">Site physics · one lever</div>
+    <h2 id="lever-h">How tightly the electrons screen</h2>
+    <p class="lede">Two nuclei repel each other until the electrons around them cancel the charge. The shorter the distance over which that happens, the thinner the barrier left to tunnel through. Between a molecule's 22&nbsp;pm and the 1&nbsp;pm a battery needs, each halving is worth eight to nineteen orders of magnitude for deuterium, and more for the heavier fuels.</p>
+  </div>
+  <figure class="panel">
+    <div class="panel-head"><h3>What a resting fuel pair needs</h3><span class="tag">a pair in a 100 pm cage</span></div>
+    <div class="legend" aria-hidden="true">
+      <span class="c1"><i></i>D–D</span><span class="c2"><i></i>p–⁶Li</span><span class="c3"><i></i>p–⁷Li</span><span class="c4"><i></i>p–¹¹B</span>
+    </div>
+    <div class="pf-wrap">
+      <div class="fig-wide">{{chart_wide}}</div>
+      <div class="fig-compact">{{chart_compact}}</div>
+      <div class="pf-tip" role="status" aria-live="polite"></div>
+    </div>
+    <details class="tv">
+      <summary>Show the values as a table</summary>
+      <div class="scroll">{{chart_table}}</div>
+    </details>
+    <figcaption>Fusion rate against the screening length of the electrons around the pair (the Coulomb repulsion is cut off as exp(−r/λ)). The shaded column is what beam experiments report for deuterium in metals, converted to a length; it is not known to apply to a pair at rest. One muon screens one charge: it gives 0.26&nbsp;pm for hydrogen pairs, but no single particle does the same for lithium or boron. Point at the chart, or use the arrow keys, to read values.</figcaption>
+  </figure>
+  <div class="scroll">
+  <table class="stack">
+    <caption>What each fuel needs from its site, sensor tier → handheld tier</caption>
+    <thead><tr><th scope="col">Fuel</th><th scope="col">Makes</th><th scope="col">Screening length needed</th><th scope="col">As energy at contact</th><th scope="col">Largest reported</th><th scope="col">Does light push the pair?</th><th scope="col">Radiation</th></tr></thead>
+    <tbody>
+      <tr><th scope="row"><span class="fuel c1"><i></i>D–D</span></th><td data-l="Makes">³He + n, or T + p; 3.65 MeV</td><td data-l="Screening needed"><b>1.5 → 1.0 pm</b></td><td data-l="Contact energy">1.0 → 1.5 keV</td><td data-l="Largest reported">0.3–1.7 keV</td><td data-l="Light pushes?">no (0)</td><td data-l="Radiation">a neutron from every second fusion</td></tr>
+      <tr><th scope="row"><span class="fuel c2"><i></i>p–⁶Li</span></th><td data-l="Makes">⁴He + ³He; 4.02 MeV</td><td data-l="Screening needed"><b>0.65 → 0.43 pm</b></td><td data-l="Contact energy">6.7 → 10 keV</td><td data-l="Largest reported">0.4–1.2 keV</td><td data-l="Light pushes?">yes (0.43 e)</td><td data-l="Radiation">charged particles only</td></tr>
+      <tr><th scope="row"><span class="fuel c3"><i></i>p–⁷Li</span></th><td data-l="Makes">2 ⁴He; 17.35 MeV</td><td data-l="Screening needed"><b>0.57 → 0.37 pm</b></td><td data-l="Contact energy">7.6 → 12 keV</td><td data-l="Largest reported">0.4–1.2 keV</td><td data-l="Light pushes?">yes (0.50 e)</td><td data-l="Radiation">charged particles only</td></tr>
+      <tr><th scope="row"><span class="fuel c4"><i></i>p–¹¹B</span></th><td data-l="Makes">3 ⁴He; 8.68 MeV</td><td data-l="Screening needed"><b>0.43 → 0.30 pm</b></td><td data-l="Contact energy">17 → 24 keV</td><td data-l="Largest reported">about 0.4 keV</td><td data-l="Light pushes?">yes (0.50 e)</td><td data-l="Radiation">charged particles, to about 1 part in 1,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <div class="body">
+    <p>For deuterium the requirement lands on what beam experiments report. That coincidence is what the whole lattice idea rests on, and it is exactly where the doubt lies: a beam's screening is not known to act on a pair at rest, and a free electron gas cannot do it (palladium's screens over about 40&nbsp;pm).</p>
+    <p>For the clean fuels it does not land anywhere near. They need sub-picometre screening, within a factor of 1.2 to 2.5 of a muon's orbit and ten times beyond anything reported for them. <b>So deuterium is the fuel for proving the physics, and lithium and boron belong wherever the proton is given real kinetic energy.</b></p>
+  </div>
+</section>
+
+<section aria-labelledby="ways-h" id="ways">
+  <div class="sec-head">
+    <div class="eyebrow">Three routes · one collision</div>
+    <h2 id="ways-h">Three ways to make two nuclei meet</h2>
+    <p class="lede">Every scheme has to bring two positive charges within a few femtometres of each other. They differ in who pays for the approach: nobody, an accelerator, or the aim.</p>
+  </div>
+  <div class="ways">
+    <div class="way">
+      <div class="kind">A · wait</div>
+      <h3>A pair at rest</h3>
+      <div class="pic">{{way_rest}}</div>
+      <p>Put both nuclei in one cage and let them tunnel. Nothing is spent on the approach, so everything hangs on the rate: <b>2 × 10⁻⁶⁴ per second</b> in a molecule, and 24 orders worse again if the two sit on neighbouring lattice sites instead of sharing one.</p>
+      <div class="verdict v-open"><span class="st">OPEN · THE LATTICE BET</span>Needs about 1 pm of screening for deuterium. Beam experiments report that strength; nobody has shown it for a pair at rest. Decided at Gate 1.</div>
+    </div>
+    <div class="way">
+      <div class="kind">B · shoot</div>
+      <h3>A beam into fuel</h3>
+      <div class="pic">{{way_beam}}</div>
+      <p>Give a proton 650 keV and fire it into boron. It fuses readily when it hits, but the electrons take their 14 eV at every layer and a hit is rare: <b>0.19&nbsp;% of the beam energy comes back</b>, and no amount of energy recovery lifts that ceiling.</p>
+      <div class="verdict v-no"><span class="st">CAPPED IN MATTER · OPEN WITHOUT ELECTRONS</span>Strip the electrons away and the ceiling rises to 1.2–1.6 on paper. The beam then scatters about a hundred times per fusion, so it works only if scattered ions are recycled at 90 to 99.9&nbsp;%.</div>
+    </div>
+    <div class="way">
+      <div class="kind">C · aim</div>
+      <h3>The cue-ball shot</h3>
+      <div class="pic">{{way_aim}}</div>
+      <p>Line up one proton on one nucleus. Head-on at 600 keV they fuse almost every time, and a single photon is a fine enough cue: it steers the proton by 6 fm over 100 nm of flight. But the nucleus jitters ±4.2 pm about its site even at absolute zero, <b>670 times the size of the pocket</b>.</p>
+      <div class="verdict v-open"><span class="st">POSSIBLE · NOT ENOUGH</span>A perfect shot hits about once in a million, 360 times better than an unaimed one, for a gain of 0.1 to 0.7 at best. Pinning the target would take 25 keV; a chemical bond supplies 55 meV.</div>
+    </div>
+  </div>
+  <p class="muted small">The original notes' idea of grouping photons onto protons is route B with light as the accelerator. The single-photon cue ball is route C. The crystal of driven sites is route A.</p>
+</section>
+
+<section aria-labelledby="light-h" id="light">
+  <div class="sec-head">
+    <div class="eyebrow">Light · the photon budget</div>
+    <h2 id="light-h">What light can and cannot do</h2>
+    <p class="lede">The idea energises each site with photons from an on-board laser. One fusion of hydrogen and boron releases 8.7 MeV; a visible photon carries 2 eV. After capture and laser losses, a battery that returns three times the electricity it uses can spend at most 43,000 photons per fusion.</p>
+  </div>
+  <figure class="panel">
+    <div class="panel-head"><h3>Photons spent per fusion</h3><span class="tag">sim/cell_model.py</span></div>
+    <div class="fig-wide">{{photon_wide}}</div>
+    <div class="fig-compact">{{photon_compact}}</div>
+    <figcaption>The budget assumes 2 eV photons, 20&nbsp;% capture of the fusion energy, a 30&nbsp;% efficient laser and 50&nbsp;% optical distribution. The two reference points reach fusion by heating a plasma with intense pulses, not by acting on a lattice.</figcaption>
+  </figure>
+  <div class="two even">
+    <div class="col">
+      <h3>Ruled out</h3>
+      <p class="muted small">What the numbers close off, whatever the site looks like.</p>
+      <div class="cando v-no">
+        <div><h4><span class="st">✕ KNOCK</span>push one nucleus into another</h4><p>A deuteron that absorbs a 2 eV photon recoils with 10⁻⁹ eV. A 10 keV knock needs a gamma ray, or a field of 135,000 V/nm across the bond; materials fail near 10.</p></div>
+        <div><h4><span class="st">✕ PUMP</span>shake a bonded pair together</h4><p>Pumping a D₂ pair to the top of its vibrational ladder lifts the rate from 10⁻⁶⁴ to 10⁻⁵⁵ per second: 8 of the 53 orders, and then the bond breaks.</p></div>
+        <div><h4><span class="st">✕ HOLD</span>keep a site switched on</h4><p>Holding one site in a 1 V/nm optical field costs 3 nW in the best cavity. The budget is 3 × 10⁻²¹ W per fuel pair. A held field is 8 to 16 orders of magnitude too expensive.</p></div>
+      </div>
+    </div>
+    <div class="col">
+      <h3>Still affordable</h3>
+      <p class="muted small">Roles the energy budget leaves open. None has a confirmed nuclear effect yet.</p>
+      <div class="cando v-ok">
+        <div><h4><span class="st">✓ WRITE</span>set a long-lived state and leave</h4><p>One photon per write pays off if the state it leaves outlasts the wait for a fusion: nine days at 10⁻¹¹ per second, about a minute at 10⁻⁷.</p></div>
+        <div><h4><span class="st">✓ TRIGGER, PROBE</span>switch and read at low duty</h4><p>The first experiment fires deuterons at a palladium-deuteride antenna array while a laser is chopped on and off, and looks for a fusion yield that follows the light.</p></div>
+        <div><h4><span class="st">✓ PUSH UNLIKE PAIRS</span>act on the clean fuels</h4><p>A light field pulls a proton and a lithium or boron nucleus in opposite senses, with half an elementary charge of leverage. On two deuterons it does nothing at all.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section aria-labelledby="cell-h" id="cell">
+  <div class="sec-head">
+    <div class="eyebrow">Device model · code-CAD</div>
+    <h2 id="cell-h">A cell kept in step with the physics</h2>
+    <p class="lede">Every site-physics result is restated as a requirement on a cell that can be drawn, exported and simulated, so the model never drifts far from something buildable.</p>
+  </div>
+  <div class="two">
+    <div class="col">
+      <div class="scroll">
+      <table class="stack">
+        <caption>What the concept cell asks of its parts, burning p–¹¹B with electricity out = 3 × electricity in</caption>
+        <thead><tr><th scope="col"></th><th scope="col">Sensor</th><th scope="col">Implant</th><th scope="col">Handheld</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Net electrical power</th><td data-l="Sensor">100 µW/cm³</td><td data-l="Implant">10 mW/cm³</td><td data-l="Handheld">1 W/cm³</td></tr>
+          <tr><th scope="row">Fusions per pair per second</th><td data-l="Sensor">2 × 10⁻¹¹</td><td data-l="Implant">2 × 10⁻⁹</td><td data-l="Handheld">2 × 10⁻⁷</td></tr>
+          <tr><th scope="row">Stack lit by a 1 mW laser</th><td data-l="Sensor">67 cm³</td><td data-l="Implant">0.67 cm³</td><td data-l="Handheld">6.7 mm³</td></tr>
+          <tr><th scope="row">Fuel film lasts</th><td data-l="Sensor">1,470 years</td><td data-l="Implant">14.7 years</td><td data-l="Handheld">54 days</td></tr>
+          <tr><th scope="row">Helium to vent, per cm³ a year</th><td data-l="Sensor">0.002 cm³</td><td data-l="Implant">0.19 cm³</td><td data-l="Handheld">19 cm³</td></tr>
+          <tr><th scope="row">Collector life</th><td data-l="Sensor">8,580 h</td><td data-l="Implant">86 h</td><td data-l="Handheld"><b>51 min</b></td></tr>
+          <tr><th scope="row">Thickest sheet cooled passively</th><td data-l="Sensor">1.2 m</td><td data-l="Implant">12 mm</td><td data-l="Handheld"><b>0.12 mm</b></td></tr>
+        </tbody>
+      </table>
+      </div>
+      <div class="body">
+        <p>The concept cell stacks 500 layers to the centimetre. Each is a 1&nbsp;µm film of site crystal on a diamond collector, lit from below by a waveguide. One laser die feeds 625 tiles; a 1&nbsp;W cell needs about 150&nbsp;mW of light, which is one ordinary diode. Fuel is never the limit. <b>What sets the life of a cell is helium, heat and radiation damage in its own collector</b>, and at the handheld tier those bite within the hour.</p>
+        <p>Both cells are generated from YAML specifications by code-CAD and exported as STEP assemblies: a 2&nbsp;×&nbsp;2 pixel block of the laboratory cell, every antenna a solid, and the laser unit with its 625 tiles. Both load in <a href="https://bldrs.ai">Bldrs Share</a> with instancing, colours and part names intact. Get the <a href="design/step/nf-cell-v1-laser-unit.step" download>laser unit</a> or the <a href="design/step/nf-cell-v0-pixel-block.step" download>pixel block</a>, or read the <a href="{{gh}}design/step/README.md">notes on the models</a>.</p>
+      </div>
+    </div>
+    <figure class="panel">
+      <div class="panel-head"><h3>One layer, in section</h3><span class="tag">nf-cell-v1</span></div>
+      {{layer_section}}
+      <figcaption>Light arrives along the waveguide and reaches the fuel film through its evanescent field. A fusion sends three alpha particles out in all directions; they stop within a few micrometres of diamond, above or below, and the charge they free is collected.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section aria-labelledby="plan-h" id="plan">
+  <div class="sec-head">
+    <div class="eyebrow">Roadmap · 2027–2036</div>
+    <h2 id="plan-h">Ten years, built around gates</h2>
+    <p class="lede">The plan does not assume the idea works. The first three years are designed to find out cheaply, and every phase ends in a product or a publishable result that survives a no.</p>
+  </div>
+  {{timeline}}
+  <div class="tracks">
+    <div class="track"><h4><span>B</span>Driven lattice site</h4>A dense crystal of caged fuel pairs, switched by on-chip light or sound. The flagship science, and unproven. Decided at Gate 1.</div>
+    <div class="track"><h4><span>A</span>Screened lattice and nano-accelerator</h4>Ions of 1 to 100 keV fired into a designed lattice. Known physics, gain capped near 1&nbsp;%. The metrology backbone and the first product.</div>
+    <div class="track"><h4><span>D</span>Electron-free nano-collider</h4>Bare ions recirculating in atom-exact traps at 1 to 10 V/nm. The only known-physics path past break-even, and the likeliest home for p–¹¹B.</div>
+    <div class="track"><h4><span>C</span>Muon-catalysed cell</h4>The 2014 concept. Known physics; the cost of a muon is the wall. Watched, and revisited if muon sources improve.</div>
+  </div>
+  <p class="muted small" style="max-width:92ch"><b>Rough odds</b>, a starting estimate rather than a calculation: a confirmed change in a nuclear rate, controlled by structure or by light, at Gate 1: perhaps 1 in 5. Net electricity from a nano-cell by 2036, well under 1 in 100; from a clean-fuel lattice cell, lower again by an order of magnitude or more. A sellable chip-scale particle source and a designed-lattice nuclear metrology platform, better than even.</p>
+</section>
+
+<section aria-labelledby="learn-h" id="learned">
+  <div class="sec-head">
+    <div class="eyebrow">Across the study</div>
+    <h2 id="learn-h">What we learned, and what to watch</h2>
+  </div>
+  <div class="two">
+    <div class="col">
+      <h3>What we learned</h3>
+      <ul class="plain">
+        <li><b>One number decides the lattice route.</b> The screening length has to fall from 22 pm to about 1 pm for deuterium. That single change is worth the whole 53 orders of magnitude.</li>
+        <li><b>The pair must share a cage.</b> Deuterons on neighbouring sites in palladium deuteride fuse 24 orders more slowly than in a free molecule.</li>
+        <li><b>Deuterium proves the physics and cannot be the product.</b> A 100 µW deuterium cell gives about 11 mSv per hour at 30 cm; the public limit is 1 mSv per year.</li>
+        <li><b>The clean fuels are muon-class hard at rest.</b> Lithium and boron need 0.3 to 0.6 pm. They belong where the proton has real kinetic energy.</li>
+        <li><b>Light is a pen, not a hammer.</b> It cannot knock, pump or hold. Inside a budget of 43,000 photons per fusion it could still write, trigger and probe, though no nuclear effect of low-power light has been confirmed.</li>
+        <li><b>Electrons are the tax on every beam.</b> Solid boron returns 0.19&nbsp;% of a beam's energy; bare nuclei 1.2 to 1.6 on paper, if a scattered beam can be recycled.</li>
+        <li><b>Aiming is not the problem.</b> A photon steers finely enough. The target's own quantum jitter is 670 times wider than the pocket.</li>
+      </ul>
+    </div>
+    <div class="col">
+      <h3>What to watch, and gates</h3>
+      <div class="gates">
+        <div class="gate"><h3>Can an experiment tell? <small>Gate 0 · Dec 2027</small></h3><p>Pass if the simulator reproduces four of six published benchmarks and at least one experiment predicts a 10σ effect under the hypothesis and a clean null without it.</p></div>
+        <div class="gate"><h3>Does structure or light change a nuclear rate? <small>Gate 1 · Dec 2029</small></h3><p>The main decision. Pass on a change of 2× or more at fixed beam conditions, or any beamless nuclear signal at 5σ, replicated in two laboratories. Fail, and the lattice track goes to the watch-list.</p></div>
+        <div class="gate"><h3>Does it survive the fuel switch? <small>Phase 2 · 2030–31</small></h3><p>The pair model says lithium needs about 8 times and boron about 17 times the screening energy that deuterium does.</p></div>
+        <div class="gate"><h3>Can a collector survive its own alphas? <small>Gate 3 · Dec 2033</small></h3><p>At the handheld tier the assumed damage limit is reached in under an hour. Capture is measured, not assumed, before anything is scaled.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section aria-labelledby="src-h" id="more">
+  <div class="sec-head">
+    <div class="eyebrow">Milestone 1 · 20 November 2026</div>
+    <h2 id="src-h">Where it stands, and where to read on</h2>
+  </div>
+  <div class="ms">
+    <div><div class="tagname">m1</div><div class="when">2026-11-20</div></div>
+    <p><b>Physics baseline, first simulator, code-CAD and the literature.</b> A site-physics solver checked against spectroscopy and the published D₂ rate; a device model kept in step with it; fifteen papers read in full; STEP models tried in Bldrs; a ten-year plan with gates; twenty-one regression tests. No hardware, and no experimental results of our own.</p>
+    <p><b>Next.</b> A first computed rate for a real site: deuterium at a palladium vacancy, from an atomistic model rather than a model potential. The go/no-go study for the electron-free collider. A count-rate budget for the first experiment, taken to a beam group.</p>
+  </div>
+  <div class="links">
+    <div><h4><a href="{{gh}}docs/worked-example.md">The worked example</a></h4>From one D₂ molecule to a battery tile in nine steps, each a number you can reproduce. Start here.</div>
+    <div><h4><a href="{{gh}}docs/physics-baseline.md">Physics baseline</a></h4>The four walls (tunnelling, stopping, radiation, capture) and the numbers a design has to beat.</div>
+    <div><h4><a href="{{gh}}docs/literature-review.md">Literature review</a></h4>What the published record supports and what it does not, graded by how closely each source was read.</div>
+    <div><h4><a href="{{gh}}docs/roadmap-10yr.md">Ten-year plan</a></h4>Phases, the seven experiments, gates, off-ramps, risks and the first ninety days.</div>
+    <div><h4><a href="{{gh}}docs/design-notes.md">Design notes</a></h4>The running design log: site and drive catalogues, the CAD data model, decisions and open questions.</div>
+    <div><h4><a href="{{repo}}">Code and models</a></h4>The simulator scripts with their saved outputs and tests, the cell specifications and the STEP export.</div>
+  </div>
+</section>
+
+<footer>
+  <span>NanoFusion · Milestone 1 · modelling only: no hardware and no experimental results of our own.</span>
+  <span>Every number on this page comes from the scripts in <a href="{{gh}}sim">sim/</a>; the build checks them against the saved outputs. Sources are in the <a href="{{gh}}docs/literature-review.md">literature review</a>.</span>
+</footer>
+</div>
+{{chart_data}}
+<script src="site/site.js" defer></script>
+</body>
+</html>

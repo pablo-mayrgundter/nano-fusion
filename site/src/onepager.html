@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+{{head}}
+</head>
+<body>
+<div class="wrap" style="gap:28px">
+<header class="top">
+  {{nav}}
+</header>
+
+<main class="op">
+  <div class="op-head">
+    <div class="eyebrow">One-pager · Milestone 1 · November 2026</div>
+    <h1>NanoFusion: a fusion battery, one reaction site at a time</h1>
+    <p>A crystal of atom-exact reaction sites, each holding one fuel pair, switched by light from a shared laser. The study at a glance: what it would take, what is ruled out, and how to find out. Modelling only, no hardware.</p>
+  </div>
+
+  <div class="op-grid">
+    <section class="card span-7" aria-labelledby="op-idea">
+      <h2 id="op-idea">The idea</h2>
+      <p>Hydrogen and boron-11 fuse into three helium nuclei and almost nothing else, releasing <b>19 kWh per milligram</b>. Burn that in a chip instead of a plasma: fuel pairs held one to a cage in a designed crystal, <b>2.5 × 10¹⁹ pairs per cm³</b>, stacked in thin films between diamond collectors that turn the helium nuclei's energy straight into current. One on-board laser lights hundreds of tiles.</p>
+      <p>It assumes near-future atomic-level fabrication, and needs it only for the cage itself. The open question is the physics: can a pair at rest be made to fuse often enough?</p>
+      <div class="chips"><span>p + <sup>11</sup>B → 3 <sup>4</sup>He + 8.7 MeV</span><span>almost no neutrons</span><span>no plasma</span><span>no moving parts</span></div>
+      <div class="fig-wide">{{zoom_strip}}</div>
+      <div class="fig-compact">{{zoom_ladder}}</div>
+    </section>
+
+    <section class="card span-5" aria-labelledby="op-stands">
+      <h2 id="op-stands">Where it stands</h2>
+      <div class="status">
+        <div class="v-ok"><span class="st">ESTABLISHED</span><p>The gap is 53 orders of magnitude, and one lever, electron screening, controls nearly all of it. The model reproduces spectroscopy and the published D₂ rate.</p></div>
+        <div class="v-no"><span class="st">RULED OUT</span><p>As power sources: a beam into cold matter, and a quiet lattice in equilibrium. As drives: light used as a hammer or as a holding field.</p></div>
+        <div class="v-open"><span class="st">OPEN</span><p>Whether the screening seen in beam experiments acts on a pair at rest. Whether a scattered beam of bare ions can be recycled.</p></div>
+        <div style="--c:var(--acc)"><span class="st">NEXT</span><p>A first computed rate for a real site, a go/no-go on the electron-free collider, a beam-time budget for experiment 1.</p></div>
+      </div>
+    </section>
+
+    <section class="card span-12" aria-labelledby="op-gap">
+      <h2 id="op-gap">The gap: 53 orders of magnitude</h2>
+      <div class="legend" aria-hidden="true">
+        <span style="--c:var(--s1)"><i class="dot"></i>computed for a deuterium pair</span>
+        <span style="--c:var(--s1)"><i class="dash"></i>only if beam-measured screening held at rest</span>
+        <span><i class="band"></i>what a battery needs</span>
+      </div>
+      <div class="fig-wide">{{rate_wide}}</div>
+      <div class="fig-compact">{{rate_compact}}</div>
+      <p>A battery is a vast number of fuel pairs, each fusing rarely, so everything reduces to a rate per pair. The rate is set by how tightly electrons screen the two nuclei: over 22 pm in a molecule, against about 1 pm needed. Deuterons fired into metals behave as if screened that tightly. Whether a pair at rest is too is the question.</p>
+    </section>
+
+    <section class="card span-12" aria-labelledby="op-ways">
+      <h2 id="op-ways">Three ways to make two nuclei meet</h2>
+      <div class="mini">
+        <div>
+          <h3>A · A pair at rest</h3>
+          <div class="pic">{{way_rest}}</div>
+          <p>Share a cage and tunnel. Nothing is spent on the approach, and it is 53 orders too slow unless electrons screen over about 1 pm.</p>
+          <div class="verdict v-open"><span class="st">OPEN · DECIDED AT GATE 1</span></div>
+        </div>
+        <div>
+          <h3>B · A beam into fuel</h3>
+          <div class="pic">{{way_beam}}</div>
+          <p>Protons at 650 keV fired into boron return <b>0.19&nbsp;%</b> of their energy; electrons take the rest. Among bare nuclei, 1.2–1.6 on paper.</p>
+          <div class="verdict v-no"><span class="st">CAPPED · OPEN WITHOUT ELECTRONS</span></div>
+        </div>
+        <div>
+          <h3>C · The cue-ball shot</h3>
+          <div class="pic">{{way_aim}}</div>
+          <p>A photon aims finely enough, but the target jitters 670 times wider than the pocket: <b>one hit in a million</b> perfect shots.</p>
+          <div class="verdict v-open"><span class="st">POSSIBLE · GAIN 0.1–0.7 AT BEST</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card span-7" aria-labelledby="op-fuels">
+      <h2 id="op-fuels">What each fuel needs</h2>
+      <div class="scroll">
+      <table class="stack">
+        <thead><tr><th scope="col">Fuel</th><th scope="col">Makes</th><th scope="col">Screening length needed</th><th scope="col">Reported, of needed (keV)</th><th scope="col">Light pushes it?</th></tr></thead>
+        <tbody>
+          <tr><th scope="row"><span class="fuel c1"><i></i>D–D</span></th><td data-l="Makes">³He + n, or T + p</td><td data-l="Screening needed"><b>1.5 → 1.0 pm</b></td><td data-l="Reported / needed">0.3–1.7 of 1.0–1.5</td><td data-l="Light pushes?">no</td></tr>
+          <tr><th scope="row"><span class="fuel c2"><i></i>p–⁶Li</span></th><td data-l="Makes">⁴He + ³He</td><td data-l="Screening needed"><b>0.65 → 0.43 pm</b></td><td data-l="Reported / needed">0.4–1.2 of 6.7–10</td><td data-l="Light pushes?">yes</td></tr>
+          <tr><th scope="row"><span class="fuel c3"><i></i>p–⁷Li</span></th><td data-l="Makes">2 ⁴He</td><td data-l="Screening needed"><b>0.57 → 0.37 pm</b></td><td data-l="Reported / needed">0.4–1.2 of 7.6–12</td><td data-l="Light pushes?">yes</td></tr>
+          <tr><th scope="row"><span class="fuel c4"><i></i>p–¹¹B</span></th><td data-l="Makes">3 ⁴He</td><td data-l="Screening needed"><b>0.43 → 0.30 pm</b></td><td data-l="Reported / needed">0.4 of 17–24</td><td data-l="Light pushes?">yes</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <p>Deuterium is the fuel for proving the physics; it makes neutrons, so it stays in the laboratory. Lithium and boron are clean, and at rest they need screening nearly as tight as a muon's orbit (0.26 pm). They suit the routes that give the proton real kinetic energy.</p>
+    </section>
+
+    <section class="card span-5" aria-labelledby="op-light">
+      <h2 id="op-light">What light can and cannot do</h2>
+      <p>A battery returning three times its electricity can spend at most <b>43,000 photons per fusion</b>.</p>
+      <div class="status">
+        <div class="v-no"><span class="st">✕ KNOCK, PUMP, HOLD</span><p>A 2 eV photon gives a deuteron 10⁻⁹ eV. The whole vibrational ladder buys 8 of the 53 orders. A held field costs 8 to 16 orders more than a site can repay.</p></div>
+        <div class="v-ok"><span class="st">✓ WRITE, TRIGGER, PROBE</span><p>Affordable: set a long-lived state and leave, switch at low duty, read out. No nuclear effect of low-power light is confirmed yet.</p></div>
+        <div class="v-ok"><span class="st">✓ PUSH UNLIKE PAIRS</span><p>A light field acts on p–Li and p–B pairs, and not at all on D–D.</p></div>
+      </div>
+    </section>
+
+    <section class="card span-12" aria-labelledby="op-plan">
+      <h2 id="op-plan">The plan: 2027 to 2036, gate by gate</h2>
+      {{timeline_short}}
+      <p><b>Rough odds</b> (a starting estimate): a confirmed change in a nuclear rate, controlled by structure or by light, at Gate 1: perhaps 1 in 5. Net electricity from a nano-cell by 2036, well under 1 in 100. A sellable chip-scale particle source and a designed-lattice metrology platform, better than even.</p>
+    </section>
+  </div>
+
+  <div class="op-foot">Numbers from the models in <a href="{{gh}}sim">sim/</a>, checked at build time against their saved outputs. Read on: the <a href="index.html">overview</a>, the <a href="{{gh}}docs/worked-example.md">worked example</a>, the <a href="{{gh}}docs/physics-baseline.md">physics baseline</a>, the <a href="{{gh}}docs/roadmap-10yr.md">ten-year plan</a>. <a href="{{repo}}">github.com/pablo-mayrgundter/nano-fusion</a></div>
+</main>
+</div>
+</body>
+</html>
