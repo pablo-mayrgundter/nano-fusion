@@ -17,6 +17,7 @@ reaction sites driven by on-board photon sources, assuming near-future atomic-le
 | [`docs/design-notes.md`](docs/design-notes.md) | Running design log toward the CAD model and simulator |
 | [`design/nf-cell-v0.yaml`](design/nf-cell-v0.yaml) | Parametric spec of the first cell (source of truth for CAD) |
 | [`design/nf-cell-v0.svg`](design/nf-cell-v0.svg) | Drawing generated from the spec by [`cad/render_cell.py`](cad/render_cell.py) |
+| [`design/sites/S1-PdD-vacancy.xyz`](design/sites/S1-PdD-vacancy.xyz) | Atom-exact model of site S1 (Pd vacancy in PdD), from [`cad/gen_site.py`](cad/gen_site.py) |
 | [`sim/baseline.py`](sim/baseline.py) | Baseline physics calculator; seed of the simulator |
 | [`sim/test_baseline.py`](sim/test_baseline.py) | Regression tests pinned to published cross-section and stopping values |
 
@@ -51,7 +52,11 @@ python3 sim/test_baseline.py
 python3 cad/render_cell.py
 ```
 
-The drawing needs PyYAML.
+```bash
+python3 cad/gen_site.py
+```
+
+The two `cad/` scripts need PyYAML.
 
 ## First cell
 

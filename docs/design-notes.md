@@ -12,8 +12,10 @@ YAML wins.
   reaction layer.
 - **Units by level:** ångström at site level, nanometre at pixel level, micrometre at tile level and
   above. SI inside solvers. Energies in eV/keV/MeV, never joules, in design files.
-- **Isotopes are part of the element symbol** everywhere (`D`, `11B`, `7Li`, `12C`). A model that
-  cannot distinguish H from D is not a model of this device.
+- **Isotopes are explicit everywhere.** Specs and prose use `D`, `11B`, `7Li`, `12C`. Atomistic files
+  keep the chemical symbol (so standard tools read them) and carry a per-atom `mass_number` column
+  (2 = deuterium, 0 = natural mix). A model that cannot distinguish H from D is not a model of this
+  device.
 - **Every parameter carries provenance:** `measured`, `computed` (with script), `literature` (with
   citation) or `assumed`. Assumed values are the to-do list.
 
@@ -39,7 +41,8 @@ code, not drawn.
 A deliberately simple first cell, chosen so that Phase 1 experiment E1 and the first CAD render are
 the same object. D-D fuel, because v0 is a laboratory instrument and D-D events are easy to count.
 A drawing generated from the spec is in [`design/nf-cell-v0.svg`](../design/nf-cell-v0.svg)
-(`python3 cad/render_cell.py`).
+(`python3 cad/render_cell.py`), and the atom-exact site S1 is in
+[`design/sites/S1-PdD-vacancy.xyz`](../design/sites/S1-PdD-vacancy.xyz) (`python3 cad/gen_site.py`).
 
 ```
   z ↑
@@ -194,6 +197,7 @@ Rules:
 | DN-016 | 2026-11-20 | proposed | Detector-first build order: the event-resolved diamond tile is the first hardware, before any reactor claim. |
 | DN-018 | 2026-11-20 | adopted | Electron-free reaction zone lifts the cold-target ceiling ~10³: ideal-case F ≈ 8 (D-T), 1.6 (p-¹¹B), 0.1–0.7 (D-D), from `sim/baseline.py`. Confinement cost not yet included (DN-011). |
 | DN-019 | 2026-11-20 | adopted | Spec numbers with exponents carry an explicit sign (`2.5e+9`); flow-mapping values containing commas are quoted. Both bit the first render. |
+| DN-020 | 2026-11-20 | adopted | First L0 model: `cad/gen_site.py` writes `design/sites/S1-PdD-vacancy.xyz` (4×4×4 supercell, 255 Pd + 230 D, six tagged D around the vacancy, unrelaxed). It is the input for the first DFT relaxation and path-integral run. Unrelaxed shell D-D distance is 2.85 Å; the question for stage 1–2 is how far relaxation, extra D in the vacancy and zero-point motion move that. |
 | DN-017 | 2026-11-20 | open | The 2014 muon-catalysed design (Notes doc state diagram) maps onto this hierarchy as a different L0 site and feed; keep as Track C, not modelled in v0. |
 
 ## 9. Open questions (owner decisions)
