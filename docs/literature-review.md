@@ -126,6 +126,24 @@ nuclear transition, and the community has built the doping, spectroscopy and the
   148 → ~193 cycles. The sticking problem the Notes doc proposed to attack with geometry is still the
   open problem, and it is being attacked with pressure rather than nanostructure.
 
+### 1.7 Smaller is better: micro-scale electrostatic and Penning traps (prior art for Track D)
+
+- ✔ Barnes & Nebel, *Phys. Plasmas* 5 (1998) and Nebel & Barnes, *Fusion Technology* 34 (1998): the
+  Periodically Oscillating Plasma Sphere (POPS). An ion cloud oscillates in a harmonic well and
+  compresses at the centre. Their scaling: **fusion power density ∝ 1/a⁴ and power per device ∝ 1/a**
+  for device radius a, which is why they proposed a "massively modular" reactor of many small traps.
+  This is the NanoFusion premise — many small reactions in parallel — stated in mainstream plasma
+  physics a quarter-century ago.
+- ✔ Park, Nebel, Stange et al., *Phys. Rev. Lett.* (2005): the POPS oscillation observed in a gridded
+  electrostatic device. ✔ Mitchell, Schauer, Barnes, *Phys. Rev. Lett.* 78, 58 (1997): spherical focus
+  with density above the Brillouin limit in a 3 mm electron Penning trap (PFX).
+- Caveats from the same programme: useful D-D gain needs ~1000:1 radial compression; space-charge
+  neutralisation of the collapsing ion sphere was found to be incomplete; a 2020 permanent-magnet trap
+  paper notes fusion in a Penning trap had still not been demonstrated.
+
+Nobody appears to have asked what this scaling does at 100 nm with solid electrodes at volts per
+nanometre. That is the Track D paper study.
+
 ---
 
 ## Tier 2 — peer-reviewed theory, or single-group experiments awaiting confirmation
@@ -213,6 +231,8 @@ Supported:
 3. An electrical knob on the lattice changes a nuclear rate (2025, 15 %).
 4. A laser can coherently drive a nucleus in a designed crystal (2024, ²²⁹Th).
 5. Nanostructure multiplies laser-fusion yield (2018, × 500).
+   Small traps favour fusion power density (POPS scaling, 1/a⁴), the original argument for massively
+   modular micro-reactors.
 6. Theory in which a driven, non-equilibrium lattice or field assists tunnelling is published in
    mainstream journals, and the no-go theorem applies only to equilibrium.
 

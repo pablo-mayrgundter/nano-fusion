@@ -30,7 +30,7 @@ All four share the fabrication stack, the CAD model and the simulator, so work i
 |---|---|---|---|
 | **B** Driven coherent lattice | Designed hydride/deuteride sites pumped by on-chip light via plasmons (electrons) or resonant phonons (lattice) | Needs new or unconfirmed physics | Flagship; decided at Gate 1 |
 | **A** Screened lattice + nano-accelerator | keV–100 keV ions from field-ionisation nanostructures into a channeling, high-screening lattice | Known physics; gain capped by F ≈ 10⁻³–10⁻² | Metrology backbone and first product |
-| **D** Electron-free nano-collider | Bare ions recirculating in atomically precise electrostatic traps at 1–10 V/nm | Known physics, unbuilt; Rider limit is the question | Hedge with the only known-physics path to F ≥ 1 |
+| **D** Electron-free nano-collider | Bare ions recirculating in atomically precise electrostatic traps at 1–10 V/nm | Known physics, unbuilt at this scale; prior art in Los Alamos POPS/Penning traps (power density ∝ 1/a⁴); Rider limit is the question | Hedge with the only known-physics path to F ≥ 1 |
 | **C** Muon-catalysed nano-cell | The 2014 concept: geometry to defeat alpha sticking | Known physics; muon cost is the wall | Watch; revisit if muon sources improve |
 
 ## Atomic-fabrication capability levels
